@@ -6,6 +6,7 @@ import '../../app/router/routes.dart';
 import '../../app/theme/app_colors.dart';
 import '../../app/theme/app_spacing.dart';
 import '../../app/theme/app_typography.dart';
+import '../../core/brand/brand_philosophy.dart';
 import '../../core/data/app_store.dart';
 import '../../core/data/db_queries.dart';
 import '../../core/l10n/l10n.dart';
@@ -13,6 +14,7 @@ import '../../core/l10n/labels.dart';
 import '../../core/models/models.dart';
 import '../../core/utils/format.dart';
 import '../../shared/navigation/home_header.dart';
+import '../../shared/widgets/brand_widgets.dart';
 import '../../shared/widgets/cards.dart';
 import '../../shared/widgets/enquiry_list.dart';
 import '../../shared/widgets/feedback.dart';
@@ -58,6 +60,12 @@ class BoHomeScreen extends ConsumerWidget {
       children: [
         const HomeTopBar(),
         Greeting(summary: t.boHomeSummary(tasks.length + dueToday)),
+        const InspirationCard(
+          title: kBackOfficeQuote,
+          subtitle: kBackOfficeQuoteBody,
+          icon: Icons.support_agent,
+          gradient: [Color(0xFFEDE7F6), Color(0xFFD1C4E9)],
+        ),
         if (next != null) _NextTask(task: next) else _AllClear(),
         Space.gapLg,
         StatStrip(items: [

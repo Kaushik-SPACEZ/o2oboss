@@ -15,6 +15,7 @@ import '../../core/l10n/locale_controller.dart';
 import '../../core/mock/seed.dart';
 import '../../core/models/models.dart';
 import '../../core/utils/validators.dart';
+import '../../shared/widgets/brand_widgets.dart';
 import '../../shared/widgets/buttons.dart';
 import '../../shared/widgets/feedback.dart';
 import '../../shared/widgets/inputs.dart';
@@ -93,7 +94,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             padding: EdgeInsets.fromLTRB(pad, Space.lg, pad, Space.xxl),
             children: [
               const Row(children: [BrandMark(size: 34), Spacer(), _LanguageButton()]),
-              const SizedBox(height: Space.huge),
+              const SizedBox(height: Space.xl),
+              const TaglineBanner(compact: true),
+              const SizedBox(height: Space.xl),
               Text(t.loginTitle, style: context.text.headlineSmall),
               Space.gapXs,
               Text(t.loginSubtitle,

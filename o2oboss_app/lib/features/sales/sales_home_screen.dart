@@ -5,12 +5,14 @@ import 'package:go_router/go_router.dart';
 import '../../app/router/routes.dart';
 import '../../app/theme/app_colors.dart';
 import '../../app/theme/app_spacing.dart';
+import '../../core/brand/brand_philosophy.dart';
 import '../../core/data/app_store.dart';
 import '../../core/data/db_queries.dart';
 import '../../core/l10n/l10n.dart';
 import '../../core/models/models.dart';
 import '../../core/utils/format.dart';
 import '../../shared/navigation/home_header.dart';
+import '../../shared/widgets/brand_widgets.dart';
 import '../../shared/widgets/cards.dart';
 import '../../shared/widgets/enquiry_card.dart';
 import '../../shared/widgets/enquiry_list.dart';
@@ -51,6 +53,12 @@ class SalesHomeScreen extends ConsumerWidget {
       children: [
         const HomeTopBar(),
         Greeting(summary: t.salesHomeSummary(inProgress)),
+        const InspirationCard(
+          title: kSalesQuoteTitle,
+          subtitle: kSalesQuoteBody,
+          icon: Icons.trending_up,
+          gradient: [Color(0xFFE3F2FD), Color(0xFFBBDEFB)],
+        ),
         PrimaryActionCard(
           icon: Icons.person_add_alt_1_outlined,
           title: t.salesReferTitle,

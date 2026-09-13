@@ -5,12 +5,14 @@ import 'package:go_router/go_router.dart';
 import '../../app/router/routes.dart';
 import '../../app/theme/app_colors.dart';
 import '../../app/theme/app_spacing.dart';
+import '../../core/brand/brand_philosophy.dart';
 import '../../core/data/app_store.dart';
 import '../../core/data/db_queries.dart';
 import '../../core/l10n/l10n.dart';
 import '../../core/models/models.dart';
 import '../../core/utils/format.dart';
 import '../../shared/navigation/home_header.dart';
+import '../../shared/widgets/brand_widgets.dart';
 import '../../shared/widgets/cards.dart';
 import '../../shared/widgets/enquiry_list.dart';
 import '../../shared/widgets/feedback.dart';
@@ -71,6 +73,12 @@ class VendorHomeScreen extends ConsumerWidget {
       children: [
         const HomeTopBar(),
         Greeting(summary: t.vnHomeSummary(pending.length)),
+        const InspirationCard(
+          title: kVendorQuote,
+          subtitle: kVendorQuoteBody,
+          icon: Icons.verified,
+          gradient: [Color(0xFFE8F5E9), Color(0xFFC8E6C9)],
+        ),
         if (vendor != null && !vendor.isActive) ...[
           NoteCard(
             tone: Tone.warning,

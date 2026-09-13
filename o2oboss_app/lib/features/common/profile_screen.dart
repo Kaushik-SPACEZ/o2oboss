@@ -14,6 +14,7 @@ import '../../core/l10n/labels.dart';
 import '../../core/l10n/languages.dart';
 import '../../core/models/models.dart';
 import '../../core/utils/format.dart';
+import '../../shared/widgets/brand_widgets.dart';
 import '../../shared/widgets/feedback.dart';
 import '../../shared/widgets/layout.dart';
 import '../../shared/widgets/pills.dart';
@@ -119,6 +120,12 @@ class ProfileScreen extends ConsumerWidget {
             onTap: () => context.push(Routes.help),
           ),
           NavRow(
+            icon: Icons.info_outline,
+            title: 'About O2O Boss',
+            subtitle: 'Vision, Values & Philosophy',
+            onTap: () => context.push(Routes.about),
+          ),
+          NavRow(
             icon: Icons.description_outlined,
             title: t.legalTerms,
             onTap: () => context.push(Routes.legal('terms')),
@@ -167,6 +174,8 @@ class ProfileScreen extends ConsumerWidget {
             },
           ),
         ),
+        const CaringValuesCard(),
+        const CultureCodeBanner(),
         Space.gapXl,
         Center(child: Text(t.profileVersion('1.0'), style: context.text.labelSmall)),
       ],

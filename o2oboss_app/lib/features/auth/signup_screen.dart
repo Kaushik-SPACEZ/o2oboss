@@ -8,6 +8,7 @@ import '../../app/theme/app_colors.dart';
 import '../../app/theme/app_motion.dart';
 import '../../app/theme/app_spacing.dart';
 import '../../app/theme/app_typography.dart';
+import '../../core/brand/brand_philosophy.dart';
 import '../../core/data/app_store.dart';
 import '../../core/data/db_queries.dart';
 import '../../core/data/drafts.dart';
@@ -15,6 +16,7 @@ import '../../core/l10n/l10n.dart';
 import '../../core/models/models.dart';
 import '../../core/utils/format.dart';
 import '../../core/utils/validators.dart';
+import '../../shared/widgets/brand_widgets.dart';
 import '../../shared/widgets/buttons.dart';
 import '../../shared/widgets/feedback.dart';
 import '../../shared/widgets/inputs.dart';
@@ -184,6 +186,8 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
     return ListView(
       padding: _pad(context),
       children: [
+        const AbundanceBanner(),
+        Space.gapXl,
         Text(t.signupWhoTitle, style: context.text.headlineSmall),
         Space.gapXl,
         for (final (role, title, desc, icon) in options) ...[
@@ -477,12 +481,13 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
       children: [
         Center(child: mark),
         Space.gapXxl,
-        Text(isVendor ? t.signupVendorDoneTitle : t.signupDoneTitle,
-            textAlign: TextAlign.center, style: context.text.headlineSmall),
+        Text(kSuccessWelcome, textAlign: TextAlign.center, style: context.text.headlineSmall),
         Space.gapSm,
         Text(isVendor ? t.signupVendorDoneBody : t.signupDoneBody(_d.loginId),
             textAlign: TextAlign.center,
             style: context.text.bodyMedium?.copyWith(color: AppColors.textSecondary)),
+        Space.gapMd,
+        const PhilosophyCard(),
         Space.gapXl,
         AppCard(
           child: Row(

@@ -3,11 +3,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../app/router/routes.dart';
+import '../../core/brand/brand_philosophy.dart';
 import '../../core/data/app_store.dart';
 import '../../core/data/db_queries.dart';
 import '../../core/l10n/l10n.dart';
 import '../../core/models/models.dart';
 import '../../shared/navigation/home_header.dart';
+import '../../shared/widgets/brand_widgets.dart';
 import '../../shared/widgets/cards.dart';
 import '../../shared/widgets/enquiry_card.dart';
 import '../../shared/widgets/feedback.dart';
@@ -76,6 +78,12 @@ class CustomerHomeScreen extends ConsumerWidget {
       children: [
         const HomeTopBar(showSearch: false),
         Greeting(summary: t.cuHomeSummary(active.length)),
+        const InspirationCard(
+          title: kCustomerQuote,
+          subtitle: kCustomerQuoteBody,
+          icon: Icons.storefront,
+          gradient: [Color(0xFFFFF3E0), Color(0xFFFFE0B2)],
+        ),
         primary,
         if (active.isNotEmpty) ...[
           SectionHeader(

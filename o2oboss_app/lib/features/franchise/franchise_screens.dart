@@ -6,6 +6,7 @@ import '../../app/router/routes.dart';
 import '../../app/theme/app_colors.dart';
 import '../../app/theme/app_spacing.dart';
 import '../../app/theme/app_typography.dart';
+import '../../core/brand/brand_philosophy.dart';
 import '../../core/data/app_store.dart';
 import '../../core/data/db_queries.dart';
 import '../../core/l10n/l10n.dart';
@@ -13,6 +14,7 @@ import '../../core/l10n/labels.dart';
 import '../../core/models/models.dart';
 import '../../core/utils/format.dart';
 import '../../shared/navigation/home_header.dart';
+import '../../shared/widgets/brand_widgets.dart';
 import '../../shared/widgets/cards.dart';
 import '../../shared/widgets/enquiry_card.dart';
 import '../../shared/widgets/enquiry_list.dart';
@@ -61,6 +63,12 @@ class FranchiseHomeScreen extends ConsumerWidget {
       children: [
         const HomeTopBar(),
         Greeting(summary: t.frHomeSummary(open)),
+        const InspirationCard(
+          title: kFranchiseQuote,
+          subtitle: kFranchiseQuoteBody,
+          icon: Icons.business,
+          gradient: [Color(0xFFFCE4EC), Color(0xFFF8BBD9)],
+        ),
         if (f == null)
           NoteCard(tone: Tone.warning, text: t.frNoTerritory)
         else

@@ -39,6 +39,7 @@ import '../../features/common/notifications_screen.dart';
 import '../../features/common/profile_screen.dart';
 import '../../features/common/search_screen.dart';
 import '../../features/common/system_screens.dart';
+import '../../features/common/about_screen.dart';
 import '../../features/enquiry/enquiry_detail_screen.dart';
 import '../../features/enquiry/new_enquiry_screen.dart';
 import '../../features/franchise/franchise_screens.dart';
@@ -257,5 +258,6 @@ List<RouteBase> pageRoutes() => [
       _push(Routes.language, (_) => const LanguageScreen(fromSettings: true)),
       _push(Routes.notificationSettings, (_) => const NotificationSettingsScreen()),
       _push(Routes.help, (_) => const HelpScreen()),
+      _push(Routes.about, (_) => const AboutScreen()),
       _push('/legal/:doc', (s) => LegalScreen(doc: s.pathParameters['doc']!)),
     ];

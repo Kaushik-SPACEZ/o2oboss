@@ -18,6 +18,7 @@ abstract final class Routes {
   static const language = '/settings/language';
   static const notificationSettings = '/settings/notifications';
   static const help = '/help';
+  static const about = '/about';
   static String legal(String doc) => '/legal/$doc';
 
   static String enquiry(String id) => '/enquiry/$id';

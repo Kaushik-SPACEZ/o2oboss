@@ -7,8 +7,10 @@ import '../../app/theme/app_colors.dart';
 import '../../app/theme/app_motion.dart';
 import '../../app/theme/app_spacing.dart';
 import '../../app/theme/app_typography.dart';
+import '../../core/brand/brand_philosophy.dart';
 import '../../core/l10n/l10n.dart';
 import '../../core/utils/validators.dart';
+import '../../shared/widgets/brand_widgets.dart';
 import '../../shared/widgets/buttons.dart';
 import '../../shared/widgets/feedback.dart';
 import '../../shared/widgets/inputs.dart';
@@ -52,7 +54,7 @@ class _State extends ConsumerState<FranchiseSignupScreen> {
     return Scaffold(
       appBar: AppBar(leading: BackButton(onPressed: () => c.canPop() ? c.pop() : c.go(Routes.signup)), title: const Text('Become a Franchiser')),
       body: SafeArea(child: ContentWidth(max: 640, child: Form(key: _key, child: ListView(padding: EdgeInsets.fromLTRB(p, Space.md, p, Space.xxxl), children: [
-        _hero(c), Space.gapXxl, _offers(c), Space.gapXxl, _fields(c), Space.gapXxl, _terms(c), Space.gapLg, AppButton('Submit Application', onPressed: _submit),
+        _hero(c), Space.gapLg, const IndiaAcronymCard(), Space.gapXxl, _offers(c), Space.gapXxl, _fields(c), Space.gapXxl, _terms(c), Space.gapLg, AppButton('Submit Application', onPressed: _submit),
       ])))));
   }
 
@@ -112,8 +114,9 @@ class _State extends ConsumerState<FranchiseSignupScreen> {
     Widget m = Container(width: 88, height: 88, decoration: const BoxDecoration(color: AppColors.successLight, shape: BoxShape.circle), child: const Icon(Icons.hourglass_top_rounded, size: 48, color: AppColors.successText));
     if (!Motion.reduced(c)) m = m.animate().scale(begin: const Offset(0.6, 0.6), duration: 360.ms, curve: Curves.easeOutBack).fadeIn();
     return Scaffold(body: SafeArea(child: ContentWidth(max: 480, child: ListView(padding: EdgeInsets.fromLTRB(Space.page(c), 72, Space.page(c), Space.xxl), children: [
-      Center(child: m), Space.gapXxl, Text('Application Submitted!', textAlign: TextAlign.center, style: c.text.headlineSmall), Space.gapSm,
-      Text('Our team will contact you in 2-3 business days.', textAlign: TextAlign.center, style: c.text.bodyMedium?.copyWith(color: AppColors.textSecondary)), Space.gapXl,
+      Center(child: m), Space.gapXxl, Text(kSuccessWelcome, textAlign: TextAlign.center, style: c.text.headlineSmall), Space.gapSm,
+      Text('Our team will contact you in 2-3 business days.', textAlign: TextAlign.center, style: c.text.bodyMedium?.copyWith(color: AppColors.textSecondary)), Space.gapMd,
+      const PhilosophyCard(), Space.gapXl,
       Container(padding: const EdgeInsets.all(Space.md), decoration: BoxDecoration(color: AppColors.track, borderRadius: Corners.mdAll), child: Column(children: [_row(c, 'Name', '${_d.firstName} ${_d.lastName}'), _row(c, 'Email', _d.email), _row(c, 'Mobile', _d.mobile), _row(c, 'State', _d.state)])),
       Space.gapXxl, AppButton('Back to Login', onPressed: () => c.go(Routes.login)),
     ]))));
