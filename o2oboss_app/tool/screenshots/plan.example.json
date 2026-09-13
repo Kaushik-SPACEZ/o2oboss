@@ -1,0 +1,11 @@
+{
+  "base": "http://localhost:8765/",
+  "width": 390,
+  "height": 844,
+  "steps": [
+    { "go": "?reset=1&lang=en&as=sales#/sales/home", "wait": 4500, "shot": "sales_home" },
+    { "go": "?lang=en&as=vendor#/vendor/home", "wait": 4500, "shot": "vendor_home" },
+    { "scroll": [195, 500, 600], "shot": "vendor_home_scrolled" },
+    { "go": "?lang=ta&as=admin#/admin/home", "wait": 4500, "shot": "admin_home_ta" }
+  ]
+}

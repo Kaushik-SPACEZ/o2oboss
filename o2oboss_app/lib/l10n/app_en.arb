@@ -1,0 +1,3164 @@
+{
+  "@@locale": "en",
+  "accActive": "Active",
+  "accPending": "Waiting for approval",
+  "accRejected": "Rejected",
+  "accSuspended": "Suspended",
+  "accUnderReview": "Under review",
+  "actionAdd": "Add",
+  "actionApply": "Apply",
+  "actionBack": "Back",
+  "actionCall": "Call",
+  "actionCancel": "Cancel",
+  "actionChange": "Change",
+  "actionClearFilters": "Clear filters",
+  "actionClose": "Close",
+  "actionConfirm": "Confirm",
+  "actionContinue": "Continue",
+  "actionCopy": "Copy",
+  "actionDelete": "Delete",
+  "actionDiscard": "Discard",
+  "actionDone": "Done",
+  "actionEdit": "Edit",
+  "actionEmail": "Email",
+  "actionFilter": "Filter",
+  "actionFilters": "Filters",
+  "actionKeepEditing": "Keep editing",
+  "actionLogout": "Log out",
+  "actionMarkDone": "Mark as done",
+  "actionMessage": "Message",
+  "actionNext": "Next",
+  "actionOpen": "Open",
+  "actionRemove": "Remove",
+  "actionReschedule": "Reschedule",
+  "actionReset": "Reset",
+  "actionRetry": "Try again",
+  "actionSave": "Save",
+  "actionSaveChanges": "Save changes",
+  "actionSearch": "Search",
+  "actionSeeAll": "See all",
+  "actionSend": "Send",
+  "actionShare": "Share",
+  "actionShowLess": "Show less",
+  "actionShowMore": "Show more",
+  "actionSkip": "Skip",
+  "actionSms": "SMS",
+  "actionUpload": "Upload",
+  "actionView": "View",
+  "actionWhatsapp": "WhatsApp",
+  "adActivate": "Activate account",
+  "adActivated": "Account activated.",
+  "adAddUserBody": "Create a login for staff, vendors, partners or customers and share it with them.",
+  "adAddUserButton": "Add user",
+  "adAddUserShort": "Add user",
+  "adAddUserTitle": "Add a new user",
+  "adArea": "Area",
+  "adAudit": "Activity log",
+  "adAuditEnquiries": "Enquiries",
+  "adAuditPeople": "People",
+  "adAuditSettings": "Settings",
+  "adAuditVendors": "Vendors",
+  "adBizCollected": "Collected",
+  "adBizCommission": "Commission due",
+  "adBizOutstanding": "Still to collect",
+  "adBizWon": "Business won",
+  "adBizWork": "Money and work",
+  "adBrands": "Brands",
+  "adCategories": "Services and questions",
+  "adCity": "City",
+  "adCompany": "Business name",
+  "adContact": "Contact",
+  "adCopy": "Copy",
+  "adCreateUser": "Create login",
+  "adCreated": "Added on",
+  "adCredsMessage": "Hello {name}, here is your O2O Boss login. User ID: {login}. Password: {password}. You will be asked to set a new password.",
+  "@adCredsMessage": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "login": {
+        "type": "String"
+      },
+      "password": {
+        "type": "String"
+      }
+    }
+  },
+  "adCredsNote": "This password is shown only once. You can reset it later if needed.",
+  "adCredsShare": "Copy message to share",
+  "adCredsSubtitle": "Share these with {name}. They will set their own password when they first sign in.",
+  "@adCredsSubtitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "adCredsTitle": "Login ready",
+  "adDone": "Done",
+  "adFranchise": "Franchise",
+  "adFranchises": "Franchises",
+  "adHomeSummary": "{count, plural, =0{Everything is running smoothly.} =1{1 approval is waiting for you.} other{{count} approvals are waiting for you.}}",
+  "@adHomeSummary": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "adKpiOpen": "Open enquiries",
+  "adKpiUsers": "Users",
+  "adKpiVendors": "Active vendors",
+  "adKpiWonMonth": "Won this month",
+  "adLocations": "Locations",
+  "adLogin": "Login",
+  "adLoginId": "User ID",
+  "adMorePeople": "People",
+  "adMoreRecords": "Records",
+  "adMoreSetup": "Setup",
+  "adOpenCustomer": "Open customer",
+  "adOpenVendor": "Open vendor profile",
+  "adPassword": "Password",
+  "adPayoutsBody": "Approve earned commissions and mark payouts as paid.",
+  "adPayoutsButton": "Open commissions",
+  "adPayoutsTitle": "{count, plural, =1{1 commission to settle} other{{count} commissions to settle}}",
+  "@adPayoutsTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "adPickRoleCity": "Choose a role and a city.",
+  "adProducts": "Products",
+  "adPwSet": "Set by the user",
+  "adPwTemp": "Temporary, must be changed",
+  "adRepClosed": "Closed",
+  "adRepEmpty": "No data yet.",
+  "adRepMonths": "Won in the last 6 months",
+  "adRepServices": "Enquiries by service",
+  "adRepStages": "Open enquiries by stage",
+  "adRepVendors": "Top vendors by jobs",
+  "adResetBody": "{name} will get a new temporary password and must change it when signing in.",
+  "@adResetBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "adResetPw": "Reset password",
+  "adResetTitle": "Reset the password?",
+  "adRole": "Role",
+  "adRoleAdmin": "Sets the rules, manages people and approves payouts.",
+  "adRoleBackOffice": "Verifies enquiries, finds vendors and runs each job.",
+  "adRoleCustomer": "Posts requirements and accepts quotations.",
+  "adRoleFranchise": "Looks after one territory and its network.",
+  "adRoleSales": "Refers customers and follows their progress.",
+  "adRoleVendor": "Accepts referrals, visits, quotes and does the work.",
+  "adRoles": "Roles",
+  "adSalesType": "Partner type",
+  "adSettings": "Settings",
+  "adSuspend": "Suspend account",
+  "adSuspendBody": "{name} will not be able to sign in until you activate the account again.",
+  "@adSuspendBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "adSuspendTitle": "Suspend this account?",
+  "adSuspended": "Account suspended.",
+  "adSystem": "System",
+  "adUser": "User",
+  "adUsers": "Users",
+  "adUsersCount": "{count, plural, =1{1 user} other{{count} users}}",
+  "@adUsersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "adVendorApprovals": "Vendor approvals",
+  "adVendorsBody": "Check their documents so they can start getting referrals.",
+  "adVendorsButton": "Review vendors",
+  "adVendorsTitle": "{count, plural, =1{1 vendor to approve} other{{count} vendors to approve}}",
+  "@adVendorsTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "appName": "O2O Boss",
+  "appTagline": "Verified business referrals",
+  "aptCancelled": "Cancelled",
+  "aptCompleted": "Completed",
+  "aptConfirmed": "Confirmed",
+  "aptNoShow": "No-show",
+  "aptPendingConfirmation": "Waiting for confirmation",
+  "aptProposed": "Proposed",
+  "aptRescheduled": "Rescheduled",
+  "assignAccepted": "Accepted",
+  "assignExpired": "No reply",
+  "assignPending": "Waiting for reply",
+  "assignRejected": "Declined",
+  "assignWithdrawn": "Withdrawn",
+  "auditAppointmentChanged": "Visit updated",
+  "auditAppointmentCreated": "Visit booked",
+  "auditAssigned": "Sent to {name}",
+  "@auditAssigned": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "auditBy": "by {name}",
+  "@auditBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "auditBySystem": "System",
+  "auditCallLogged": "Call logged",
+  "auditCommissionApproved": "Commission updated",
+  "auditCommissionCreated": "Commission calculated",
+  "auditCommissionPaid": "Commission paid",
+  "auditConfigChanged": "Setting changed",
+  "auditConsentGiven": "Consent recorded",
+  "auditCreated": "Enquiry created",
+  "auditEdited": "Details updated",
+  "auditEmailCopySent": "Copy emailed to O2O Boss",
+  "auditFeedbackGiven": "Feedback received",
+  "auditMilestoneUpdated": "Project progress updated",
+  "auditPasswordReset": "Password changed",
+  "auditPaymentRecorded": "Payment recorded",
+  "auditProjectCreated": "Project created",
+  "auditQualificationSaved": "Requirement details saved",
+  "auditQuotationAccepted": "Quotation accepted",
+  "auditQuotationApproved": "Quotation approved",
+  "auditQuotationRejected": "Quotation rejected",
+  "auditQuotationRevised": "Revised quotation submitted",
+  "auditQuotationSent": "Quotation sent to customer",
+  "auditQuotationSubmitted": "Quotation submitted",
+  "auditReassigned": "Reassigned",
+  "auditRevisionRequested": "Changes requested",
+  "auditStatusChanged": "Moved to {status}",
+  "@auditStatusChanged": {
+    "placeholders": {
+      "status": {
+        "type": "String"
+      }
+    }
+  },
+  "auditUserCreated": "User created",
+  "auditUserUpdated": "User updated",
+  "auditVendorAccepted": "Vendor accepted",
+  "auditVendorApproved": "Vendor approved",
+  "auditVendorRejected": "Vendor declined",
+  "auditVendorSuspended": "Vendor status changed",
+  "authHidePassword": "Hide password",
+  "authShowPassword": "Show password",
+  "boAllClearBody": "No tasks are waiting. New enquiries will appear here.",
+  "boAllClearTitle": "All caught up",
+  "boHomeSummary": "{count, plural, =0{Nothing is waiting for you right now.} =1{1 thing needs you today.} other{{count} things need you today.}}",
+  "@boHomeSummary": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "boKpiActive": "Active enquiries",
+  "boKpiOverdue": "Overdue",
+  "boKpiTasks": "Open tasks",
+  "boKpiToday": "Follow-ups today",
+  "boNewEnquiry": "Add an enquiry",
+  "boNewEnquiryShort": "New enquiry",
+  "boNextUp": "Next up",
+  "boQueues": "Work queues",
+  "boQueuesEmpty": "Every queue is empty.",
+  "callBy": "By {name}",
+  "@callBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "callConnecting": "Connecting through O2O Boss…",
+  "callEnd": "End call",
+  "callLength": "How long",
+  "callLogHeading": "Call log",
+  "callLogTitle": "Log a call",
+  "callLogged": "Call saved.",
+  "callMinutes": "{count, plural, =1{1 min} other{{count} min}}",
+  "@callMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "callNone": "No calls yet",
+  "callRecorded": "This call is recorded",
+  "callRecordedShort": "Recorded",
+  "callWith": "Call with",
+  "changePwCurrent": "Current password",
+  "changePwDone": "Password changed.",
+  "changePwNew": "New password",
+  "changePwSubtitle": "Your password was created by admin. Choose a new one to continue.",
+  "changePwTitle": "Set your own password",
+  "changePwWrong": "Current password is not correct.",
+  "channelEmail": "Email",
+  "channelEmailBody": "Summaries and quotation copies.",
+  "channelInAppNote": "Everything also appears under Notifications in the app, whatever you choose here.",
+  "channelOffByAdmin": "Not available yet. O2O Boss has turned this off.",
+  "channelPush": "App notifications",
+  "channelPushBody": "Alerts on this phone.",
+  "channelSms": "SMS",
+  "channelSmsBody": "Important updates by text message.",
+  "channelWhatsapp": "WhatsApp",
+  "channelWhatsappBody": "Updates on WhatsApp.",
+  "chatAttach": "Attach",
+  "chatAttached": "File sent.",
+  "chatClosed": "This enquiry is closed. The chat is read-only.",
+  "chatDocument": "Document",
+  "chatEmptyBody": "Say hello or share an update.",
+  "chatEmptyTitle": "No messages yet",
+  "chatHint": "Write a message",
+  "chatNoneBody": "Chats about your referrals will appear here.",
+  "chatNoneTitle": "No conversations yet",
+  "chatO2OTeam": "{name}, O2O Boss",
+  "@chatO2OTeam": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "chatOpenEnquiry": "Open enquiry",
+  "chatPhoto": "Photo",
+  "chatReadOnly": "Franchise heads can read chats but not reply.",
+  "chatThreadsHelp": "Customers and vendors each talk only to O2O Boss. Their numbers stay private.",
+  "chatWithO2O": "O2O Boss team",
+  "comApproved": "Approved",
+  "comCancelled": "Cancelled",
+  "comOnHold": "On hold",
+  "comPaid": "Paid",
+  "comPayable": "Ready to pay",
+  "comPending": "Pending",
+  "comingSoon": "This screen is being built.",
+  "commissionAdminOnly": "Only admin can approve and pay commissions.",
+  "commissionApprove": "Approve",
+  "commissionBase": "Order value",
+  "commissionHold": "Put on hold",
+  "commissionMakePayable": "Ready to pay",
+  "commissionMarkPaid": "Mark as paid",
+  "commissionNone": "No commission yet",
+  "commissionRate": "Rate",
+  "commissionReference": "Payment reference",
+  "commissionReferenceHint": "For example: UPI reference number",
+  "commissionRelease": "Release hold",
+  "commissionRuleNote": "Commissions are created when {trigger}. Admin approves and pays them.",
+  "@commissionRuleNote": {
+    "placeholders": {
+      "trigger": {
+        "type": "String"
+      }
+    }
+  },
+  "completed": "Completed",
+  "contactCallAnytime": "Call any time",
+  "contactCallAtTime": "Call at a set time",
+  "contactIntroduceFirst": "I will introduce first",
+  "countEnquiries": "{count, plural, =1{1 enquiry} other{{count} enquiries}}",
+  "@countEnquiries": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "countItems": "{count, plural, =0{No items} =1{1 item} other{{count} items}}",
+  "@countItems": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "credAvailable": "Available",
+  "credConfirmPassword": "Confirm password",
+  "credPasswordHelp": "At least 6 characters.",
+  "credSubtitle": "You'll use these to sign in.",
+  "credTitle": "Create your login",
+  "credUserIdHelp": "4 to 20 letters or numbers. Dots and underscores are allowed.",
+  "cuCall": "Call {name}",
+  "@cuCall": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "cuChatHelp": "Questions about this requirement? We reply quickly.",
+  "cuChatWithO2O": "Chat with O2O Boss",
+  "cuClosedBody": "{reason}. You can post a new requirement any time.",
+  "@cuClosedBody": {
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "cuEmptyBody": "Post what you need and follow every step here.",
+  "cuEmptyTitle": "No requirements yet",
+  "cuFilterActive": "In progress",
+  "cuFilterClosed": "Closed",
+  "cuFilterDone": "Done",
+  "cuHomeSummary": "{count, plural, =0{Tell us what you need. We find a trusted vendor.} =1{1 requirement is in progress.} other{{count} requirements are in progress.}}",
+  "@cuHomeSummary": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cuMessages": "Messages",
+  "cuNewRequirement": "New requirement",
+  "cuNoVendorYet": "We are finding the right vendor for you.",
+  "cuOrdersCount": "{count, plural, =0{No orders yet} =1{1 order} other{{count} orders}}",
+  "@cuOrdersCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cuPostBody": "Tell us what you need. We check it and connect a trusted vendor near you.",
+  "cuPostButton": "Post a requirement",
+  "cuPostTitle": "Need something done?",
+  "cuQuoteReadyBody": "{vendor} sent a price for {job}. Take a look and decide.",
+  "@cuQuoteReadyBody": {
+    "placeholders": {
+      "vendor": {
+        "type": "String"
+      },
+      "job": {
+        "type": "String"
+      }
+    }
+  },
+  "cuQuoteReadyButton": "See quotation",
+  "cuQuoteReadyTitle": "Your quotation is ready",
+  "cuQuotesToDecide": "To decide",
+  "cuRating": "Rated {rating} out of 5",
+  "@cuRating": {
+    "placeholders": {
+      "rating": {
+        "type": "String"
+      }
+    }
+  },
+  "cuVendorHidden": "You reach the vendor through O2O Boss. Use the chat below.",
+  "cuVendorTitle": "Your vendor",
+  "cuVisitCheckBody": "{vendor} marked the visit for {job} as done. Please confirm.",
+  "@cuVisitCheckBody": {
+    "placeholders": {
+      "vendor": {
+        "type": "String"
+      },
+      "job": {
+        "type": "String"
+      }
+    }
+  },
+  "cuVisitCheckButton": "Confirm visit",
+  "cuVisitCheckTitle": "Did the visit happen?",
+  "cuWhatsApp": "WhatsApp {name}",
+  "@cuWhatsApp": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "cuYourRequirements": "Your requirements",
+  "daysAgo": "{count, plural, =1{1 day ago} other{{count} days ago}}",
+  "@daysAgo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deadlinePassed": "Deadline passed",
+  "demoActionNote": "In the demo this action is only simulated.",
+  "detailCreatedOn": "{id}, created {date}",
+  "@detailCreatedOn": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "detailProgress": "Progress",
+  "detailTitleCustomer": "Your requirement",
+  "detailTitleSales": "Referral",
+  "detailYourEarning": "Your earning",
+  "discardBody": "Your changes haven't been saved.",
+  "discardTitle": "Discard changes?",
+  "docBankProof": "Bank proof",
+  "docGst": "GST certificate",
+  "docOther": "Other document",
+  "docPan": "PAN card",
+  "docPhoto": "Photo",
+  "docTradeLicense": "Trade licence",
+  "dueAt": "Due {time}",
+  "@dueAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "earningsEmptyBody": "When a referral is won and paid for, your commission appears here.",
+  "earningsEmptyTitle": "No commissions yet",
+  "earningsFilterPaid": "Paid",
+  "earningsFilterPending": "On the way",
+  "earningsLineDetail": "{id}, {percent} of {value}",
+  "@earningsLineDetail": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      },
+      "percent": {
+        "type": "String"
+      },
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "earningsListTitle": "Commissions",
+  "earningsOnTheWay": "On the way",
+  "earningsPayoutBank": "Bank account ending {last4}",
+  "@earningsPayoutBank": {
+    "placeholders": {
+      "last4": {
+        "type": "String"
+      }
+    }
+  },
+  "earningsPayoutMissing": "Add your UPI ID or bank account to get paid.",
+  "earningsPayoutTitle": "Payout details",
+  "earningsPayoutUpi": "UPI: {upi}",
+  "@earningsPayoutUpi": {
+    "placeholders": {
+      "upi": {
+        "type": "String"
+      }
+    }
+  },
+  "earningsRule": "You earn {percent} of the final order value. It becomes due when {trigger}.",
+  "@earningsRule": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      },
+      "trigger": {
+        "type": "String"
+      }
+    }
+  },
+  "earningsTitle": "Earnings",
+  "earningsTotalPaid": "Paid to you so far",
+  "emptyNoResults": "No results",
+  "emptyNoResultsBody": "Try a different word or clear the filters.",
+  "emptyTitle": "Nothing here yet",
+  "faqCustomer1A": "Yes. You only pay the vendor for the work you accept in the quotation.",
+  "faqCustomer1Q": "Is this service free for me?",
+  "faqCustomer2A": "Open Quotations, check the items and total, then tap Accept and type your name to sign.",
+  "faqCustomer2Q": "How do I accept a quotation?",
+  "faqCustomer3A": "Yes. Tap Ask for changes and say what you'd like. The vendor will send a new version.",
+  "faqCustomer3Q": "Can I ask for changes to a quotation?",
+  "faqLanguageA": "Go to Profile, then Language, and choose from English and 22 Indian languages.",
+  "faqLanguageQ": "How do I change the language?",
+  "faqLogin1A": "On the sign-in screen, tap Forgot password and verify your mobile number to set a new one.",
+  "faqLogin1Q": "I forgot my password",
+  "faqOps1A": "Home shows what needs you now. Work through it from the top, then check Follow-ups and Tasks.",
+  "faqOps1Q": "Where do I start each day?",
+  "faqOps2A": "Only back office, franchise heads and admin. Vendors, customers and referral partners never see them.",
+  "faqOps2Q": "Who can see internal notes?",
+  "faqSales1A": "Your commission becomes due at the stage set by O2O Boss, usually when the customer pays in full. You can follow it under Earnings.",
+  "faqSales1Q": "When do I get my commission?",
+  "faqSales2A": "Our team calls every customer. If the number is wrong, the customer is not interested or it is a duplicate, the referral is closed. The reason is shown on the referral.",
+  "faqSales2Q": "Why was my referral not verified?",
+  "faqSales3A": "Yes, for a different need. For the same need, the first referral is protected and a second one may not count.",
+  "faqSales3Q": "Can I refer the same customer again?",
+  "faqVendor1A": "Accept or decline before the time shown on the referral. Quick replies improve your response rate and bring more referrals.",
+  "faqVendor1Q": "How fast should I respond to a referral?",
+  "faqVendor2A": "O2O Boss connects you with the customer. Use the chat with back office to fix visits and share updates.",
+  "faqVendor2Q": "Why can't I see the customer's phone number?",
+  "faqVendor3A": "Back office checks it before it goes to the customer. O2O Boss also keeps a copy of every quotation.",
+  "faqVendor3Q": "Who checks my quotation?",
+  "feedbackAsk": "How was the work by {vendor}?",
+  "@feedbackAsk": {
+    "placeholders": {
+      "vendor": {
+        "type": "String"
+      }
+    }
+  },
+  "feedbackReview": "Anything to add?",
+  "feedbackSend": "Send feedback",
+  "feedbackThanks": "Thank you for your feedback.",
+  "feedbackTitle": "Your feedback",
+  "filterOpen": "Open",
+  "forgotIdLabel": "User ID or mobile number",
+  "forgotNotFound": "We couldn't find an account with that user ID or number.",
+  "forgotSendCode": "Send code",
+  "forgotSubtitle": "Enter your user ID or registered mobile number.",
+  "forgotTitle": "Reset password",
+  "frCities": "Cities",
+  "frHeroBody": "{value} of business won this month in {cities}.",
+  "@frHeroBody": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      },
+      "cities": {
+        "type": "String"
+      }
+    }
+  },
+  "frHeroButton": "See business",
+  "frHeroTitle": "{name}",
+  "@frHeroTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "frHomeSummary": "{count, plural, =0{No open enquiries in your territory.} =1{1 enquiry is moving in your territory.} other{{count} enquiries are moving in your territory.}}",
+  "@frHomeSummary": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "frKpiActive": "Open enquiries",
+  "frKpiPartners": "Sales partners",
+  "frKpiVendors": "Vendors",
+  "frKpiWon": "Won",
+  "frLatest": "Latest enquiries",
+  "frNoPartners": "No sales partners in your territory yet.",
+  "frNoTerritory": "No territory is linked to your account yet. Please contact O2O Boss.",
+  "frNoVendors": "No vendors in your territory yet.",
+  "frPartners": "Sales partners",
+  "frPendingVendors": "{count, plural, =1{1 vendor is waiting for approval in your territory.} other{{count} vendors are waiting for approval in your territory.}}",
+  "@frPendingVendors": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "frReferralsCount": "{count, plural, =0{No referrals} =1{1 referral} other{{count} referrals}}",
+  "@frReferralsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "frSeeVendors": "See vendors",
+  "frShare": "Your share",
+  "frTerritory": "Your territory",
+  "frTerritoryName": "Territory",
+  "frVendors": "Vendors",
+  "frVendorsWaiting": "Waiting",
+  "fuAdd": "Add follow-up",
+  "fuAdded": "Follow-up added.",
+  "fuAppointment": "Visit follow-up",
+  "fuCompleteTitle": "Finish follow-up",
+  "fuCustomerCall": "Customer call",
+  "fuDone": "Follow-up done.",
+  "fuDoneNext": "Done. Next follow-up added.",
+  "fuDoneOn": "Done {date}",
+  "@fuDoneOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "fuEmptyBody": "Follow-ups you add, or that come from calls and visits, show up here.",
+  "fuEmptyTitle": "No follow-ups here",
+  "fuNextWhen": "When",
+  "fuOutcome": "Result: {outcome}",
+  "@fuOutcome": {
+    "placeholders": {
+      "outcome": {
+        "type": "String"
+      }
+    }
+  },
+  "fuPayment": "Payment follow-up",
+  "fuProject": "Project follow-up",
+  "fuQuotation": "Quotation follow-up",
+  "fuRescheduled": "Follow-up moved.",
+  "fuScheduleNext": "Add another follow-up",
+  "fuTabToday": "Today",
+  "fuType": "Type",
+  "fuVendorCall": "Vendor call",
+  "fuWhatHappened": "What happened?",
+  "goHome": "Go to home",
+  "greetingAfternoon": "Good afternoon, {name}",
+  "@greetingAfternoon": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "greetingEvening": "Good evening, {name}",
+  "@greetingEvening": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "greetingMorning": "Good morning, {name}",
+  "@greetingMorning": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "groupCompleted": "Completed",
+  "groupFresh": "New",
+  "groupLost": "Lost",
+  "groupPayment": "Payment",
+  "groupProject": "Project",
+  "groupQualification": "Qualified",
+  "groupQuotation": "Quotation",
+  "groupVendor": "Vendor",
+  "groupVerification": "Verification",
+  "groupVisit": "Appointment",
+  "groupWon": "Won",
+  "helpCall": "Call support",
+  "helpContactBody": "Our support team is available Monday to Saturday, 9 am to 7 pm.",
+  "helpContactTitle": "Still need help?",
+  "helpEmail": "Email support",
+  "helpFaqTitle": "Common questions",
+  "helpTitle": "Help",
+  "hiddenValue": "Hidden",
+  "homeQuickActions": "Quick actions",
+  "hoursAgo": "{count, plural, =1{1 hour ago} other{{count} hours ago}}",
+  "@hoursAgo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "hoursLeft": "{count, plural, =1{1 hour left} other{{count} hours left}}",
+  "@hoursLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "hoursLeftShort": "{count, plural, =1{1 hour} other{{count} hours}}",
+  "@hoursLeftShort": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "jdCommission": "Payment received. Commissions are being processed.",
+  "jdPayment": "Waiting for the payment to be completed.",
+  "jdQuotePreparing": "The vendor is preparing the quotation.",
+  "jdQuoteReady": "The quotation is with the customer.",
+  "jdQuoteReadyCustomer": "Your quotation is ready. Open it below to review.",
+  "jdVendor": "We are choosing a trusted vendor nearby.",
+  "jdVerifying": "We are calling the customer to confirm the requirement.",
+  "jdVerifyingCustomer": "Our team will call you to confirm the requirement.",
+  "jdVisit": "The vendor will fix a visit with the customer.",
+  "jdVisitCustomer": "The vendor will fix a time to visit you.",
+  "jdVisitOn": "Visit on {date}.",
+  "@jdVisitOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "jdWon": "The order is confirmed. Work will start soon.",
+  "jdWork": "Work in progress: {done} of {total} steps done.",
+  "@jdWork": {
+    "placeholders": {
+      "done": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "journeyCommission": "Commission",
+  "journeyPayment": "Payment",
+  "journeyProject": "Work",
+  "journeyQualified": "Requirement checked",
+  "journeyQuotation": "Quotation",
+  "journeySubmitted": "Submitted",
+  "journeyVendor": "Vendor found",
+  "journeyVerified": "Verified",
+  "journeyVisit": "Visit",
+  "journeyWon": "Won",
+  "justNow": "Just now",
+  "labelAddress": "Address",
+  "labelAll": "All",
+  "labelAmount": "Amount",
+  "labelAnyBrand": "Any brand",
+  "labelArea": "Area",
+  "labelBackOffice": "Back office",
+  "labelBrand": "Brand",
+  "labelBrandsYouSupply": "Brands you supply",
+  "labelBusinessName": "Business name",
+  "labelCategoriesYouServe": "What do you sell or service?",
+  "labelCategory": "Category",
+  "labelChoose": "Choose",
+  "labelCity": "City",
+  "labelCreated": "Created",
+  "labelCustomer": "Customer",
+  "labelDate": "Date",
+  "labelDemo": "Demo",
+  "labelEmail": "Email",
+  "labelEmailOptional": "Email (optional)",
+  "labelEnquiryId": "Enquiry ID",
+  "labelEstimatedValue": "Estimated value",
+  "labelFinalValue": "Final value",
+  "labelFranchise": "Territory",
+  "labelFullName": "Full name",
+  "labelGstin": "GSTIN",
+  "labelLocation": "Location",
+  "labelMobile": "Mobile number",
+  "labelName": "Name",
+  "labelNo": "No",
+  "labelNone": "None",
+  "labelNotes": "Notes",
+  "labelNotesOptional": "Notes (optional)",
+  "labelOptional": "Optional",
+  "labelOther": "Other",
+  "labelPassword": "Password",
+  "labelPincode": "Pincode",
+  "labelPriority": "Priority",
+  "labelProduct": "Product or service",
+  "labelReason": "Reason",
+  "labelRequired": "Required",
+  "labelRequirement": "Requirement",
+  "labelRole": "Role",
+  "labelSalesperson": "Referred by",
+  "labelSearchHint": "Search by name, ID or phone",
+  "labelServiceCities": "Cities you serve",
+  "labelStatus": "Status",
+  "labelTime": "Time",
+  "labelTotal": "Total",
+  "labelUpdated": "Last update",
+  "labelUserId": "User ID",
+  "labelValue": "Value",
+  "labelVendor": "Vendor",
+  "labelYes": "Yes",
+  "labelYourName": "Your name",
+  "langContinue": "Continue",
+  "langSubtitle": "You can change this later in Profile.",
+  "langTitle": "Choose your language",
+  "legalDemoNote": "Sample wording for the demo. The final text will be provided by O2O Boss.",
+  "legalPrivacy": "Privacy policy",
+  "legalTerms": "Terms of use",
+  "legalVersion": "Version {version}",
+  "@legalVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "listActive": "Active",
+  "listAwaitingApproval": "Awaiting approval",
+  "listCalls": "Call log",
+  "listCustomerSince": "Joined",
+  "listNeedsAction": "Needs action",
+  "listPast": "Past",
+  "listPayments": "Payments",
+  "listProjects": "Projects",
+  "listStopped": "Stopped",
+  "listToReview": "To review",
+  "listVisits": "Visits",
+  "listWithCustomer": "With customer",
+  "loading": "Loading",
+  "loginButton": "Sign in",
+  "loginCreateAccount": "Create an account",
+  "loginDemoButton": "Try a demo account",
+  "loginDemoCredentials": "ID: {id}, password: {password}",
+  "@loginDemoCredentials": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      },
+      "password": {
+        "type": "String"
+      }
+    }
+  },
+  "loginDemoSubtitle": "For testing only. Each one opens a different role.",
+  "loginDemoTitle": "Demo accounts",
+  "loginError": "User ID or password is not correct. Check both and try again.",
+  "loginForgot": "Forgot password?",
+  "loginNoAccount": "New to O2O Boss?",
+  "loginSubtitle": "Use the user ID and password from your sign-up, or the one O2O Boss gave you.",
+  "loginTitle": "Sign in",
+  "logoutBody": "You'll need your user ID and password to sign in again.",
+  "logoutTitle": "Log out?",
+  "lostReasonDelay": "Plan postponed",
+  "lostReasonNoNeed": "No longer needed",
+  "lostReasonOther": "Bought from someone else",
+  "lostReasonPrice": "Price too high",
+  "methodBank": "Bank transfer",
+  "methodCard": "Card",
+  "methodCash": "Cash",
+  "methodCheque": "Cheque",
+  "methodUpi": "UPI",
+  "minutesAgo": "{count, plural, =1{1 minute ago} other{{count} minutes ago}}",
+  "@minutesAgo": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "minutesLeft": "{count, plural, =1{1 minute left} other{{count} minutes left}}",
+  "@minutesLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "moreDirectory": "People",
+  "moreMine": "Mine",
+  "moreProfileSubtitle": "Profile, password and language",
+  "moreWork": "Work",
+  "msAdvancePayment": "Advance payment",
+  "msFinalInspection": "Final inspection",
+  "msFinalPayment": "Final payment",
+  "msInstallationDone": "Installation or service done",
+  "msMaterialOrdered": "Material ordered",
+  "msOrderConfirmed": "Order confirmed",
+  "msProjectCompleted": "Project completed",
+  "msWorkInProgress": "Work in progress",
+  "msWorkStarted": "Work started",
+  "nAccountCreatedBody": "Your account is ready.",
+  "nAccountCreatedTitle": "Welcome to O2O Boss",
+  "nAppointmentChangedBody": "The visit for {id} has changed.",
+  "@nAppointmentChangedBody": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nAppointmentChangedTitle": "Visit updated",
+  "nAppointmentConfirmedBody": "The visit for {id} is confirmed.",
+  "@nAppointmentConfirmedBody": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nAppointmentConfirmedTitle": "Visit confirmed",
+  "nAppointmentProposedBody": "A visit time was proposed for {id}. Please confirm it.",
+  "@nAppointmentProposedBody": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nAppointmentProposedTitle": "Visit time proposed",
+  "nChatMessageBody": "{from} sent a message on {id}.",
+  "@nChatMessageBody": {
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nChatMessageTitle": "New message",
+  "nCommissionPaidBody": "{amount} for {id} has been paid to you.",
+  "@nCommissionPaidBody": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nCommissionPaidTitle": "Commission paid",
+  "nCommissionUpdatedBody": "Your commission of {amount} for {id} was updated.",
+  "@nCommissionUpdatedBody": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nCommissionUpdatedTitle": "Commission update",
+  "nConfigChangedBody": "An admin changed a setting.",
+  "nConfigChangedTitle": "Settings changed",
+  "nEnquiryLostBody": "{id} was closed without a deal.",
+  "@nEnquiryLostBody": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nEnquiryLostTitle": "Enquiry closed",
+  "nEnquiryQualifiedBody": "{id} is ready to be sent to a vendor.",
+  "@nEnquiryQualifiedBody": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nEnquiryQualifiedTitle": "Requirement confirmed",
+  "nEnquiryRejectedBody": "{id} could not be verified.",
+  "@nEnquiryRejectedBody": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nEnquiryRejectedTitle": "Enquiry not verified",
+  "nEnquirySubmittedBody": "{id} is registered. We'll verify it soon.",
+  "@nEnquirySubmittedBody": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nEnquirySubmittedTitle": "Enquiry registered",
+  "nEnquiryVerifiedBody": "{id} is genuine and moving ahead.",
+  "@nEnquiryVerifiedBody": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nEnquiryVerifiedTitle": "Enquiry verified",
+  "nEnquiryWonBody": "{id} is won.",
+  "@nEnquiryWonBody": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nEnquiryWonTitle": "Business won",
+  "nFeedbackRequestBody": "Rate the work done for {id}.",
+  "@nFeedbackRequestBody": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nFeedbackRequestTitle": "How was the work?",
+  "nFollowUpDueBody": "A follow-up on {id} is due.",
+  "@nFollowUpDueBody": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nFollowUpDueTitle": "Follow-up due",
+  "nNewEnquiryBody": "{id} is waiting for verification.",
+  "@nNewEnquiryBody": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nNewEnquiryTitle": "New enquiry",
+  "nNewReferralBody": "{id} is waiting for your reply.",
+  "@nNewReferralBody": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nNewReferralTitle": "New referral",
+  "nPaymentRecordedBody": "{amount} received for {id}.",
+  "@nPaymentRecordedBody": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nPaymentRecordedTitle": "Payment recorded",
+  "nPaymentReminderBody": "Payment for {id} is due.",
+  "@nPaymentReminderBody": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nPaymentReminderTitle": "Payment reminder",
+  "nProjectCompletedBody": "Work for {id} is complete.",
+  "@nProjectCompletedBody": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nProjectCompletedTitle": "Work completed",
+  "nProjectCreatedBody": "A project for {id} has been created.",
+  "@nProjectCreatedBody": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nProjectCreatedTitle": "Project started",
+  "nProjectUpdatedBody": "There is progress on {id}.",
+  "@nProjectUpdatedBody": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nProjectUpdatedTitle": "Project update",
+  "nQuotationAcceptedBody": "{number} was accepted for {id}.",
+  "@nQuotationAcceptedBody": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      },
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nQuotationAcceptedTitle": "Quotation accepted",
+  "nQuotationApprovedBody": "{number} was checked and sent to the customer.",
+  "@nQuotationApprovedBody": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "nQuotationApprovedTitle": "Quotation sent to customer",
+  "nQuotationCopyBody": "A copy of {number} from {vendor} was saved and emailed.",
+  "@nQuotationCopyBody": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      },
+      "vendor": {
+        "type": "String"
+      }
+    }
+  },
+  "nQuotationCopyTitle": "Quotation copy saved",
+  "nQuotationReceivedBody": "A quotation for {id} is ready to view.",
+  "@nQuotationReceivedBody": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nQuotationReceivedTitle": "Quotation ready",
+  "nQuotationRejectedBody": "{number} was rejected for {id}.",
+  "@nQuotationRejectedBody": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      },
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nQuotationRejectedTitle": "Quotation rejected",
+  "nQuotationSubmittedBody": "{vendor} sent {number} for {id}.",
+  "@nQuotationSubmittedBody": {
+    "placeholders": {
+      "vendor": {
+        "type": "String"
+      },
+      "number": {
+        "type": "String"
+      },
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nQuotationSubmittedTitle": "Quotation to review",
+  "nReferralAcceptedBody": "{vendor} accepted {id}.",
+  "@nReferralAcceptedBody": {
+    "placeholders": {
+      "vendor": {
+        "type": "String"
+      },
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nReferralAcceptedTitle": "Vendor accepted",
+  "nReferralRejectedBody": "{vendor} declined {id}. Choose another vendor.",
+  "@nReferralRejectedBody": {
+    "placeholders": {
+      "vendor": {
+        "type": "String"
+      },
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nReferralRejectedTitle": "Vendor declined",
+  "nReferralReminderBody": "Please reply to {id} before the deadline.",
+  "@nReferralReminderBody": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nReferralReminderTitle": "Reply needed",
+  "nRevisionRequestedBody": "Changes were requested on {number}.",
+  "@nRevisionRequestedBody": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "nRevisionRequestedTitle": "Changes requested",
+  "nTaskAssignedBody": "{id} has been assigned to you.",
+  "@nTaskAssignedBody": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nTaskAssignedTitle": "New work for you",
+  "nVendorApprovedBody": "Your business is approved. You can now receive referrals.",
+  "nVendorApprovedTitle": "Account approved",
+  "nVendorAssignedBody": "{vendor} will handle {id}.",
+  "@nVendorAssignedBody": {
+    "placeholders": {
+      "vendor": {
+        "type": "String"
+      },
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nVendorAssignedTitle": "Vendor assigned",
+  "nVendorConnectedBody": "{vendor} will help you with {id} through O2O Boss.",
+  "@nVendorConnectedBody": {
+    "placeholders": {
+      "vendor": {
+        "type": "String"
+      },
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "nVendorConnectedTitle": "Vendor connected",
+  "nVendorRegisteredBody": "{vendor} registered and needs review.",
+  "@nVendorRegisteredBody": {
+    "placeholders": {
+      "vendor": {
+        "type": "String"
+      }
+    }
+  },
+  "nVendorRegisteredTitle": "New vendor registration",
+  "navBusiness": "Business",
+  "navChat": "Chat",
+  "navEarnings": "Earnings",
+  "navEnquiries": "Enquiries",
+  "navFollowUps": "Follow-ups",
+  "navHome": "Home",
+  "navMore": "More",
+  "navNetwork": "Network",
+  "navNotifications": "Notifications",
+  "navOrders": "Orders",
+  "navProducts": "Products",
+  "navProfile": "Profile",
+  "navQuotations": "Quotations",
+  "navRefer": "Refer",
+  "navReferrals": "Referrals",
+  "navReports": "Reports",
+  "navRequirement": "Requirement",
+  "navTasks": "Tasks",
+  "nextAssignBody": "Pick one or more matching vendors to send this referral to.",
+  "nextAssignButton": "Find vendors",
+  "nextAssignTitle": "Choose a vendor",
+  "nextCommissionBody": "Payment is complete. Commissions are ready for approval.",
+  "nextCommissionTitle": "Settle the commission",
+  "nextCustomerDecidesBody": "The quotation is with the customer. Follow up if needed.",
+  "nextCustomerDecidesTitle": "The customer is deciding",
+  "nextDoneBody": "The work is complete and every commission is paid.",
+  "nextDoneTitle": "All done",
+  "nextMessageVendor": "Message vendor",
+  "nextPaymentBody": "{amount} is still to be paid.",
+  "@nextPaymentBody": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "nextPaymentButton": "Record payment",
+  "nextPaymentTitle": "Collect the payment",
+  "nextProjectBody": "The customer accepted. Set the dates so work can be tracked.",
+  "nextProjectButton": "Create project",
+  "nextProjectTitle": "Create the project",
+  "nextQualifyBody": "A few questions give the vendor a clear, complete brief.",
+  "nextQualifyButton": "Qualify",
+  "nextQualifyTitle": "Ask the qualification questions",
+  "nextReviewBody": "{number} from {vendor} is waiting for your check.",
+  "@nextReviewBody": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      },
+      "vendor": {
+        "type": "String"
+      }
+    }
+  },
+  "nextReviewButton": "Review quotation",
+  "nextReviewTitle": "Review the quotation",
+  "nextVerifyBody": "Call {name} to confirm the requirement is genuine.",
+  "@nextVerifyBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "nextVerifyButton": "Verify now",
+  "nextVerifyTitle": "Verify the enquiry",
+  "nextVisitBody": "The vendor accepted. Introduce them to the customer and book a visit.",
+  "nextVisitButton": "Book a visit",
+  "nextVisitDoneBody": "The visit is on {date}. Mark it done once it happens.",
+  "@nextVisitDoneBody": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "nextVisitDoneBodyPlain": "Mark the visit done once it happens.",
+  "nextVisitDoneTitle": "Visit booked",
+  "nextVisitTitle": "Fix a site visit",
+  "nextWaitQuoteBody": "The vendor is preparing it. Remind them if it takes long.",
+  "nextWaitQuoteTitle": "Waiting for the quotation",
+  "nextWaitVendorBody": "{vendor} has not replied yet. {time}.",
+  "@nextWaitVendorBody": {
+    "placeholders": {
+      "vendor": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "nextWaitVendorBodyPlain": "Vendors have not replied yet.",
+  "nextWaitVendorTitle": "Waiting for the vendor",
+  "nextWorkBody": "{done} of {total} steps done.",
+  "@nextWorkBody": {
+    "placeholders": {
+      "done": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "nextWorkTitle": "Track the work",
+  "noAccessBody": "This page isn't available for your account.",
+  "noAccessTitle": "You don't have access",
+  "notFoundBody": "This page doesn't exist or has moved.",
+  "notFoundTitle": "Page not found",
+  "notSet": "Not set",
+  "notifAllRead": "All notifications marked as read.",
+  "notifEarlier": "Earlier",
+  "notifEmptyBody": "Updates about your enquiries will appear here.",
+  "notifEmptyTitle": "No notifications",
+  "notifMarkAll": "Mark all as read",
+  "notifUnread": "Unread",
+  "offlineBanner": "You're offline. Changes will sync when you're back online.",
+  "opsActivityNote": "Every action is recorded with who did it and when. This history cannot be changed.",
+  "opsActivitySubtitle": "Last change {time}",
+  "@opsActivitySubtitle": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "opsAnswers": "{count, plural, =0{No answers yet} =1{1 answer saved} other{{count} answers saved}}",
+  "@opsAnswers": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "opsChangePriority": "Change priority",
+  "opsChatSubtitle": "Messages with the customer and vendors",
+  "opsClosed": "Closed",
+  "opsCommissionSummary": "{amount} in total",
+  "@opsCommissionSummary": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "opsInternalNote": "Internal note",
+  "opsInternalNoteHelp": "Only back office, franchise heads and admin can see internal notes.",
+  "opsInternalNoteLabel": "Note for the team",
+  "opsMarkLost": "Mark as lost",
+  "opsMarkLostBody": "The enquiry will close and vendors will be told.",
+  "opsMarkedLost": "Marked as lost.",
+  "opsMoreActions": "More actions",
+  "opsNextStep": "Next step",
+  "opsNoNote": "No note yet.",
+  "opsNoQuotesYet": "No quotations yet",
+  "opsNoVendorsYet": "No vendor chosen yet",
+  "opsNoVisitsYet": "No visits yet",
+  "opsNotQualifiedYet": "Questions not answered yet",
+  "opsNotVerifiedYet": "Not verified yet",
+  "opsOtpVerified": "Number confirmed by OTP",
+  "opsOutcome": "Result",
+  "opsPartActivity": "Activity",
+  "opsPartCalls": "Verification and calls",
+  "opsPartCommission": "Commission",
+  "opsPartDetails": "Customer and requirement",
+  "opsPartProject": "Project and payments",
+  "opsPartQualify": "Qualification",
+  "opsPartVendors": "Vendors",
+  "opsPartVisits": "Visits",
+  "opsReassign": "Reassign back office",
+  "opsReassigned": "Now handled by {name}.",
+  "@opsReassigned": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "opsReopen": "Reopen",
+  "opsReopenBody": "It will go back to the right step so the team can continue.",
+  "opsReopenTitle": "Reopen this enquiry?",
+  "opsReopened": "Enquiry reopened.",
+  "opsSections": "Details",
+  "opsSource": "Source",
+  "opsSourceLabel": "Came from",
+  "opsStageOf": "{stage}, step {done} of {total}",
+  "@opsStageOf": {
+    "placeholders": {
+      "stage": {
+        "type": "String"
+      },
+      "done": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "opsVendorsSummary": "{accepted} accepted, {waiting} waiting",
+  "@opsVendorsSummary": {
+    "placeholders": {
+      "accepted": {
+        "type": "String"
+      },
+      "waiting": {
+        "type": "String"
+      }
+    }
+  },
+  "opsVerification": "Verification",
+  "opsVerifiedBy": "Checked by",
+  "otpChangeNumber": "Change number",
+  "otpDemoHint": "Demo code: {code}",
+  "@otpDemoHint": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  },
+  "otpLabel": "Verification code",
+  "otpResend": "Send code again",
+  "otpResendIn": "Send again in {seconds}s",
+  "@otpResendIn": {
+    "placeholders": {
+      "seconds": {
+        "type": "String"
+      }
+    }
+  },
+  "otpResent": "A new code has been sent.",
+  "otpSubtitle": "Enter the 6-digit code sent to {phone}.",
+  "@otpSubtitle": {
+    "placeholders": {
+      "phone": {
+        "type": "String"
+      }
+    }
+  },
+  "otpTitle": "Verify your mobile number",
+  "otpVerify": "Verify",
+  "outcomeCallBackLater": "Call back later",
+  "outcomeDuplicate": "Duplicate",
+  "outcomeGenuine": "Genuine",
+  "outcomeNoAnswer": "No answer",
+  "outcomeNotGenuine": "Not genuine",
+  "outcomeNotInterested": "Not interested",
+  "outcomeWrongNumber": "Wrong number",
+  "outcomeWrongRequirement": "Wrong requirement",
+  "overdue": "Overdue",
+  "payFull": "Fully paid",
+  "payOverdue": "Overdue",
+  "payPartial": "Partly paid",
+  "payUnpaid": "Unpaid",
+  "paymentAddProof": "Add a photo of the receipt",
+  "paymentMethod": "Paid by",
+  "paymentPayOnline": "Pay online",
+  "paymentProofAdded": "Receipt added",
+  "paymentRecord": "Record payment",
+  "paymentRecorded": "Payment of {amount} saved.",
+  "@paymentRecorded": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "paymentReference": "Reference",
+  "paymentReferenceHint": "UPI or cheque number",
+  "paymentsCollected": "Collected",
+  "paymentsDue": "Payment due",
+  "paymentsNoneDue": "Nothing is due",
+  "paymentsOff": "Payment tracking is turned off by admin.",
+  "paymentsOutstanding": "Still to collect",
+  "paymentsReceived": "Received",
+  "pendingBody": "We check every business before sending referrals. This usually takes one working day.",
+  "pendingContact": "Contact support",
+  "pendingRejectedBody": "Contact O2O Boss support to know more.",
+  "pendingRejectedTitle": "Registration not approved",
+  "pendingStep1": "We verify your documents and details.",
+  "pendingStep2": "You get a notification when approved.",
+  "pendingStep3": "Verified customers start reaching you.",
+  "pendingSuspendedBody": "Your account is paused for now. Contact O2O Boss support.",
+  "pendingSuspendedTitle": "Account paused",
+  "pendingTitle": "Your business is being reviewed",
+  "pendingWhatNext": "What happens next",
+  "prAbout": "About this product",
+  "prAsk": "Ask",
+  "prAskHelp": "Your question goes to the O2O Boss team, not to a vendor. We reply in chat.",
+  "prAskHint": "For example: Is installation included?",
+  "prAskLabel": "Your question",
+  "prAskTitle": "Ask about {product}",
+  "@prAskTitle": {
+    "placeholders": {
+      "product": {
+        "type": "String"
+      }
+    }
+  },
+  "prBrandsAvailable": "Brands",
+  "prCantFindBody": "Post a requirement and we'll find it for you.",
+  "prCantFindTitle": "Can't find what you need?",
+  "prCount": "{count, plural, =1{1 product} other{{count} products}}",
+  "@prCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "prDeliverTo": "Address",
+  "prFilterBrands": "Brands",
+  "prFilterNear": "Only show what's available in {city}",
+  "@prFilterNear": {
+    "placeholders": {
+      "city": {
+        "type": "String"
+      }
+    }
+  },
+  "prFrom": "From {price}",
+  "@prFrom": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "prHow1Body": "No payment now. Tell us what you need.",
+  "prHow1Title": "You order here",
+  "prHow2Body": "The O2O Boss team calls you and matches a vendor near you.",
+  "prHow2Title": "We find a verified vendor",
+  "prHow3Body": "See the final price and decide. You pay only after you accept.",
+  "prHow3Title": "You get a quotation",
+  "prHowTitle": "How ordering works",
+  "prLess": "One less",
+  "prMore": "One more",
+  "prNotNear": "Not in {city} yet. Order anyway and we'll try to find one.",
+  "@prNotNear": {
+    "placeholders": {
+      "city": {
+        "type": "String"
+      }
+    }
+  },
+  "prNoteHint": "For example: size, colour or a preferred day",
+  "prNoteLabel": "Anything we should know?",
+  "prOpenRequest": "You already have an open request for this ({id}).",
+  "@prOpenRequest": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "prOrderFootnote": "No payment now. We'll call you to confirm the price.",
+  "prOrderNow": "Order now",
+  "prOrderPlaced": "Order placed. The O2O Boss team will call you soon.",
+  "prOrderTitle": "Order {product}",
+  "@prOrderTitle": {
+    "placeholders": {
+      "product": {
+        "type": "String"
+      }
+    }
+  },
+  "prPlaceOrder": "Place order",
+  "prPriceNote": "Estimated price. Your final price comes in the quotation.",
+  "prPriceOnQuote": "Price on quotation",
+  "prPriceRange": "{from} to {to}",
+  "@prPriceRange": {
+    "placeholders": {
+      "from": {
+        "type": "String"
+      },
+      "to": {
+        "type": "String"
+      }
+    }
+  },
+  "prPrivacyNote": "You deal with O2O Boss, not the vendor directly. We stay with you until the job is done.",
+  "prQuantity": "Quantity",
+  "prSearchHint": "Search products and services",
+  "prSortFilter": "Sort and filter",
+  "prSortName": "Name: A to Z",
+  "prSortPopular": "Most popular",
+  "prSortPriceHigh": "Price: high to low",
+  "prSortPriceLow": "Price: low to high",
+  "prSortTitle": "Sort by",
+  "prUnitEach": "each",
+  "prUnitGram": "per gram",
+  "prUnitKw": "per kW",
+  "prUnitSqft": "per sq ft",
+  "prUnitVisit": "per visit",
+  "prVendorsNear": "{count, plural, =1{1 verified vendor in {city}} other{{count} verified vendors in {city}}}",
+  "@prVendorsNear": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "city": {
+        "type": "String"
+      }
+    }
+  },
+  "prViewRequest": "View request",
+  "priorityHigh": "High",
+  "priorityLow": "Low",
+  "priorityNormal": "Normal",
+  "priorityUrgent": "Urgent",
+  "privacy1Body": "Your name, mobile number, city and the details you share about requirements, quotations and payments.",
+  "privacy1Title": "What we collect",
+  "privacy2Body": "To verify requirements, connect you with vendors, send updates and calculate commissions.",
+  "privacy2Title": "How we use it",
+  "privacy3Body": "Each role sees only what it needs. Customer phone numbers are not shared with vendors unless O2O Boss allows it.",
+  "privacy3Title": "Who can see it",
+  "privacy4Body": "Calls with our team may be recorded for quality and dispute resolution. All actions are logged for safety.",
+  "privacy4Title": "Calls and records",
+  "profileAccount": "Account",
+  "profileBankAccount": "Bank account number",
+  "profileChangePassword": "Change password",
+  "profileDemo": "Demo",
+  "profileEdit": "Edit profile",
+  "profileIfsc": "IFSC code",
+  "profileNotifications": "Notifications",
+  "profilePayoutNote": "Commissions are paid to these details. Double-check them.",
+  "profilePhoneHelp": "To change your mobile number, contact support.",
+  "profilePreferences": "Preferences",
+  "profileResetDemo": "Reset demo data",
+  "profileResetDemoBody": "Go back to the original sample data.",
+  "profileResetDemoConfirm": "All changes made in this demo, by every role, will be removed.",
+  "profileResetDemoDone": "Demo data has been reset.",
+  "profileResetDemoTitle": "Reset demo data?",
+  "profileSupport": "Help and legal",
+  "profileTitle": "Profile",
+  "profileUpi": "UPI ID",
+  "profileUserId": "User ID: {id}",
+  "@profileUserId": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "profileVersion": "O2O Boss {version}, demo version",
+  "@profileVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "projectBalance": "Balance {amount}",
+  "@projectBalance": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "projectBalanceDue": "Balance {amount}, due {date}",
+  "@projectBalanceDue": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "projectCancel": "Cancel project",
+  "projectCancelBody": "Unpaid commissions will be put on hold for admin to decide.",
+  "projectCancelCustomer": "Customer cancelled",
+  "projectCancelVendor": "Vendor could not deliver",
+  "projectCancelled": "Cancelled",
+  "projectCompleteBody": "The customer will be asked for feedback and payment follow-up begins.",
+  "projectCompleteConfirm": "Mark completed",
+  "projectCompleteTitle": "Mark the work as completed?",
+  "projectCompleted": "Completed",
+  "projectCompletedOn": "Completed on",
+  "projectCreateNote": "The customer, vendor and referral partner will see the progress.",
+  "projectCreateSubtitle": "Set the dates. You can change them later.",
+  "projectCreateTitle": "Create project",
+  "projectCreated": "Project {id} created.",
+  "@projectCreated": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "projectExpectedEnd": "Expected completion",
+  "projectHold": "Put on hold",
+  "projectInProgress": "In progress",
+  "projectNotStarted": "Not started",
+  "projectOnHold": "On hold",
+  "projectOnHoldNote": "On hold: {reason}",
+  "@projectOnHoldNote": {
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "projectOpenEnquiry": "Open enquiry {id}",
+  "@projectOpenEnquiry": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "projectPaidOf": "{paid} paid of {total}",
+  "@projectPaidOf": {
+    "placeholders": {
+      "paid": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "projectPaymentDue": "Payment due by",
+  "projectPayments": "Payments",
+  "projectResume": "Resume work",
+  "projectStart": "Start date",
+  "projectSteps": "Work steps",
+  "qAssign": "Need a vendor",
+  "qPayment": "Payments and commission",
+  "qProject": "Work in progress",
+  "qQualify": "To qualify",
+  "qQuote": "Quotations",
+  "qVendorReply": "Waiting for vendor",
+  "qVerify": "To verify",
+  "qVisit": "Visits",
+  "qualifyComplete": "Mark as qualified",
+  "qualifyDone": "Qualified. Now choose a vendor.",
+  "qualifyLocked": "This enquiry is qualified and already with vendors.",
+  "qualifySaveLater": "Save for later",
+  "qualifySubtitle": "Questions for {category}. Required ones are marked with *.",
+  "@qualifySubtitle": {
+    "placeholders": {
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "qualifyTitle": "Qualification",
+  "qualifyValueHelp": "Your best guess of the order value. Helps vendors and reports.",
+  "questionNo": "No",
+  "questionYes": "Yes",
+  "quoteAccept": "Accept",
+  "quoteAcceptAgree": "I accept the items, price and terms in this quotation.",
+  "quoteAcceptTitle": "Accept this quotation",
+  "quoteAccepted": "Accepted",
+  "quoteAcceptedOn": "Accepted on {date}.",
+  "@quoteAcceptedOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "quoteAcceptedTitle": "Accepted",
+  "quoteAcceptedToast": "Accepted. The vendor will start the work.",
+  "quoteApprove": "Approve and send",
+  "quoteApproved": "Sent to the customer.",
+  "quoteAskChanges": "Ask for changes",
+  "quoteAskChangesHint": "For example: reduce the installation charge",
+  "quoteAskChangesLabel": "Message to the vendor",
+  "quoteAskChangesLabelCustomer": "What would you like changed?",
+  "quoteAskChangesSub": "The vendor will send a new version.",
+  "quoteAskChangesTitle": "What should change?",
+  "quoteAttachment": "Attachment",
+  "quoteChangesSent": "Sent to the vendor.",
+  "quoteChangesSentCustomer": "Your request was sent. You'll get a new version.",
+  "quoteCopySent": "Copy sent to {email}.",
+  "@quoteCopySent": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "quoteCustomerChanges": "Not yet",
+  "quoteCustomerNote": "Take your time. Ask us anything in the chat.",
+  "quoteDays": "{days} days",
+  "@quoteDays": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "quoteDecline": "Decline quotation",
+  "quoteDeclineElsewhere": "Going with another option",
+  "quoteDeclineLater": "Not now",
+  "quoteDeclinePrice": "Price is too high",
+  "quoteDeclineSub": "Tell us why so we can help.",
+  "quoteDeclined": "Quotation declined.",
+  "quoteDeclinedReason": "Declined",
+  "quoteDelivery": "Delivery",
+  "quoteDiscount": "Discount",
+  "quoteDraft": "Draft",
+  "quoteDraftSaved": "Draft saved.",
+  "quoteExpired": "Expired",
+  "quoteFormAddItem": "Add another item",
+  "quoteFormAttach": "Add file",
+  "quoteFormCharges": "Other charges",
+  "quoteFormDescription": "Description",
+  "quoteFormEdit": "Edit quotation",
+  "quoteFormItem": "Item {n}",
+  "@quoteFormItem": {
+    "placeholders": {
+      "n": {
+        "type": "String"
+      }
+    }
+  },
+  "quoteFormNeedItem": "Add at least one item with a price.",
+  "quoteFormNew": "New quotation",
+  "quoteFormQty": "Qty",
+  "quoteFormReviewNote": "Back office checks every quotation before the customer sees it.",
+  "quoteFormRevise": "Revised quotation, version {version}",
+  "@quoteFormRevise": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "quoteFormTax": "GST",
+  "quoteFormTotalLine": "Items {subtotal}, GST {tax}",
+  "@quoteFormTotalLine": {
+    "placeholders": {
+      "subtotal": {
+        "type": "String"
+      },
+      "tax": {
+        "type": "String"
+      }
+    }
+  },
+  "quoteFormUnitPrice": "Price per unit",
+  "quoteInclTax": "Includes {percent} GST",
+  "@quoteInclTax": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "quoteInstallation": "Installation",
+  "quoteItems": "Items",
+  "quoteNew": "New",
+  "quoteNumber": "{number}, version {version}",
+  "@quoteNumber": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      },
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "quoteOtherVersions": "Other versions",
+  "quoteQtyLine": "{qty} × {price}",
+  "@quoteQtyLine": {
+    "placeholders": {
+      "qty": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "quoteRejected": "Rejected",
+  "quoteReviewNote": "Check prices, items and terms before the customer sees it.",
+  "quoteRevise": "Send a revised version",
+  "quoteRevisionAsked": "Changes asked for",
+  "quoteRevisionRequested": "Changes requested",
+  "quoteSaveDraft": "Save draft",
+  "quoteSendToVendor": "Send to vendor",
+  "quoteSent": "Sent",
+  "quoteSignHelp": "This works as your signature.",
+  "quoteSignLabel": "Type your full name to sign",
+  "quoteSignedBy": "Signed by {name} on {date}.",
+  "@quoteSignedBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "quoteSubmit": "Submit",
+  "quoteSubmitBody": "O2O Boss will check it and send it to the customer. You can't edit it after this.",
+  "quoteSubmitTitle": "Submit this quotation?",
+  "quoteSubmitted": "Under review",
+  "quoteSubmittedToast": "Quotation submitted for review.",
+  "quoteSubtotal": "Subtotal",
+  "quoteSuperseded": "Replaced",
+  "quoteSupersededNote": "A newer version of this quotation exists.",
+  "quoteTax": "GST {percent}",
+  "@quoteTax": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "quoteTerms": "Terms",
+  "quoteTermsLabel": "Terms and warranty",
+  "quoteTimeline": "Work takes",
+  "quoteValidUntil": "Valid until {date}",
+  "@quoteValidUntil": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "quoteValidity": "Valid for",
+  "quoteViewed": "Viewed",
+  "quotesCopyNote": "A copy of every quotation is sent to {email}.",
+  "@quotesCopyNote": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "quotesEmptyBody": "Quotations from vendors will appear here after the site visit.",
+  "quotesToReview": "{count, plural, =1{1 quotation is waiting for your review.} other{{count} quotations are waiting for your review.}}",
+  "@quotesToReview": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "referAnother": "Refer another customer",
+  "referConsent": "The customer knows about this referral and agreed to be contacted by O2O Boss.",
+  "referConsentCustomer": "I agree to be contacted by O2O Boss and its partner vendors about this requirement.",
+  "referConsentError": "Tick the box to confirm.",
+  "referContactLabel": "How should we contact the customer?",
+  "referContactLabelCustomer": "How should we contact you?",
+  "referCustomerSubtitle": "We'll call this number to confirm the requirement.",
+  "referCustomerTitle": "Who is the customer?",
+  "referDoneId": "Enquiry ID {id}",
+  "@referDoneId": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "referDoneTitle": "Referral sent",
+  "referDoneTitleCustomer": "Requirement posted",
+  "referDuplicateBody": "{id} for {category} is still open for this number. A new referral for the same need may not count.",
+  "@referDuplicateBody": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      },
+      "category": {
+        "type": "String"
+      }
+    }
+  },
+  "referDuplicateCheck": "Go back",
+  "referDuplicateContinue": "Continue anyway",
+  "referDuplicateTitle": "This customer is already referred",
+  "referHow1Body": "Takes about a minute. Tell the customer we will call them.",
+  "referHow1Title": "Share the customer's details",
+  "referHow2Body": "Our team confirms the need and connects a trusted vendor nearby.",
+  "referHow2Title": "We verify and find a vendor",
+  "referHow3Body": "Follow every step here. Your commission is added when the customer pays.",
+  "referHow3Title": "You earn when it's paid",
+  "referHowTitle": "How referrals work",
+  "referNeedTitle": "What do they need?",
+  "referNeedTitleCustomer": "What do you need?",
+  "referNext1Body": "Our team will call the customer, usually within a few hours.",
+  "referNext1BodyCustomer": "Our team will call you, usually within a few hours.",
+  "referNext1Title": "We call to verify",
+  "referNext2Body": "We pick a verified vendor nearby who serves this need.",
+  "referNext2Title": "A trusted vendor is connected",
+  "referNext3Body": "You can follow each step and your earning in the app.",
+  "referNext3BodyCustomer": "You'll get the quotation here to accept or ask for changes.",
+  "referNext3Title": "Quotation and work",
+  "referNotSure": "Not sure? Describe the need",
+  "referOtpNote": "We'll send a code to the customer's mobile to confirm the number.",
+  "referPlaceTitle": "Where is the work?",
+  "referPreferredTime": "Best time to call",
+  "referPreferredTimeHint": "For example: after 6 pm",
+  "referPrivacyNote": "The customer's number is only shared with O2O Boss. Vendors contact them through us.",
+  "referRequirementError": "Add a few words about the requirement.",
+  "referRequirementHint": "For example: 4 cameras for a 2-floor house, with night vision",
+  "referReviewSubtitle": "Make sure everything is right. You can change any part.",
+  "referReviewTitle": "Check and send",
+  "referRulesBody": "You earn {percent} of the final order value when {trigger}. Your referral is protected for {days} days.",
+  "@referRulesBody": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      },
+      "trigger": {
+        "type": "String"
+      },
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "referSubmit": "Send referral",
+  "referSubmitCustomer": "Post requirement",
+  "referTabSubtitle": "What does your customer need? Tap one to start.",
+  "referTabTitle": "Refer",
+  "referTitle": "Refer a customer",
+  "referTitleCustomer": "New requirement",
+  "referTrack": "Track progress",
+  "resetButton": "Save password",
+  "resetDone": "Password changed. Sign in with your new password.",
+  "resetTitle": "Set a new password",
+  "roleAdmin": "Admin",
+  "roleAdminDesc": "Manage the whole platform",
+  "roleBackOffice": "Back office",
+  "roleBackOfficeDesc": "Verify enquiries and manage the work",
+  "roleCustomer": "Customer",
+  "roleCustomerDesc": "Track your requirement and quotations",
+  "roleFranchise": "Franchise head",
+  "roleFranchiseDesc": "See business in your territory",
+  "roleSales": "Referral partner",
+  "roleSalesDesc": "Refer customers and earn commission",
+  "roleVendor": "Vendor",
+  "roleVendorDesc": "Receive referrals and send quotations",
+  "salesCompany": "Company sales team",
+  "salesEarningLater": "You earn {percent} of the final order value. The amount appears once a quotation is accepted.",
+  "@salesEarningLater": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "salesEmptyBody": "Your referrals and their progress will appear here.",
+  "salesEmptyTitle": "No referrals yet",
+  "salesEnquiriesTitle": "My referrals",
+  "salesExpectedEarning": "You can earn about {amount} when {trigger}.",
+  "@salesExpectedEarning": {
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      },
+      "trigger": {
+        "type": "String"
+      }
+    }
+  },
+  "salesFilterActive": "In progress",
+  "salesFilterClosed": "Closed",
+  "salesFilterWon": "Won",
+  "salesHomeSummary": "{count, plural, =0{No referrals in progress right now.} =1{1 referral is in progress.} other{{count} referrals are in progress.}}",
+  "@salesHomeSummary": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "salesIndependent": "Independent referrer",
+  "salesKpiEarned": "Earned",
+  "salesKpiInProgress": "In progress",
+  "salesKpiPending": "On the way",
+  "salesKpiWon": "Won",
+  "salesLostBody": "The customer did not go ahead. Reason: {reason}.",
+  "@salesLostBody": {
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "salesNoEarning": "There is no commission for this referral because it was closed.",
+  "salesRecentTitle": "Latest referrals",
+  "salesReferBody": "Know someone who needs CCTV, solar, interiors or more? Share their details and earn when the work is paid for.",
+  "salesReferButton": "Start a referral",
+  "salesReferTitle": "Refer a customer",
+  "salesRejectedBody": "We could not verify this referral. Reason: {reason}.",
+  "@salesRejectedBody": {
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "salesVendorWorking": "Working on it",
+  "searchCustomers": "Customers",
+  "searchHint": "Search by enquiry ID, product or name",
+  "searchHintOps": "Search enquiries, customers or vendors",
+  "searchStartBody": "Type at least 2 letters, an enquiry ID or part of a phone number.",
+  "searchStartTitle": "Search",
+  "searchVendors": "Vendors",
+  "settingsLanguage": "Language",
+  "settingsTheme": "App colours",
+  "settingsTitle": "Settings",
+  "signupBusinessTitle": "Business details",
+  "signupCreate": "Create account",
+  "signupDetailsTitle": "Your details",
+  "signupDoneBody": "Sign in any time with user ID {id}.",
+  "@signupDoneBody": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "signupDoneTitle": "Your account is ready",
+  "signupGoHome": "Go to home",
+  "signupPhoneExists": "This number already has an account. Sign in instead.",
+  "signupStepOf": "Step {step} of {total}",
+  "@signupStepOf": {
+    "placeholders": {
+      "step": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "signupTerms": "I agree to the Terms of use and Privacy policy",
+  "signupTermsError": "Please accept the terms to continue.",
+  "signupTitle": "Create account",
+  "signupVendorDoneBody": "We check every business before sending referrals. You'll be notified when it's approved.",
+  "signupVendorDoneTitle": "Registration sent for review",
+  "signupWhoCustomer": "I need a product or service",
+  "signupWhoCustomerDesc": "Tell us what you need. We'll connect you with a trusted business.",
+  "signupWhoSales": "Refer customers and earn",
+  "signupWhoSalesDesc": "Tell us who needs a product or service. Earn when the business is done.",
+  "signupWhoTitle": "How will you use O2O Boss?",
+  "signupWhoVendor": "Register my business",
+  "signupWhoVendorDesc": "Get verified customers for your products and services.",
+  "simpleDone": "Completed",
+  "simpleFindingVendor": "Finding a vendor",
+  "simpleLost": "Lost",
+  "simpleNotVerified": "Not verified",
+  "simplePayment": "Payment pending",
+  "simpleQuotation": "Quotation stage",
+  "simpleVendorAssigned": "Vendor assigned",
+  "simpleVerified": "Verified",
+  "simpleVerifying": "Being verified",
+  "simpleVisit": "Visit planned",
+  "simpleWon": "Won",
+  "simpleWork": "Work in progress",
+  "sourceAdmin": "Admin",
+  "sourceBackOffice": "Back office",
+  "sourceCustomer": "Customer, in the app",
+  "sourceSales": "Referral partner",
+  "stActive": "Active",
+  "stActiveHelp": "Inactive items are hidden from new enquiries.",
+  "stAddArea": "Add area",
+  "stAddBrand": "Add brand",
+  "stAddCity": "Add city",
+  "stAddFranchise": "Add franchise",
+  "stAddProduct": "Add product",
+  "stAddQuestion": "Add question",
+  "stAddService": "Add service",
+  "stAdded": "Added.",
+  "stAdminCopy": "Send a copy of each quotation to admin",
+  "stAreaName": "Area name",
+  "stAreasCount": "{count, plural, =0{No areas} =1{1 area} other{{count} areas}}",
+  "@stAreasCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "stAsksPrice": "Ask vendors for an expected price",
+  "stAsksTime": "Ask vendors for expected days",
+  "stBoPercent": "Back office commission",
+  "stBrandName": "Brand name",
+  "stBrandServices": "Used for",
+  "stCalling": "Calls from the app",
+  "stCityName": "City",
+  "stDays": "{count, plural, =1{1 day} other{{count} days}}",
+  "@stDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "stDecrease": "Less {label}",
+  "@stDecrease": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "stDefaultPriority": "Default priority",
+  "stDeleteQuestion": "Delete question",
+  "stDeleteQuestionTitle": "Delete this question?",
+  "stDescription": "Description",
+  "stESign": "Customers sign to accept",
+  "stEditQuestion": "Edit question",
+  "stEmail": "Email",
+  "stExpiryDays": "Close quiet enquiries after",
+  "stFeedbackOn": "Ask customers for a rating",
+  "stFranchiseName": "Franchise name",
+  "stFranchisePercent": "Franchise share",
+  "stHead": "Franchise head",
+  "stHours": "{count, plural, =1{1 hour} other{{count} hours}}",
+  "@stHours": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "stInactive": "Inactive",
+  "stIncrease": "More {label}",
+  "@stIncrease": {
+    "placeholders": {
+      "label": {
+        "type": "String"
+      }
+    }
+  },
+  "stMultiQuotes": "Customers can compare quotations by default",
+  "stNoHead": "No head assigned",
+  "stNoQuestions": "No questions yet.",
+  "stOnlinePay": "Online payment",
+  "stOtp": "Confirm customer mobile with a code",
+  "stPayoutApproval": "Admin approves each payout",
+  "stPincode": "Pincode",
+  "stPincodeError": "Enter a 6-digit pincode.",
+  "stProductName": "Product name",
+  "stProtectionDays": "Referral protected for",
+  "stPush": "App notifications",
+  "stQChoice": "Pick one",
+  "stQDate": "Date",
+  "stQNumber": "Number",
+  "stQText": "Short answer",
+  "stQYesNo": "Yes or no",
+  "stQuestionLabel": "Question",
+  "stQuestionOptions": "Choices",
+  "stQuestionOptionsHint": "Separate with commas, for example: 1, 2, 3 or more",
+  "stQuestionRequired": "Answer is required",
+  "stQuestionType": "Answer type",
+  "stQuestions": "Qualification questions",
+  "stQuestionsCount": "{count, plural, =0{No questions} =1{1 question} other{{count} questions}}",
+  "@stQuestionsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "stQuestionsHelp": "Back office asks these when checking an enquiry.",
+  "stQuoteReview": "Back office checks quotations first",
+  "stRecording": "Record calls",
+  "stRecordingConsent": "Ask before recording",
+  "stRemoveArea": "Remove area",
+  "stRemoveAreaTitle": "Remove {area}?",
+  "@stRemoveAreaTitle": {
+    "placeholders": {
+      "area": {
+        "type": "String"
+      }
+    }
+  },
+  "stRename": "Rename",
+  "stRequired": "Required",
+  "stSalesPercent": "Referral partner commission",
+  "stSalesValue": "What referral partners see of the value",
+  "stSave": "Save",
+  "stSaved": "Setting saved.",
+  "stSecChannels": "Messages and calls",
+  "stSecChannelsHelp": "WhatsApp, SMS, email, calls and recording",
+  "stSecCommission": "Commission",
+  "stSecCommissionHelp": "Rates, when it is earned, payout approval",
+  "stSecEnquiry": "Enquiries",
+  "stSecEnquiryHelp": "Mobile check, expiry and referral protection",
+  "stSecFeedback": "Feedback",
+  "stSecFeedbackHelp": "Ratings after the work is done",
+  "stSecPayments": "Payments",
+  "stSecPaymentsHelp": "Tracking and online payment",
+  "stSecQuotes": "Quotations",
+  "stSecQuotesHelp": "Checking, signing and copies",
+  "stSecVendors": "Vendors",
+  "stSecVendorsHelp": "Approval and time to reply",
+  "stSecVisibility": "Who sees what",
+  "stSecVisibilityHelp": "Contact details and order values",
+  "stSeesReferrer": "Customers see who referred them",
+  "stSeesVendorContact": "Customers see vendor phone numbers",
+  "stService": "Service",
+  "stServiceName": "Service name",
+  "stShareDefault": "The default share is {percent}.",
+  "@stShareDefault": {
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "stSms": "SMS messages",
+  "stState": "State",
+  "stTracking": "Track payments",
+  "stTrigger": "Commission is earned when",
+  "stVendorApproval": "Approve new vendors before they get referrals",
+  "stVendorHours": "Time for vendors to reply",
+  "stVendorSeesReferrer": "Vendors see the referral partner",
+  "stWhatsapp": "WhatsApp messages",
+  "statusAppointmentCompleted": "Visit done",
+  "statusAppointmentScheduled": "Visit scheduled",
+  "statusCommissionCalculated": "Commission calculated",
+  "statusCommissionSettled": "Completed",
+  "statusCustomerContact": "Customer connected",
+  "statusLost": "Lost",
+  "statusNegotiation": "Negotiation",
+  "statusNewEnquiry": "New",
+  "statusPaymentCollected": "Payment collected",
+  "statusPaymentPending": "Payment pending",
+  "statusProjectCompleted": "Work completed",
+  "statusProjectCreated": "Project created",
+  "statusProjectInProgress": "Work in progress",
+  "statusQualificationPending": "Qualification pending",
+  "statusQualified": "Qualified",
+  "statusQuotationPending": "Quotation pending",
+  "statusQuotationSubmitted": "Quotation submitted",
+  "statusRejected": "Not verified",
+  "statusVendorAccepted": "Vendor accepted",
+  "statusVendorAssigned": "Vendor assigned",
+  "statusVendorMatching": "Finding vendor",
+  "statusVerificationPending": "Verification pending",
+  "statusVerified": "Verified",
+  "statusWon": "Won",
+  "svCommissionOnly": "Commission only",
+  "svFull": "Full value",
+  "svHidden": "Hidden",
+  "svLimited": "Rounded value",
+  "svStageBased": "Only after the deal is won",
+  "sysAppointmentCancelled": "Visit cancelled.",
+  "sysAppointmentCompleted": "Visit completed.",
+  "sysAppointmentConfirmed": "Visit confirmed for {date}.",
+  "@sysAppointmentConfirmed": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sysAppointmentProposed": "Visit proposed for {date}.",
+  "@sysAppointmentProposed": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sysAppointmentRescheduled": "Visit moved to {date}.",
+  "@sysAppointmentRescheduled": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "sysAssigned": "{id} assigned to {vendor}.",
+  "@sysAssigned": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      },
+      "vendor": {
+        "type": "String"
+      }
+    }
+  },
+  "sysConnected": "{vendor} is now connected to the customer through O2O Boss.",
+  "@sysConnected": {
+    "placeholders": {
+      "vendor": {
+        "type": "String"
+      }
+    }
+  },
+  "sysEnquiryLost": "This enquiry was closed.",
+  "sysNewReferral": "New referral {id}. Please reply within {hours} hours.",
+  "@sysNewReferral": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      },
+      "hours": {
+        "type": "String"
+      }
+    }
+  },
+  "sysOtherAccepted": "Another quotation was accepted.",
+  "sysProjectCreated": "Project {project} started.",
+  "@sysProjectCreated": {
+    "placeholders": {
+      "project": {
+        "type": "String"
+      }
+    }
+  },
+  "sysQuotationAccepted": "The customer accepted {number}.",
+  "@sysQuotationAccepted": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "sysQuotationRejected": "The customer rejected {number}.",
+  "@sysQuotationRejected": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "sysQuotationSent": "Quotation {number} (version {version}) sent to the customer.",
+  "@sysQuotationSent": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      },
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "sysQuotationSubmitted": "Quotation {number} (version {version}) submitted.",
+  "@sysQuotationSubmitted": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      },
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "sysReferralAccepted": "{vendor} accepted the referral.",
+  "@sysReferralAccepted": {
+    "placeholders": {
+      "vendor": {
+        "type": "String"
+      }
+    }
+  },
+  "sysReferralRejected": "{vendor} declined the referral.",
+  "@sysReferralRejected": {
+    "placeholders": {
+      "vendor": {
+        "type": "String"
+      }
+    }
+  },
+  "sysRevisionRequested": "Changes requested on {number}.",
+  "@sysRevisionRequested": {
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "taskAdd": "Add task",
+  "taskAdded": "Task added.",
+  "taskApproveCommission": "Approve commission for {id}",
+  "@taskApproveCommission": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "taskApproveVendor": "Review new vendor {name}",
+  "@taskApproveVendor": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "taskAssignVendor": "Choose vendor for {id}",
+  "@taskAssignVendor": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "taskCollectPayment": "Collect payment for {id}",
+  "@taskCollectPayment": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "taskCreateProject": "Start project for {id}",
+  "@taskCreateProject": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "taskDone": "Task done.",
+  "taskDue": "Due",
+  "taskEmptyBody": "Tasks are created for you as enquiries move. You can add your own too.",
+  "taskEmptyTitle": "No tasks",
+  "taskQualify": "Check requirement for {id}",
+  "@taskQualify": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "taskReviewQuotation": "Review quotation for {id}",
+  "@taskReviewQuotation": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "taskToDo": "To do",
+  "taskVendorNoResponse": "Vendor hasn't replied on {id}",
+  "@taskVendorNoResponse": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "taskVerify": "Verify {id}",
+  "@taskVerify": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "taskWhat": "What needs doing?",
+  "terms1Body": "O2O Boss connects customers with verified vendors through referrals. By using the app you agree to share accurate information and to use it only for genuine requirements.",
+  "terms1Title": "Using O2O Boss",
+  "terms2Body": "Commission is paid on referrals verified and completed through O2O Boss, according to the rules shown in the app at the time of the referral.",
+  "terms2Title": "Referrals and commission",
+  "terms3Body": "Vendors are responsible for their quotations, work quality and delivery timelines. O2O Boss may review quotations before they reach customers.",
+  "terms3Title": "Vendors",
+  "terms4Body": "Keep your user ID and password private. O2O Boss may suspend accounts that misuse the platform.",
+  "terms4Title": "Accounts",
+  "themeBrand": "O2O Boss orange",
+  "themeBrandBody": "Orange and navy, like our website",
+  "themeClassic": "Blue",
+  "themeClassicBody": "The standard look",
+  "toastCopied": "Copied.",
+  "toastSaved": "Saved.",
+  "toastSent": "Sent.",
+  "toastUpdated": "Updated.",
+  "today": "Today",
+  "tomorrow": "Tomorrow",
+  "trigFullPayment": "Full payment collected",
+  "trigOrderConfirmed": "Order confirmed",
+  "trigPaymentReceived": "First payment received",
+  "trigProjectCompleted": "Work completed",
+  "trigProjectStarted": "Work started",
+  "trigQuotationAccepted": "Quotation accepted",
+  "trigSentenceFullPayment": "the customer has paid in full",
+  "trigSentenceOrderConfirmed": "the order is confirmed",
+  "trigSentencePaymentReceived": "the first payment is received",
+  "trigSentenceProjectCompleted": "the work is completed",
+  "trigSentenceProjectStarted": "the work starts",
+  "trigSentenceQuotationAccepted": "the customer accepts the quotation",
+  "upcoming": "Upcoming",
+  "validationAmount": "Enter an amount greater than zero.",
+  "validationChooseOne": "Choose one option.",
+  "validationEmail": "Enter a valid email address.",
+  "validationFixErrors": "Some details need attention. Check the highlighted fields.",
+  "validationLoginIdFormat": "Use 4 to 20 letters, numbers, dots or underscores.",
+  "validationLoginIdTaken": "This user ID is taken. Try another.",
+  "validationName": "Enter a name.",
+  "validationNumber": "Enter a number.",
+  "validationOtp": "Enter the 6-digit code.",
+  "validationOtpWrong": "That code is not right. Check it and try again.",
+  "validationPasswordLength": "Use at least 6 characters.",
+  "validationPasswordMatch": "Passwords do not match.",
+  "validationPhone": "Enter a 10-digit mobile number.",
+  "validationReason": "Tell us the reason.",
+  "validationRequired": "This field is required.",
+  "vbAbout": "About your business",
+  "vbAboutEmpty": "Tell customers what you do best.",
+  "vbAddress": "Address",
+  "vbAreasHelp": "Pick the areas you reach in each city. Leave a city's areas empty to cover all of it.",
+  "vbAvailable": "Taking new referrals",
+  "vbAvailableOff": "Paused. You will not get new referrals.",
+  "vbAvailableOn": "O2O Boss will send you new customers.",
+  "vbBrands": "Brands",
+  "vbCities": "Cities",
+  "vbCompanyName": "Business name",
+  "vbCompanyTitle": "Business profile",
+  "vbContactPerson": "Contact person",
+  "vbDetails": "Business details",
+  "vbDocUploadedOn": "{kind}, uploaded {date}",
+  "@vbDocUploadedOn": {
+    "placeholders": {
+      "kind": {
+        "type": "String"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "vbDocsNote": "O2O Boss checks each document. Verified documents help you get more referrals.",
+  "vbEdit": "Edit",
+  "vbEditTitle": "Edit business details",
+  "vbEmail": "Email",
+  "vbGst": "GST number",
+  "vbJoined": "Partner since {date}",
+  "@vbJoined": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "vbPickCityFirst": "Choose a city first.",
+  "vbPickServiceFirst": "Choose a service first.",
+  "vbProducts": "Products",
+  "vbSave": "Save changes",
+  "vbSaved": "Saved.",
+  "vbServices": "Services",
+  "vbServicesHelp": "Choose what you offer. You only get referrals for these.",
+  "vbUpload": "Upload a document",
+  "vbUploadTitle": "Which document?",
+  "vbUploaded": "Document uploaded. We will check it soon.",
+  "vendorApprove": "Approve vendor",
+  "vendorApproved": "Vendor approved. They can now receive referrals.",
+  "vendorAwaiting": "Waiting for approval",
+  "vendorAwaitingBody": "Check the business details and documents, then approve or reject.",
+  "vendorBusiness": "Business",
+  "vendorDocPending": "Not checked",
+  "vendorDocVerified": "Verified",
+  "vendorDocVerifiedToast": "Document verified.",
+  "vendorDocuments": "Documents",
+  "vendorNoDocs": "No documents uploaded",
+  "vendorRating": "Rating",
+  "vendorReactivate": "Reactivate vendor",
+  "vendorReferrals": "Referrals",
+  "vendorReject": "Reject",
+  "vendorRejectArea": "Area not covered yet",
+  "vendorRejectDocs": "Documents missing or unclear",
+  "vendorRejectQuality": "Did not meet quality checks",
+  "vendorRejected": "Vendor rejected.",
+  "vendorResponse": "Replies on time",
+  "vendorSuspend": "Suspend vendor",
+  "vendorSuspended": "Vendor suspended.",
+  "vendorTerms": "Commercial terms",
+  "vendorVerifyDoc": "Mark verified",
+  "vendorsDeadline": "Time to reply",
+  "vendorsDeclined": "Declined: {reason}",
+  "@vendorsDeclined": {
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "vendorsExpectedDays": "About {days} days",
+  "@vendorsExpectedDays": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "vendorsExpectedPrice": "Expected price {price}",
+  "@vendorsExpectedPrice": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "vendorsIntroduce": "Introduce to customer",
+  "vendorsIntroduced": "Vendor introduced to the customer.",
+  "vendorsMeta": "{area}, rating {rating}, replies {rate}%",
+  "@vendorsMeta": {
+    "placeholders": {
+      "area": {
+        "type": "String"
+      },
+      "rating": {
+        "type": "String"
+      },
+      "rate": {
+        "type": "String"
+      }
+    }
+  },
+  "vendorsNoneBody": "No active vendor serves this category in this city yet.",
+  "vendorsNoneTitle": "No matching vendor",
+  "vendorsNotQualified": "Referrals go to vendors only after the enquiry is verified and qualified.",
+  "vendorsOnThis": "Vendors on this enquiry",
+  "vendorsOptions": "Before sending",
+  "vendorsProfile": "Profile",
+  "vendorsReasonArea": "Area",
+  "vendorsReasonBrand": "Brand",
+  "vendorsReasonCity": "City",
+  "vendorsReasonProduct": "Product",
+  "vendorsScore": "Match {score}",
+  "@vendorsScore": {
+    "placeholders": {
+      "score": {
+        "type": "String"
+      }
+    }
+  },
+  "vendorsSendBody": "They will have {hours} hours to accept or decline. The customer's number stays private.",
+  "@vendorsSendBody": {
+    "placeholders": {
+      "hours": {
+        "type": "String"
+      }
+    }
+  },
+  "vendorsSendButton": "{count, plural, =1{Send to 1 vendor} other{Send to {count} vendors}}",
+  "@vendorsSendButton": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "vendorsSendConfirm": "Send referral",
+  "vendorsSendTitle": "{count, plural, =1{Send referral to 1 vendor?} other{Send referral to {count} vendors?}}",
+  "@vendorsSendTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "vendorsSent": "Referral sent.",
+  "vendorsSentOn": "Sent {date}",
+  "@vendorsSentOn": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "vendorsShowAllQuotes": "Customer can compare quotations",
+  "vendorsShowAllQuotesHelp": "When on, the customer sees every vendor's quotation. When off, only the one you send.",
+  "vendorsShowPartial": "{count, plural, =1{Show 1 partial match} other{Show {count} partial matches}}",
+  "@vendorsShowPartial": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "vendorsSuggested": "Suggested vendors",
+  "vendorsSuggestedHelp": "Best matches first, by product, brand, location, rating and response rate.",
+  "vendorsWithdraw": "Withdraw",
+  "vendorsWithdrawBody": "{vendor} will no longer see this enquiry.",
+  "@vendorsWithdrawBody": {
+    "placeholders": {
+      "vendor": {
+        "type": "String"
+      }
+    }
+  },
+  "vendorsWithdrawTitle": "Withdraw the referral?",
+  "vendorsWithdrawn": "Referral withdrawn.",
+  "verifyCallAgain": "Call again",
+  "verifyCallButton": "Call customer",
+  "verifyCallLength": "Last call: {time}",
+  "@verifyCallLength": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "verifyCallbackAt": "When to call back",
+  "verifyDoneGenuine": "Verified. Now ask the qualification questions.",
+  "verifyDoneLater": "Saved. A follow-up was added.",
+  "verifyDoneRejected": "Enquiry closed.",
+  "verifyDuplicateNote": "This number also has {ids} open. Check it is not a duplicate.",
+  "@verifyDuplicateNote": {
+    "placeholders": {
+      "ids": {
+        "type": "String"
+      }
+    }
+  },
+  "verifyExplainGenuine": "The enquiry will be marked verified and move to qualification.",
+  "verifyExplainLater": "The enquiry stays open and a follow-up is added for you.",
+  "verifyExplainReject": "The enquiry will be closed and the referral partner told why.",
+  "verifyNotesHint": "What the customer said, in a few words",
+  "verifyRecordingConsent": "The customer agreed to the call being recorded.",
+  "verifyReferredBy": "Referred by {name}",
+  "@verifyReferredBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "verifyRejectBody": "It will be closed as \"{reason}\". You can ask admin to reopen it later.",
+  "@verifyRejectBody": {
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "verifyRejectConfirm": "Close enquiry",
+  "verifyRejectTitle": "Close this enquiry?",
+  "verifySave": "Save result",
+  "verifyTitle": "Verify enquiry",
+  "verifyWhatHappened": "What happened on the call?",
+  "visFull": "Full details",
+  "visHidden": "Hidden",
+  "visLimited": "Name and area only",
+  "visitBookTitle": "Book a visit",
+  "visitBooked": "Visit booked. Everyone has been told.",
+  "visitCancel": "Cancel visit",
+  "visitCancelCustomer": "Customer not available",
+  "visitCancelReason": "Cancelled: {reason}",
+  "@visitCancelReason": {
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "visitCancelTitle": "Cancel the visit",
+  "visitCancelVendor": "Vendor not available",
+  "visitCancelWeather": "Weather or site not ready",
+  "visitCancelled": "Visit cancelled.",
+  "visitConfirm": "Confirm",
+  "visitConfirmed": "Visit confirmed.",
+  "visitCustomerConfirm": "Yes, the vendor visited",
+  "visitCustomerConfirmed": "Customer confirmed the visit",
+  "visitDone": "Visit marked done.",
+  "visitDoneBody": "The vendor can then prepare the quotation.",
+  "visitDoneTitle": "Did the visit happen?",
+  "visitIntroduceFirst": "{vendor} accepted. Introduce them to the customer before booking a visit.",
+  "@visitIntroduceFirst": {
+    "placeholders": {
+      "vendor": {
+        "type": "String"
+      }
+    }
+  },
+  "visitMarkDone": "Mark visit done",
+  "visitNeedVendor": "A vendor must accept the referral first.",
+  "visitNoShow": "Didn't happen",
+  "visitNoShowSaved": "Saved. A follow-up call was added.",
+  "visitProposeSubtitle": "O2O Boss will confirm the time with the customer.",
+  "visitProposeTitle": "Propose a visit",
+  "visitProposed": "Visit proposed. Back office will confirm.",
+  "visitPurpose": "Purpose",
+  "visitPurposeHint": "For example: measure the site and check wiring",
+  "visitRescheduled": "Visit rescheduled.",
+  "visitThanks": "Thanks for confirming.",
+  "visitWhen": "Date and time",
+  "vnAccept": "Accept",
+  "vnAcceptSubtitle": "Give a rough idea. You will send the exact quotation later.",
+  "vnAcceptTitle": "Accept this referral",
+  "vnAcceptedToast": "Referral accepted. O2O Boss will share the next steps.",
+  "vnAllClearBody": "New referrals from O2O Boss will appear here.",
+  "vnAllClearTitle": "All caught up",
+  "vnAreas": "Service areas",
+  "vnAreasSubtitle": "Cities and areas you cover",
+  "vnBusinessProfile": "Business profile",
+  "vnCatalog": "Products and brands",
+  "vnCatalogSubtitle": "What you sell and install",
+  "vnChatHelp": "Ask questions or share photos about this job",
+  "vnChatWithO2O": "Chat with O2O Boss",
+  "vnClosedBody": "The customer did not go ahead. Thank you for your time.",
+  "vnClosedTitle": "This enquiry is closed",
+  "vnCustomerHidden": "Shared after you accept",
+  "vnDecline": "Decline",
+  "vnDeclineArea": "Area is too far",
+  "vnDeclineBudget": "Budget is too low",
+  "vnDeclineBusy": "Too busy right now",
+  "vnDeclineProduct": "We don't offer this product",
+  "vnDeclineTitle": "Why are you declining?",
+  "vnDeclinedBody": "Reason: {reason}",
+  "@vnDeclinedBody": {
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "vnDeclinedTitle": "You declined this referral",
+  "vnDeclinedToast": "Referral declined.",
+  "vnDocumentsSubtitle": "GST, PAN, licence and bank proof",
+  "vnEmptyBody": "When O2O Boss sends you a customer, it shows up in this list.",
+  "vnEmptyTitle": "No referrals here",
+  "vnExpectedDays": "Days to finish the work",
+  "vnExpectedPrice": "Expected price",
+  "vnExpiredBody": "The time to reply ran out, so it went to another vendor.",
+  "vnExpiredTitle": "This referral has expired",
+  "vnFilterActive": "Active",
+  "vnFilterClosed": "Closed",
+  "vnFilterNew": "New",
+  "vnFilterWon": "Won",
+  "vnHomeSummary": "{count, plural, =0{No new referrals right now.} =1{1 new referral is waiting.} other{{count} new referrals are waiting.}}",
+  "@vnHomeSummary": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "vnKpiActive": "Active jobs",
+  "vnKpiNew": "New",
+  "vnKpiProjects": "Work going on",
+  "vnKpiQuotes": "Open quotes",
+  "vnMoreBusiness": "Your business",
+  "vnNewBody": "Reply by {time} so the customer is not kept waiting.",
+  "@vnNewBody": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "vnNewButton": "See referral",
+  "vnNewQuote": "Create quotation",
+  "vnNewTitle": "{count, plural, =1{New referral waiting} other{{count} new referrals waiting}}",
+  "@vnNewTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "vnNextChangesBody": "Read the note on the quotation and send a new version.",
+  "vnNextChangesTitle": "Changes asked",
+  "vnNextCheckBody": "You will get a message when it goes to the customer.",
+  "vnNextCheckTitle": "O2O Boss is checking your quotation",
+  "vnNextCustomerBody": "We will tell you as soon as they reply.",
+  "vnNextCustomerTitle": "The customer is deciding",
+  "vnNextDraftBody": "Your draft is saved. Send it when it is ready.",
+  "vnNextDraftTitle": "Finish your quotation",
+  "vnNextLabel": "Next step",
+  "vnNextQuoteBody": "Add the items and price. O2O Boss checks it before the customer sees it.",
+  "vnNextQuoteTitle": "Send your quotation",
+  "vnNextVisitBody": "Suggest a time. O2O Boss confirms it with the customer.",
+  "vnNextVisitSetBody": "{time} at {place}",
+  "@vnNextVisitSetBody": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      },
+      "place": {
+        "type": "String"
+      }
+    }
+  },
+  "vnNextVisitSetTitle": "Visit planned",
+  "vnNextVisitTitle": "Plan a site visit",
+  "vnNextWorkBody": "Tick each step as it is done so everyone can see progress.",
+  "vnNextWorkTitle": "Update the work",
+  "vnNoQuotes": "No quotation yet",
+  "vnNoVisits": "No visit planned yet",
+  "vnNoteLabel": "Note for O2O Boss",
+  "vnOpenDraft": "Open draft",
+  "vnOpenProject": "Open work",
+  "vnPendingBody": "You can look around. Referrals start once O2O Boss approves your business.",
+  "vnPendingTitle": "Your business is being checked",
+  "vnPrivacyNote": "The customer's name is shared after you accept. You always reach them through O2O Boss.",
+  "vnProposeVisit": "Suggest a visit",
+  "vnQuoteBody": "{job} is ready for your price.",
+  "@vnQuoteBody": {
+    "placeholders": {
+      "job": {
+        "type": "String"
+      }
+    }
+  },
+  "vnQuoteButton": "Create quotation",
+  "vnQuoteTitle": "Send a quotation",
+  "vnQuotesChecking": "Being checked",
+  "vnQuotesDrafts": "Drafts",
+  "vnReferralTitle": "Referral",
+  "vnReplyBy": "Please reply by {time}",
+  "@vnReplyBy": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "vnReplyStatus": "Status",
+  "vnRevise": "Make changes",
+  "vnStatusNew": "New referral",
+  "vnUpcomingVisits": "Upcoming visits",
+  "vnYourReply": "Your reply",
+  "yesterday": "Yesterday"
+}
