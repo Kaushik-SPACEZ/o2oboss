@@ -12,27 +12,27 @@ class TaglineBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(compact ? Space.md : Space.lg),
+      padding: EdgeInsets.all(compact ? Space.sm : Space.md),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [AppColors.primaryLight.withOpacity(0.6), AppColors.primaryLight.withOpacity(0.2)],
           begin: Alignment.topLeft, end: Alignment.bottomRight,
         ),
-        borderRadius: Corners.lgAll,
+        borderRadius: Corners.mdAll,
         border: Border.all(color: AppColors.primary.withOpacity(0.2)),
       ),
       child: Column(
         children: [
           Text(kTaglinePrimary,
             textAlign: TextAlign.center,
-            style: context.text.titleLarge?.copyWith(
-              fontWeight: FontWeight.bold, color: AppColors.primaryDark, letterSpacing: 0.5,
+            style: context.text.titleSmall?.copyWith(
+              fontWeight: FontWeight.bold, color: AppColors.primaryDark, letterSpacing: 0.3,
             )),
-          SizedBox(height: compact ? Space.xs : Space.sm),
+          SizedBox(height: compact ? 2 : Space.xs),
           Text(kTaglineSecondary,
             textAlign: TextAlign.center,
-            style: context.text.bodyMedium?.copyWith(
-              fontStyle: FontStyle.italic, color: AppColors.textSecondary, height: 1.4,
+            style: context.text.bodySmall?.copyWith(
+              fontStyle: FontStyle.italic, color: AppColors.textSecondary, height: 1.3,
             )),
         ],
       ),
@@ -52,30 +52,30 @@ class InspirationCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final colors = gradient ?? [AppColors.primary.withOpacity(0.1), AppColors.primaryLight];
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: Space.sm),
-      padding: const EdgeInsets.all(Space.lg),
+      margin: const EdgeInsets.symmetric(vertical: Space.xs),
+      padding: const EdgeInsets.all(Space.md),
       decoration: BoxDecoration(
         gradient: LinearGradient(colors: colors, begin: Alignment.topLeft, end: Alignment.bottomRight),
-        borderRadius: Corners.lgAll,
-        boxShadow: [BoxShadow(color: AppColors.primary.withOpacity(0.1), blurRadius: 8, offset: const Offset(0, 2))],
+        borderRadius: Corners.mdAll,
+        boxShadow: [BoxShadow(color: AppColors.primary.withOpacity(0.08), blurRadius: 4, offset: const Offset(0, 1))],
       ),
       child: Row(
         children: [
           if (icon != null) ...[
             Container(
-              padding: const EdgeInsets.all(Space.sm),
+              padding: const EdgeInsets.all(Space.xs),
               decoration: BoxDecoration(color: Colors.white.withOpacity(0.8), shape: BoxShape.circle),
-              child: Icon(icon, color: AppColors.primary, size: 24),
+              child: Icon(icon, color: AppColors.primary, size: 18),
             ),
-            Space.gapMd,
+            Space.gapSm,
           ],
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title, style: context.text.titleMedium?.copyWith(fontWeight: FontWeight.bold, color: AppColors.primaryDark)),
-                Space.gapXs,
-                Text(subtitle, style: context.text.bodySmall?.copyWith(fontStyle: FontStyle.italic, color: AppColors.textSecondary)),
+                Text(title, style: context.text.titleSmall?.copyWith(fontWeight: FontWeight.w600, color: AppColors.primaryDark, fontSize: 14)),
+                const SizedBox(height: 2),
+                Text(subtitle, style: context.text.bodySmall?.copyWith(fontStyle: FontStyle.italic, color: AppColors.textSecondary, fontSize: 12)),
               ],
             ),
           ),
@@ -92,22 +92,22 @@ class AbundanceBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: Space.lg, horizontal: Space.xl),
+      padding: const EdgeInsets.symmetric(vertical: Space.md, horizontal: Space.lg),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [AppColors.primaryLight, AppColors.primaryLight.withValues(alpha: 0.5)],
           begin: Alignment.topCenter, end: Alignment.bottomCenter,
         ),
-        borderRadius: Corners.lgAll,
+        borderRadius: Corners.mdAll,
         border: Border.all(color: AppColors.primary.withValues(alpha: 0.3)),
       ),
       child: Column(
         children: [
           Text(kMottoAbundance, textAlign: TextAlign.center,
-            style: context.text.headlineSmall?.copyWith(fontWeight: FontWeight.bold, color: AppColors.primaryDark)),
-          Space.gapXs,
+            style: context.text.titleMedium?.copyWith(fontWeight: FontWeight.bold, color: AppColors.primaryDark, fontSize: 16)),
+          const SizedBox(height: 2),
           Text(kMottoAbundanceSub, textAlign: TextAlign.center,
-            style: context.text.titleMedium?.copyWith(fontStyle: FontStyle.italic, color: AppColors.primary)),
+            style: context.text.bodySmall?.copyWith(fontStyle: FontStyle.italic, color: AppColors.primary, fontSize: 12)),
         ],
       ),
     );
@@ -121,23 +121,23 @@ class CultureCodeBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(Space.lg),
+      padding: const EdgeInsets.all(Space.md),
       decoration: BoxDecoration(
         gradient: LinearGradient(colors: [const Color(0xFFE8F5E9), const Color(0xFFC8E6C9)]),
-        borderRadius: Corners.lgAll,
+        borderRadius: Corners.mdAll,
       ),
       child: Column(children: [
         Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          const Icon(Icons.groups, color: Color(0xFF2E7D32), size: 20),
-          Space.gapSm,
-          Text(kCultureCodeTitle, style: context.text.titleSmall?.copyWith(fontWeight: FontWeight.bold, color: const Color(0xFF2E7D32))),
+          const Icon(Icons.groups, color: Color(0xFF2E7D32), size: 16),
+          Space.gapXs,
+          Text(kCultureCodeTitle, style: context.text.bodyMedium?.copyWith(fontWeight: FontWeight.bold, color: const Color(0xFF2E7D32), fontSize: 13)),
         ]),
-        Space.gapMd,
-        Text(kCultureCodeRespect, textAlign: TextAlign.center,
-          style: context.text.bodyMedium?.copyWith(fontWeight: FontWeight.w600, color: const Color(0xFF1B5E20))),
         Space.gapSm,
+        Text(kCultureCodeRespect, textAlign: TextAlign.center,
+          style: context.text.bodySmall?.copyWith(fontWeight: FontWeight.w600, color: const Color(0xFF1B5E20), fontSize: 12)),
+        const SizedBox(height: 2),
         Text(kCultureCodeBeliefs, textAlign: TextAlign.center,
-          style: context.text.bodySmall?.copyWith(fontStyle: FontStyle.italic, color: const Color(0xFF388E3C))),
+          style: context.text.bodySmall?.copyWith(fontStyle: FontStyle.italic, color: const Color(0xFF388E3C), fontSize: 11)),
       ]),
     );
   }
@@ -156,30 +156,30 @@ class _CaringValuesCardState extends State<CaringValuesCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: Space.md),
+      margin: const EdgeInsets.symmetric(vertical: Space.sm),
       decoration: BoxDecoration(
-        color: AppColors.surface, borderRadius: Corners.lgAll,
+        color: AppColors.surface, borderRadius: Corners.mdAll,
         border: Border.all(color: AppColors.washBorder),
-        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.05), blurRadius: 4)],
+        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 2)],
       ),
       child: Column(children: [
         InkWell(
           onTap: () => setState(() => _expanded = !_expanded),
-          borderRadius: Corners.lgAll,
+          borderRadius: Corners.mdAll,
           child: Padding(
-            padding: const EdgeInsets.all(Space.lg),
+            padding: const EdgeInsets.all(Space.md),
             child: Row(children: [
               Container(
-                padding: const EdgeInsets.all(Space.sm),
-                decoration: BoxDecoration(color: AppColors.successLight, borderRadius: Corners.mdAll),
-                child: const Icon(Icons.favorite, color: AppColors.success, size: 24),
+                padding: const EdgeInsets.all(Space.xs),
+                decoration: BoxDecoration(color: AppColors.successLight, borderRadius: Corners.smAll),
+                child: const Icon(Icons.favorite, color: AppColors.success, size: 18),
               ),
-              Space.gapMd,
+              Space.gapSm,
               Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(kCoreValuesTitle, style: context.text.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
-                Text('Tap to explore our values', style: context.text.bodySmall?.copyWith(color: AppColors.textSecondary)),
+                Text(kCoreValuesTitle, style: context.text.bodyMedium?.copyWith(fontWeight: FontWeight.bold, fontSize: 13)),
+                Text('Tap to explore our values', style: context.text.bodySmall?.copyWith(color: AppColors.textSecondary, fontSize: 11)),
               ])),
-              Icon(_expanded ? Icons.expand_less : Icons.expand_more, color: AppColors.textSecondary),
+              Icon(_expanded ? Icons.expand_less : Icons.expand_more, color: AppColors.textSecondary, size: 18),
             ]),
           ),
         ),
@@ -195,22 +195,22 @@ class _CaringValuesCardState extends State<CaringValuesCard> {
 
   Widget _buildValues(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(Space.lg, 0, Space.lg, Space.lg),
+      padding: const EdgeInsets.fromLTRB(Space.md, 0, Space.md, Space.md),
       child: Column(children: [
-        const Divider(), Space.gapSm,
+        const Divider(height: 1), Space.gapXs,
         for (final v in kCaringValues)
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: Space.xs),
+            padding: const EdgeInsets.symmetric(vertical: 3),
             child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Container(
-                width: 28, height: 28, alignment: Alignment.center,
+                width: 20, height: 20, alignment: Alignment.center,
                 decoration: BoxDecoration(color: AppColors.primary, shape: BoxShape.circle),
-                child: Text(v.letter, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14)),
+                child: Text(v.letter, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 10)),
               ),
-              Space.gapMd,
+              Space.gapSm,
               Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Text(v.word, style: context.text.titleSmall?.copyWith(fontWeight: FontWeight.w600)),
-                Text('— ${v.meaning}', style: context.text.bodySmall?.copyWith(fontStyle: FontStyle.italic, color: AppColors.textSecondary)),
+                Text(v.word, style: context.text.bodySmall?.copyWith(fontWeight: FontWeight.w600, fontSize: 12)),
+                Text('— ${v.meaning}', style: context.text.bodySmall?.copyWith(fontStyle: FontStyle.italic, color: AppColors.textSecondary, fontSize: 10)),
               ])),
             ]),
           ),
@@ -226,17 +226,17 @@ class VisionSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(Space.xl),
+      padding: const EdgeInsets.all(Space.md),
       decoration: BoxDecoration(
         gradient: LinearGradient(colors: [const Color(0xFFE3F2FD), const Color(0xFFBBDEFB)]),
-        borderRadius: Corners.lgAll,
+        borderRadius: Corners.mdAll,
       ),
       child: Column(children: [
-        const Icon(Icons.visibility, color: Color(0xFF1565C0), size: 40),
-        Space.gapMd,
-        Text(kVisionTitle, style: context.text.titleLarge?.copyWith(fontWeight: FontWeight.bold, color: const Color(0xFF1565C0))),
-        Space.gapMd,
-        Text(kVisionText, textAlign: TextAlign.center, style: context.text.bodyLarge?.copyWith(fontStyle: FontStyle.italic, height: 1.5)),
+        const Icon(Icons.visibility, color: Color(0xFF1565C0), size: 28),
+        Space.gapSm,
+        Text(kVisionTitle, style: context.text.titleSmall?.copyWith(fontWeight: FontWeight.bold, color: const Color(0xFF1565C0), fontSize: 14)),
+        Space.gapSm,
+        Text(kVisionText, textAlign: TextAlign.center, style: context.text.bodySmall?.copyWith(fontStyle: FontStyle.italic, height: 1.4, fontSize: 12)),
       ]),
     );
   }
@@ -249,15 +249,15 @@ class PhilosophyCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(Space.lg),
+      padding: const EdgeInsets.all(Space.md),
       decoration: BoxDecoration(
         gradient: LinearGradient(colors: [const Color(0xFFFCE4EC), const Color(0xFFF8BBD9)]),
-        borderRadius: Corners.lgAll,
+        borderRadius: Corners.mdAll,
       ),
       child: Column(children: [
-        Text(kPhilosophySanskrit, style: context.text.headlineSmall?.copyWith(fontWeight: FontWeight.bold, color: const Color(0xFFC2185B))),
-        Space.gapSm,
-        Text(kPhilosophyText, textAlign: TextAlign.center, style: context.text.titleMedium?.copyWith(fontStyle: FontStyle.italic, color: const Color(0xFF880E4F))),
+        Text(kPhilosophySanskrit, style: context.text.titleSmall?.copyWith(fontWeight: FontWeight.bold, color: const Color(0xFFC2185B), fontSize: 14)),
+        const SizedBox(height: 4),
+        Text(kPhilosophyText, textAlign: TextAlign.center, style: context.text.bodySmall?.copyWith(fontStyle: FontStyle.italic, color: const Color(0xFF880E4F), fontSize: 12)),
       ]),
     );
   }
@@ -271,36 +271,36 @@ class IndiaAcronymCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(Space.lg),
+      padding: const EdgeInsets.all(Space.md),
       decoration: BoxDecoration(
         gradient: LinearGradient(colors: [AppColors.primaryLight, AppColors.primaryLight.withValues(alpha: 0.5)]),
-        borderRadius: Corners.lgAll,
+        borderRadius: Corners.mdAll,
         border: Border.all(color: AppColors.primary.withValues(alpha: 0.3)),
       ),
       child: Column(children: [
         Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           for (final c in kIndiaAcronym.split(''))
             Container(
-              width: 36, height: 36, margin: const EdgeInsets.symmetric(horizontal: 2),
+              width: 28, height: 28, margin: const EdgeInsets.symmetric(horizontal: 2),
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 color: AppColors.primary,
                 borderRadius: Corners.smAll,
               ),
-              child: Text(c, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Colors.white)),
+              child: Text(c, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.white)),
             ),
         ]),
-        Space.gapMd,
-        Text(kIndiaFull, textAlign: TextAlign.center, style: context.text.titleSmall?.copyWith(fontWeight: FontWeight.w600, color: AppColors.primaryDark)),
+        Space.gapSm,
+        Text(kIndiaFull, textAlign: TextAlign.center, style: context.text.bodySmall?.copyWith(fontWeight: FontWeight.w600, color: AppColors.primaryDark, fontSize: 12)),
         if (expanded) ...[
-          Space.gapMd, const Divider(), Space.gapSm,
+          Space.gapSm, const Divider(height: 1), Space.gapXs,
           for (final p in kIndiaPoints.take(5))
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: Space.xs),
+              padding: const EdgeInsets.symmetric(vertical: 2),
               child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                Icon(Icons.check_circle, color: AppColors.primary, size: 18),
-                Space.gapSm,
-                Expanded(child: Text(p, style: context.text.bodySmall)),
+                Icon(Icons.check_circle, color: AppColors.primary, size: 14),
+                Space.gapXs,
+                Expanded(child: Text(p, style: context.text.bodySmall?.copyWith(fontSize: 11))),
               ]),
             ),
         ],
