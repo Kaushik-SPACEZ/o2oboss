@@ -132,6 +132,11 @@ abstract final class AppColors {
   static const dangerLight = Color(0xFFFEE2E2);
   static const purple = Color(0xFF7C3AED);
   static const purpleLight = Color(0xFFF3E8FF);
+  
+  // Premium gold accents
+  static const gold = Color(0xFFD4AF37);
+  static const goldLight = Color(0xFFF5E6C8);
+  static const goldDark = Color(0xFFB8960C);
 
   // Darker text shades for use on the light status backgrounds, so pill
   // labels keep at least 4.5:1 contrast.

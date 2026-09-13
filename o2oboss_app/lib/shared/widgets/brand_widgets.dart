@@ -1,46 +1,56 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import '../../app/theme/app_colors.dart';
 import '../../app/theme/app_spacing.dart';
 import '../../app/theme/app_typography.dart';
 import '../../core/brand/brand_philosophy.dart';
 
-/// Animated tagline banner for login/auth screens
+/// Animated tagline banner for login/auth screens - Premium glass effect
 class TaglineBanner extends StatelessWidget {
   const TaglineBanner({super.key, this.compact = false});
   final bool compact;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(compact ? Space.sm : Space.md),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [AppColors.primaryLight.withOpacity(0.6), AppColors.primaryLight.withOpacity(0.2)],
-          begin: Alignment.topLeft, end: Alignment.bottomRight,
+    return ClipRRect(
+      borderRadius: Corners.mdAll,
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
+        child: Container(
+          padding: EdgeInsets.all(compact ? Space.sm : Space.md),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [AppColors.primaryLight.withOpacity(0.8), AppColors.primaryLight.withOpacity(0.4)],
+              begin: Alignment.topLeft, end: Alignment.bottomRight,
+            ),
+            borderRadius: Corners.mdAll,
+            border: Border.all(color: Colors.white.withOpacity(0.3)),
+            boxShadow: [
+              BoxShadow(color: AppColors.primary.withOpacity(0.08), blurRadius: 12, offset: const Offset(0, 4)),
+            ],
+          ),
+          child: Column(
+            children: [
+              Text(kTaglinePrimary,
+                textAlign: TextAlign.center,
+                style: context.text.titleSmall?.copyWith(
+                  fontWeight: FontWeight.bold, color: AppColors.primaryDark, letterSpacing: 0.3,
+                )),
+              SizedBox(height: compact ? 2 : Space.xs),
+              Text(kTaglineSecondary,
+                textAlign: TextAlign.center,
+                style: context.text.bodySmall?.copyWith(
+                  fontStyle: FontStyle.italic, color: AppColors.textSecondary, height: 1.3,
+                )),
+            ],
+          ),
         ),
-        borderRadius: Corners.mdAll,
-        border: Border.all(color: AppColors.primary.withOpacity(0.2)),
-      ),
-      child: Column(
-        children: [
-          Text(kTaglinePrimary,
-            textAlign: TextAlign.center,
-            style: context.text.titleSmall?.copyWith(
-              fontWeight: FontWeight.bold, color: AppColors.primaryDark, letterSpacing: 0.3,
-            )),
-          SizedBox(height: compact ? 2 : Space.xs),
-          Text(kTaglineSecondary,
-            textAlign: TextAlign.center,
-            style: context.text.bodySmall?.copyWith(
-              fontStyle: FontStyle.italic, color: AppColors.textSecondary, height: 1.3,
-            )),
-        ],
       ),
     );
   }
 }
 
-/// Inspirational quote card for home screens (role-specific)
+/// Inspirational quote card for home screens (role-specific) - Premium with layered shadows
 class InspirationCard extends StatelessWidget {
   const InspirationCard({super.key, required this.title, required this.subtitle, this.icon, this.gradient});
   final String title;
@@ -53,33 +63,49 @@ class InspirationCard extends StatelessWidget {
     final colors = gradient ?? [AppColors.primary.withOpacity(0.1), AppColors.primaryLight];
     return Container(
       margin: const EdgeInsets.symmetric(vertical: Space.xs),
-      padding: const EdgeInsets.all(Space.md),
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: colors, begin: Alignment.topLeft, end: Alignment.bottomRight),
         borderRadius: Corners.mdAll,
-        boxShadow: [BoxShadow(color: AppColors.primary.withOpacity(0.08), blurRadius: 4, offset: const Offset(0, 1))],
-      ),
-      child: Row(
-        children: [
-          if (icon != null) ...[
-            Container(
-              padding: const EdgeInsets.all(Space.xs),
-              decoration: BoxDecoration(color: Colors.white.withOpacity(0.8), shape: BoxShape.circle),
-              child: Icon(icon, color: AppColors.primary, size: 18),
-            ),
-            Space.gapSm,
-          ],
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(title, style: context.text.titleSmall?.copyWith(fontWeight: FontWeight.w600, color: AppColors.primaryDark, fontSize: 14)),
-                const SizedBox(height: 2),
-                Text(subtitle, style: context.text.bodySmall?.copyWith(fontStyle: FontStyle.italic, color: AppColors.textSecondary, fontSize: 12)),
-              ],
-            ),
-          ),
+        boxShadow: [
+          BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 4, offset: const Offset(0, 1)),
+          BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 8, offset: const Offset(0, 4)),
         ],
+      ),
+      child: ClipRRect(
+        borderRadius: Corners.mdAll,
+        child: Container(
+          padding: const EdgeInsets.all(Space.md),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(colors: colors, begin: Alignment.topLeft, end: Alignment.bottomRight),
+            borderRadius: Corners.mdAll,
+            border: Border.all(color: Colors.white.withOpacity(0.5)),
+          ),
+          child: Row(
+            children: [
+              if (icon != null) ...[
+                Container(
+                  padding: const EdgeInsets.all(Space.xs),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    boxShadow: [BoxShadow(color: AppColors.primary.withOpacity(0.15), blurRadius: 6, offset: const Offset(0, 2))],
+                  ),
+                  child: Icon(icon, color: AppColors.primary, size: 18),
+                ),
+                Space.gapSm,
+              ],
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(title, style: context.text.titleSmall?.copyWith(fontWeight: FontWeight.w600, color: AppColors.primaryDark, fontSize: 14)),
+                    const SizedBox(height: 2),
+                    Text(subtitle, style: context.text.bodySmall?.copyWith(fontStyle: FontStyle.italic, color: AppColors.textSecondary, fontSize: 12)),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

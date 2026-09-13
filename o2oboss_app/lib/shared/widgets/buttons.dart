@@ -1,11 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import '../../app/theme/app_colors.dart';
 import '../../app/theme/app_spacing.dart';
 
-enum ButtonKind { primary, secondary, danger, success, text }
+enum ButtonKind { primary, secondary, danger, success, text, premium }
 
 /// The one button used for actions. Shows a spinner while its async action
 /// runs and ignores extra taps, so nothing is submitted twice.
@@ -50,6 +51,7 @@ class _AppButtonState extends State<AppButton> {
 
   Future<void> _tap() async {
     if (_busy || widget.onPressed == null) return;
+    HapticFeedback.lightImpact(); // Premium haptic feedback
     final result = widget.onPressed!();
     if (result is Future) {
       setState(() => _busy = true);
@@ -103,6 +105,7 @@ class _AppButtonState extends State<AppButton> {
         ),
       ButtonKind.secondary => OutlinedButton(onPressed: onPressed, child: content),
       ButtonKind.text => TextButton(onPressed: onPressed, child: content),
+      ButtonKind.premium => _PremiumGradientButton(onPressed: onPressed, child: content),
     };
     return Semantics(
       button: true,
@@ -112,7 +115,7 @@ class _AppButtonState extends State<AppButton> {
   }
 }
 
-/// Square-ish quick action: icon on a tinted tile with a short label below.
+/// Square-ish quick action: icon on a tinted tile with a short label below - Premium with shadows
 class QuickAction extends StatelessWidget {
   const QuickAction({
     super.key,
@@ -129,45 +132,64 @@ class QuickAction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: AppColors.surface,
-      shape: const RoundedRectangleBorder(
+    return Container(
+      decoration: BoxDecoration(
         borderRadius: Corners.lgAll,
-        side: BorderSide(color: AppColors.border),
+        boxShadow: [
+          BoxShadow(color: Colors.black.withOpacity(0.02), blurRadius: 4, offset: const Offset(0, 1)),
+          BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 8, offset: const Offset(0, 4)),
+        ],
       ),
-      clipBehavior: Clip.antiAlias,
-      child: InkWell(
-        onTap: onTap,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: Space.md, vertical: Space.lg),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Badge(
-                isLabelVisible: badge > 0,
-                label: Text('$badge'),
-                child: Container(
-                  width: 44,
-                  height: 44,
-                  decoration: BoxDecoration(
-                    color: AppColors.primaryLight,
-                    borderRadius: Corners.mdAll,
+      child: Material(
+        color: AppColors.surface,
+        shape: const RoundedRectangleBorder(
+          borderRadius: Corners.lgAll,
+          side: BorderSide(color: AppColors.border),
+        ),
+        clipBehavior: Clip.antiAlias,
+        child: InkWell(
+          onTap: () {
+            HapticFeedback.selectionClick();
+            onTap();
+          },
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: Space.md, vertical: Space.lg),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Badge(
+                  isLabelVisible: badge > 0,
+                  label: Text('$badge'),
+                  child: Container(
+                    width: 44,
+                    height: 44,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [AppColors.primaryLight, AppColors.primary.withOpacity(0.15)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                      borderRadius: Corners.mdAll,
+                      boxShadow: [
+                        BoxShadow(color: AppColors.primary.withOpacity(0.1), blurRadius: 4, offset: const Offset(0, 2)),
+                      ],
+                    ),
+                    child: Icon(icon, color: AppColors.primary, size: 22),
                   ),
-                  child: Icon(icon, color: AppColors.primary, size: 22),
                 ),
-              ),
-              Space.gapSm,
-              Text(
-                label,
-                textAlign: TextAlign.center,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: Theme.of(context)
-                    .textTheme
-                    .labelMedium
-                    ?.copyWith(fontWeight: FontWeight.w600),
-              ),
-            ],
+                Space.gapSm,
+                Text(
+                  label,
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: Theme.of(context)
+                      .textTheme
+                      .labelMedium
+                      ?.copyWith(fontWeight: FontWeight.w600),
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -186,11 +208,68 @@ class AddFab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton(
-      heroTag: null,
-      tooltip: label,
-      onPressed: onPressed,
-      child: const Icon(Icons.add, size: 28),
+    return Container(
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        gradient: const LinearGradient(
+          colors: [Color(0xFF2563EB), Color(0xFF1E40AF)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        boxShadow: [
+          BoxShadow(color: AppColors.primary.withOpacity(0.4), blurRadius: 12, offset: const Offset(0, 4)),
+        ],
+      ),
+      child: FloatingActionButton(
+        heroTag: null,
+        tooltip: label,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        onPressed: () {
+          HapticFeedback.mediumImpact();
+          onPressed();
+        },
+        child: const Icon(Icons.add, size: 28, color: Colors.white),
+      ),
+    );
+  }
+}
+
+/// Premium gradient button internal widget
+class _PremiumGradientButton extends StatelessWidget {
+  const _PremiumGradientButton({required this.onPressed, required this.child});
+  final VoidCallback? onPressed;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: Sizes.buttonHeight,
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [Color(0xFF2563EB), Color(0xFF1E40AF)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: Corners.mdAll,
+        boxShadow: [
+          BoxShadow(color: AppColors.primary.withOpacity(0.3), blurRadius: 8, offset: const Offset(0, 4)),
+        ],
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: onPressed,
+          borderRadius: Corners.mdAll,
+          splashColor: Colors.white.withOpacity(0.2),
+          child: Center(
+            child: DefaultTextStyle(
+              style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 14),
+              child: IconTheme(data: const IconThemeData(color: Colors.white, size: 20), child: child),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

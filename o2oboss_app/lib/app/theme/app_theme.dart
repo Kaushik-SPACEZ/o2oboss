@@ -70,15 +70,26 @@ ThemeData buildAppTheme() {
       titleTextStyle: text.titleLarge,
       toolbarHeight: 56,
     ),
-    cardTheme: const CardThemeData(
+    cardTheme: CardThemeData(
       color: AppColors.surface,
       elevation: 0,
       margin: EdgeInsets.zero,
       clipBehavior: Clip.antiAlias,
-      shape: RoundedRectangleBorder(
+      shadowColor: Colors.black.withOpacity(0.08),
+      shape: const RoundedRectangleBorder(
         borderRadius: Corners.lgAll,
         side: BorderSide(color: AppColors.border),
       ),
+    ),
+    // Premium page transitions
+    pageTransitionsTheme: const PageTransitionsTheme(
+      builders: {
+        TargetPlatform.android: FadeUpwardsPageTransitionsBuilder(),
+        TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
+        TargetPlatform.windows: FadeUpwardsPageTransitionsBuilder(),
+        TargetPlatform.macOS: FadeUpwardsPageTransitionsBuilder(),
+        TargetPlatform.linux: FadeUpwardsPageTransitionsBuilder(),
+      },
     ),
     inputDecorationTheme: InputDecorationThemeData(
       filled: true,
