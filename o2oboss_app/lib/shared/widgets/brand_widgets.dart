@@ -95,18 +95,19 @@ class AbundanceBanner extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: Space.lg, horizontal: Space.xl),
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: [const Color(0xFFFFF3E0), const Color(0xFFFFE0B2)],
+          colors: [AppColors.primaryLight, AppColors.primaryLight.withValues(alpha: 0.5)],
           begin: Alignment.topCenter, end: Alignment.bottomCenter,
         ),
         borderRadius: Corners.lgAll,
+        border: Border.all(color: AppColors.primary.withValues(alpha: 0.3)),
       ),
       child: Column(
         children: [
           Text(kMottoAbundance, textAlign: TextAlign.center,
-            style: context.text.headlineSmall?.copyWith(fontWeight: FontWeight.bold, color: const Color(0xFFE65100))),
+            style: context.text.headlineSmall?.copyWith(fontWeight: FontWeight.bold, color: AppColors.primaryDark)),
           Space.gapXs,
           Text(kMottoAbundanceSub, textAlign: TextAlign.center,
-            style: context.text.titleMedium?.copyWith(fontStyle: FontStyle.italic, color: const Color(0xFFFF8F00))),
+            style: context.text.titleMedium?.copyWith(fontStyle: FontStyle.italic, color: AppColors.primary)),
         ],
       ),
     );
@@ -272,9 +273,9 @@ class IndiaAcronymCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(Space.lg),
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [const Color(0xFFFF9800).withOpacity(0.1), const Color(0xFF4CAF50).withOpacity(0.1)]),
+        gradient: LinearGradient(colors: [AppColors.primaryLight, AppColors.primaryLight.withValues(alpha: 0.5)]),
         borderRadius: Corners.lgAll,
-        border: Border.all(color: const Color(0xFFFF9800).withOpacity(0.3)),
+        border: Border.all(color: AppColors.primary.withValues(alpha: 0.3)),
       ),
       child: Column(children: [
         Row(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -283,22 +284,21 @@ class IndiaAcronymCard extends StatelessWidget {
               width: 36, height: 36, margin: const EdgeInsets.symmetric(horizontal: 2),
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: c == 'I' ? const Color(0xFFFF9800) : c == 'N' ? Colors.white : c == 'D' ? const Color(0xFF4CAF50) : c == 'A' ? const Color(0xFF2196F3) : Colors.white,
+                color: AppColors.primary,
                 borderRadius: Corners.smAll,
-                border: Border.all(color: Colors.grey.shade300),
               ),
-              child: Text(c, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: c == 'N' || c == 'A' && c != 'I' ? Colors.black87 : Colors.white)),
+              child: Text(c, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Colors.white)),
             ),
         ]),
         Space.gapMd,
-        Text(kIndiaFull, textAlign: TextAlign.center, style: context.text.titleSmall?.copyWith(fontWeight: FontWeight.w600)),
+        Text(kIndiaFull, textAlign: TextAlign.center, style: context.text.titleSmall?.copyWith(fontWeight: FontWeight.w600, color: AppColors.primaryDark)),
         if (expanded) ...[
           Space.gapMd, const Divider(), Space.gapSm,
           for (final p in kIndiaPoints.take(5))
             Padding(
               padding: const EdgeInsets.symmetric(vertical: Space.xs),
               child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                const Icon(Icons.check_circle, color: Color(0xFF4CAF50), size: 18),
+                Icon(Icons.check_circle, color: AppColors.primary, size: 18),
                 Space.gapSm,
                 Expanded(child: Text(p, style: context.text.bodySmall)),
               ]),
