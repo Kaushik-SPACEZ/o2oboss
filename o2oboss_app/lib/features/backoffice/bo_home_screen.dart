@@ -102,23 +102,27 @@ class BoHomeScreen extends ConsumerWidget {
           QuickActionTile(
             icon: Icons.add,
             label: t.boNewEnquiryShort,
+            subtitle: t.qaSubNewEnquiry,
             onTap: () => context.push(Routes.refer()),
           ),
           QuickActionTile(
             icon: Icons.call_outlined,
             label: t.listCalls,
+            subtitle: t.qaSubCalls,
             tint: ActionTint.green,
             onTap: () => context.push(Routes.calls),
           ),
           QuickActionTile(
             icon: Icons.event_outlined,
             label: t.listVisits,
+            subtitle: t.qaSubVisits,
             tint: ActionTint.purple,
             onTap: () => context.push(Routes.appointments),
           ),
           QuickActionTile(
             icon: Icons.chat_bubble_outline,
             label: t.navChat,
+            subtitle: t.qaSubChat,
             tint: ActionTint.pink,
             onTap: () => context.push('/chats'),
           ),

@@ -146,24 +146,28 @@ class VendorHomeScreen extends ConsumerWidget {
           QuickActionTile(
             icon: Icons.event_outlined,
             label: t.listVisits,
+            subtitle: t.qaSubVisits,
             tint: ActionTint.purple,
             onTap: () => context.push(Routes.appointments),
           ),
           QuickActionTile(
             icon: Icons.construction_outlined,
             label: t.listProjects,
+            subtitle: t.qaSubTrack,
             tint: ActionTint.amber,
             onTap: () => context.push(Routes.projects),
           ),
           QuickActionTile(
             icon: Icons.currency_rupee,
             label: t.listPayments,
+            subtitle: t.qaSubPayments,
             tint: ActionTint.green,
             onTap: () => context.push(Routes.payments),
           ),
           QuickActionTile(
             icon: Icons.storefront_outlined,
             label: t.vnBusinessProfile,
+            subtitle: t.qaSubBusiness,
             onTap: () => context.push(Routes.vendorCompany),
           ),
         ]),

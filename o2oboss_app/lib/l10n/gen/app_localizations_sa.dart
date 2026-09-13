@@ -1455,6 +1455,15 @@ class AppLocalizationsSa extends AppLocalizations {
   String get goHome => 'Go to home';
 
   @override
+  String get greetHelloAfternoon => 'Good afternoon,';
+
+  @override
+  String get greetHelloEvening => 'Good evening,';
+
+  @override
+  String get greetHelloMorning => 'Good morning,';
+
+  @override
   String greetingAfternoon(String name) {
     return 'Good afternoon, $name';
   }
@@ -3251,6 +3260,51 @@ class AppLocalizationsSa extends AppLocalizations {
 
   @override
   String get qVisit => 'Visits';
+
+  @override
+  String get qaSubAddUser => 'Create a login';
+
+  @override
+  String get qaSubAudit => 'Who changed what';
+
+  @override
+  String get qaSubBusiness => 'Your company details';
+
+  @override
+  String get qaSubCalls => 'Calls made and received';
+
+  @override
+  String get qaSubChat => 'Customers and vendors';
+
+  @override
+  String get qaSubHelp => 'Questions and support';
+
+  @override
+  String get qaSubMessages => 'Chat with O2O Boss';
+
+  @override
+  String get qaSubNewEnquiry => 'Add a customer\'s need';
+
+  @override
+  String get qaSubNewRequirement => 'Tell us what you need';
+
+  @override
+  String get qaSubPayments => 'Money received';
+
+  @override
+  String get qaSubQuotations => 'Compare and decide';
+
+  @override
+  String get qaSubReports => 'See how it\'s going';
+
+  @override
+  String get qaSubSettings => 'Rules and options';
+
+  @override
+  String get qaSubTrack => 'Track progress';
+
+  @override
+  String get qaSubVisits => 'Plan your visits';
 
   @override
   String get qualifyComplete => 'Mark as qualified';

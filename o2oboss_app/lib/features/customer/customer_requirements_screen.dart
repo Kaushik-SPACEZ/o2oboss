@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../app/router/routes.dart';
 import '../../core/l10n/l10n.dart';
+import '../../shared/widgets/buttons.dart';
 import '../../shared/widgets/enquiry_list.dart';
 import '../../shared/widgets/feedback.dart';
 import '../../shared/widgets/layout.dart';
@@ -17,12 +18,7 @@ class CustomerRequirementsScreen extends StatelessWidget {
     void post() => context.push(Routes.refer());
     return PageScaffold(
       title: t.navRequirement,
-      fab: FloatingActionButton.extended(
-        heroTag: null,
-        onPressed: post,
-        icon: const Icon(Icons.add),
-        label: Text(t.cuNewRequirement),
-      ),
+      fab: AddFab(label: t.cuNewRequirement, onPressed: post),
       body: EnquiryListBody(
         listKey: 'customer',
         filters: [

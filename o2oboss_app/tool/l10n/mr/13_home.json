@@ -1,0 +1,20 @@
+{
+  "greetHelloMorning": "सुप्रभात,",
+  "greetHelloAfternoon": "नमस्कार,",
+  "greetHelloEvening": "शुभ संध्याकाळ,",
+  "qaSubAddUser": "लॉगिन तयार करा",
+  "qaSubSettings": "नियम आणि पर्याय",
+  "qaSubReports": "कसे चालले आहे ते पाहा",
+  "qaSubAudit": "कोणी काय बदलले",
+  "qaSubNewEnquiry": "ग्राहकाची गरज जोडा",
+  "qaSubCalls": "केलेले आणि आलेले कॉल",
+  "qaSubVisits": "तुमच्या भेटींचे नियोजन करा",
+  "qaSubChat": "ग्राहक आणि विक्रेते",
+  "qaSubNewRequirement": "तुम्हाला काय हवे ते सांगा",
+  "qaSubQuotations": "तुलना करून ठरवा",
+  "qaSubTrack": "प्रगती पाहा",
+  "qaSubMessages": "O2O Boss शी चॅट",
+  "qaSubHelp": "प्रश्न आणि मदत",
+  "qaSubPayments": "मिळालेले पैसे",
+  "qaSubBusiness": "तुमच्या कंपनीची माहिती"
+}

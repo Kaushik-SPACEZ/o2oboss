@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:o2oboss_app/app/router/app_router.dart';
@@ -80,12 +81,29 @@ void main() {
 
     expect(c.read(themeProvider), AppThemeId.brand);
     expect(AppColors.primary, AppPalette.brand.primary);
-    final ctx = tester.element(find.byType(NavigationBar));
+    final ctx = tester.element(find.text('Products').first);
     expect(Theme.of(ctx).colorScheme.primary, AppPalette.brand.primary);
     expect(c.read(storageProvider).themeId, 'brand');
 
     c.read(routerProvider).go('/customer/products');
     await settle(tester);
     expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('long pages scroll without a scrollbar, even on desktop', (tester) async {
+    // Desktop browsers are where Flutter would normally draw the scrollbar.
+    debugDefaultTargetPlatformOverride = TargetPlatform.windows;
+    try {
+      await pumpApp(tester, as: 'customer', location: '/products/p_split_ac');
+      expect(find.byType(Scrollbar), findsNothing);
+      expect(find.byType(RawScrollbar), findsNothing);
+      final list = find.byType(Scrollable).first;
+      final before = tester.state<ScrollableState>(list).position.pixels;
+      await tester.drag(list, const Offset(0, -400));
+      await settle(tester, 1);
+      expect(tester.state<ScrollableState>(list).position.pixels, greaterThan(before));
+    } finally {
+      debugDefaultTargetPlatformOverride = null;
+    }
   });
 }

@@ -23,6 +23,7 @@ class O2OBossApp extends ConsumerWidget {
     return MaterialApp.router(
       title: company,
       debugShowCheckedModeBanner: false,
+      scrollBehavior: const _NoScrollbars(),
       theme: _themes.putIfAbsent(themeId, buildAppTheme),
       routerConfig: router,
       locale: locale,
@@ -41,3 +42,13 @@ class O2OBossApp extends ConsumerWidget {
     );
   }
 }
+
+/// Pages still scroll with touch, mouse wheel, trackpad and keyboard, but
+/// without the scrollbar line Flutter adds on desktop browsers.
+class _NoScrollbars extends MaterialScrollBehavior {
+  const _NoScrollbars();
+
+  @override
+  Widget buildScrollbar(BuildContext context, Widget child, ScrollableDetails details) => child;
+}
+

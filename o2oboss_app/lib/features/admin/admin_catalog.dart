@@ -33,12 +33,7 @@ String _questionType(AppLocalizations t, QuestionType q) => switch (q) {
       QuestionType.date => t.stQDate,
     };
 
-FloatingActionButton _addButton(String label, VoidCallback onPressed) => FloatingActionButton.extended(
-      heroTag: null,
-      onPressed: onPressed,
-      icon: const Icon(Icons.add),
-      label: Text(label),
-    );
+Widget _addButton(String label, VoidCallback onPressed) => AddFab(label: label, onPressed: onPressed);
 
 /// A card of rows separated by dividers.
 class _RowsCard extends StatelessWidget {

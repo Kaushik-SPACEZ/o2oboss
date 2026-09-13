@@ -1469,6 +1469,15 @@ class AppLocalizationsTa extends AppLocalizations {
   String get goHome => 'முகப்புக்குச் செல்';
 
   @override
+  String get greetHelloAfternoon => 'மதிய வணக்கம்,';
+
+  @override
+  String get greetHelloEvening => 'மாலை வணக்கம்,';
+
+  @override
+  String get greetHelloMorning => 'காலை வணக்கம்,';
+
+  @override
   String greetingAfternoon(String name) {
     return 'மதிய வணக்கம், $name';
   }
@@ -3273,6 +3282,51 @@ class AppLocalizationsTa extends AppLocalizations {
 
   @override
   String get qVisit => 'வருகைகள்';
+
+  @override
+  String get qaSubAddUser => 'உள்நுழைவை உருவாக்கு';
+
+  @override
+  String get qaSubAudit => 'யார் எதை மாற்றினார்';
+
+  @override
+  String get qaSubBusiness => 'உங்கள் நிறுவன விவரங்கள்';
+
+  @override
+  String get qaSubCalls => 'செய்த, வந்த அழைப்புகள்';
+
+  @override
+  String get qaSubChat => 'வாடிக்கையாளர்கள், விற்பனையாளர்கள்';
+
+  @override
+  String get qaSubHelp => 'கேள்விகள், உதவி';
+
+  @override
+  String get qaSubMessages => 'O2O Boss உடன் அரட்டை';
+
+  @override
+  String get qaSubNewEnquiry => 'வாடிக்கையாளர் தேவையைச் சேர்';
+
+  @override
+  String get qaSubNewRequirement => 'என்ன வேண்டும் என்று சொல்லுங்கள்';
+
+  @override
+  String get qaSubPayments => 'பெற்ற பணம்';
+
+  @override
+  String get qaSubQuotations => 'ஒப்பிட்டு முடிவு செய்யுங்கள்';
+
+  @override
+  String get qaSubReports => 'எப்படி நடக்கிறது என்று பாருங்கள்';
+
+  @override
+  String get qaSubSettings => 'விதிகள், விருப்பங்கள்';
+
+  @override
+  String get qaSubTrack => 'முன்னேற்றத்தைப் பாருங்கள்';
+
+  @override
+  String get qaSubVisits => 'வருகைகளைத் திட்டமிடுங்கள்';
 
   @override
   String get qualifyComplete => 'தேவை உறுதி எனக் குறி';

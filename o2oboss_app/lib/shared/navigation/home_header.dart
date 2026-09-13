@@ -9,6 +9,7 @@ import '../../app/theme/app_typography.dart';
 import '../../core/data/app_store.dart';
 import '../../core/data/db_queries.dart';
 import '../../core/l10n/l10n.dart';
+import '../widgets/city_scene.dart';
 import '../widgets/pills.dart';
 
 /// Top of every role's Home: brand on the start side; search, notifications
@@ -75,7 +76,9 @@ class NotificationBell extends ConsumerWidget {
   }
 }
 
-/// "Good morning, Arun" with a one-line summary under it.
+/// "Good evening," over the person's first name in large type, a one-line
+/// summary, and a small city drawing on the end side (hidden when space or
+/// large text would crowd the words).
 class Greeting extends ConsumerWidget {
   const Greeting({super.key, required this.summary});
 
@@ -89,30 +92,42 @@ class Greeting extends ConsumerWidget {
     final first = me.name.split(' ').first;
     final hour = DateTime.now().hour;
     final hello = hour < 12
-        ? t.greetingMorning(first)
+        ? t.greetHelloMorning
         : hour < 17
-            ? t.greetingAfternoon(first)
-            : t.greetingEvening(first);
-    // Two lines: a bold hello, then the day's summary in a lighter weight.
+            ? t.greetHelloAfternoon
+            : t.greetHelloEvening;
+    final roomy = MediaQuery.sizeOf(context).width >= 340 &&
+        MediaQuery.textScalerOf(context).scale(1) <= 1.3;
     return Padding(
       padding: const EdgeInsets.only(top: Space.sm, bottom: Space.xl),
-      child: Semantics(
-        header: true,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(hello, style: context.text.displaySmall),
-            const SizedBox(height: 4),
-            Text(
-              summary,
-              style: context.text.bodyLarge?.copyWith(
-                fontSize: 20,
-                height: 1.3,
-                color: AppColors.textSecondary,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Expanded(
+            child: Semantics(
+              header: true,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(hello,
+                      style: context.text.titleMedium
+                          ?.copyWith(fontWeight: FontWeight.w400, color: AppColors.text)),
+                  const SizedBox(height: 2),
+                  Text(
+                    first,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: AppType.weight(context.text.displaySmall!, FontWeight.w800),
+                  ),
+                  const SizedBox(height: 6),
+                  Text(summary,
+                      style: context.text.bodyLarge?.copyWith(color: AppColors.textSecondary)),
+                ],
               ),
             ),
-          ],
-        ),
+          ),
+          if (roomy) ...[Space.gapMd, const CityScene()],
+        ],
       ),
     );
   }

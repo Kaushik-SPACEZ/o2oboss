@@ -54,11 +54,7 @@ class _FollowUpsScreenState extends ConsumerState<FollowUpsScreen> {
 
     return PageScaffold(
       title: t.navFollowUps,
-      fab: FloatingActionButton.extended(
-        onPressed: () => addFollowUpFlow(context, ref),
-        icon: const Icon(Icons.add),
-        label: Text(t.fuAdd),
-      ),
+      fab: AddFab(label: t.fuAdd, onPressed: () => addFollowUpFlow(context, ref)),
       body: ListView(
         padding: EdgeInsets.fromLTRB(0, Space.sm, 0, 120),
         children: [

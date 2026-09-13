@@ -6,6 +6,7 @@ import '../../app/router/routes.dart';
 import '../../core/data/app_store.dart';
 import '../../core/data/permissions.dart';
 import '../../core/l10n/l10n.dart';
+import '../../shared/widgets/buttons.dart';
 import '../../shared/widgets/enquiry_list.dart';
 import '../../shared/widgets/layout.dart';
 import 'bo_filters.dart';
@@ -25,11 +26,7 @@ class OpsEnquiriesScreen extends ConsumerWidget {
     return PageScaffold(
       title: t.navEnquiries,
       fab: canCreate
-          ? FloatingActionButton.extended(
-              onPressed: () => context.push(Routes.refer()),
-              icon: const Icon(Icons.add),
-              label: Text(t.boNewEnquiryShort),
-            )
+          ? AddFab(label: t.boNewEnquiryShort, onPressed: () => context.push(Routes.refer()))
           : null,
       body: EnquiryListBody(listKey: listKey, filters: opsListFilters(t)),
     );

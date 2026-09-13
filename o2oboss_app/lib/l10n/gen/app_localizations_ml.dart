@@ -1463,6 +1463,15 @@ class AppLocalizationsMl extends AppLocalizations {
   String get goHome => 'ഹോമിലേക്ക് പോകുക';
 
   @override
+  String get greetHelloAfternoon => 'നമസ്കാരം,';
+
+  @override
+  String get greetHelloEvening => 'ശുഭ സായാഹ്നം,';
+
+  @override
+  String get greetHelloMorning => 'സുപ്രഭാതം,';
+
+  @override
   String greetingAfternoon(String name) {
     return 'നമസ്കാരം, $name';
   }
@@ -3263,6 +3272,51 @@ class AppLocalizationsMl extends AppLocalizations {
 
   @override
   String get qVisit => 'സന്ദർശനങ്ങൾ';
+
+  @override
+  String get qaSubAddUser => 'ലോഗിൻ ഉണ്ടാക്കുക';
+
+  @override
+  String get qaSubAudit => 'ആര് എന്ത് മാറ്റി';
+
+  @override
+  String get qaSubBusiness => 'നിങ്ങളുടെ കമ്പനി വിവരങ്ങൾ';
+
+  @override
+  String get qaSubCalls => 'ചെയ്തതും വന്നതുമായ കോളുകൾ';
+
+  @override
+  String get qaSubChat => 'ഉപഭോക്താക്കളും വെണ്ടർമാരും';
+
+  @override
+  String get qaSubHelp => 'ചോദ്യങ്ങളും സഹായവും';
+
+  @override
+  String get qaSubMessages => 'O2O Boss-മായി ചാറ്റ്';
+
+  @override
+  String get qaSubNewEnquiry => 'ഉപഭോക്താവിന്റെ ആവശ്യം ചേർക്കുക';
+
+  @override
+  String get qaSubNewRequirement => 'എന്താണ് വേണ്ടതെന്ന് പറയൂ';
+
+  @override
+  String get qaSubPayments => 'ലഭിച്ച പണം';
+
+  @override
+  String get qaSubQuotations => 'താരതമ്യം ചെയ്ത് തീരുമാനിക്കൂ';
+
+  @override
+  String get qaSubReports => 'എങ്ങനെ പോകുന്നു എന്ന് കാണുക';
+
+  @override
+  String get qaSubSettings => 'നിയമങ്ങളും ഓപ്ഷനുകളും';
+
+  @override
+  String get qaSubTrack => 'പുരോഗതി കാണുക';
+
+  @override
+  String get qaSubVisits => 'സന്ദർശനങ്ങൾ പ്ലാൻ ചെയ്യുക';
 
   @override
   String get qualifyComplete => 'ആവശ്യം ഉറപ്പായി എന്ന് രേഖപ്പെടുത്തുക';

@@ -99,11 +99,13 @@ class CustomerHomeScreen extends ConsumerWidget {
             QuickActionTile(
               icon: Icons.add,
               label: t.cuNewRequirement,
+              subtitle: t.qaSubNewRequirement,
               onTap: () => context.push(Routes.refer()),
             ),
           QuickActionTile(
             icon: Icons.request_quote_outlined,
             label: t.navQuotations,
+            subtitle: t.qaSubQuotations,
             tint: ActionTint.purple,
             count: waiting.length,
             onTap: () => context.go('/customer/quotations'),
@@ -111,12 +113,14 @@ class CustomerHomeScreen extends ConsumerWidget {
           QuickActionTile(
             icon: Icons.inventory_2_outlined,
             label: t.navOrders,
+            subtitle: t.qaSubTrack,
             tint: ActionTint.amber,
             onTap: () => context.push(Routes.projects),
           ),
           QuickActionTile(
             icon: Icons.chat_bubble_outline,
             label: t.cuMessages,
+            subtitle: t.qaSubMessages,
             tint: ActionTint.pink,
             onTap: () => context.push('/chats'),
           ),
@@ -124,6 +128,7 @@ class CustomerHomeScreen extends ConsumerWidget {
             QuickActionTile(
               icon: Icons.help_outline,
               label: t.helpTitle,
+              subtitle: t.qaSubHelp,
               tint: ActionTint.green,
               onTap: () => context.push(Routes.help),
             ),

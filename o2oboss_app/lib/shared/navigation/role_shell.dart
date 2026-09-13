@@ -3,7 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../app/theme/app_colors.dart';
+import '../../app/theme/app_motion.dart';
 import '../../app/theme/app_spacing.dart';
+import '../../app/theme/app_typography.dart';
 import '../../core/data/app_store.dart';
 import '../../core/data/db_queries.dart';
 import '../../core/l10n/l10n.dart';
@@ -70,23 +72,11 @@ class RoleShell extends ConsumerWidget {
 
     return Scaffold(
       body: shell,
-      bottomNavigationBar: DecoratedBox(
-        decoration: const BoxDecoration(
-          border: Border(top: BorderSide(color: AppColors.border)),
-        ),
-        child: NavigationBar(
-          selectedIndex: shell.currentIndex,
-          onDestinationSelected: _go,
-          destinations: [
-            for (var i = 0; i < tabs.length; i++)
-              NavigationDestination(
-                icon: icon(tabs[i], i, active: false),
-                selectedIcon: icon(tabs[i], i, active: true),
-                label: tabs[i].label(t),
-                tooltip: '',
-              ),
-          ],
-        ),
+      bottomNavigationBar: _BottomTabs(
+        tabs: tabs,
+        badges: badges,
+        current: shell.currentIndex,
+        onTap: _go,
       ),
     );
   }
@@ -126,3 +116,119 @@ class RoleShell extends ConsumerWidget {
     return [for (final tab in tabs) badgeFor(tab.path)];
   }
 }
+
+/// Bottom bar: outlined icons, and for the open tab a filled icon, a bold
+/// label and a short underline, so the current tab never relies on colour
+/// alone. Long translated labels shrink to fit instead of wrapping.
+class _BottomTabs extends StatelessWidget {
+  const _BottomTabs({
+    required this.tabs,
+    required this.badges,
+    required this.current,
+    required this.onTap,
+  });
+
+  final List<RoleTab> tabs;
+  final List<int> badges;
+  final int current;
+  final ValueChanged<int> onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.t;
+    return DecoratedBox(
+      decoration: const BoxDecoration(
+        color: AppColors.surface,
+        border: Border(top: BorderSide(color: AppColors.border)),
+      ),
+      child: SafeArea(
+        top: false,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            for (var i = 0; i < tabs.length; i++)
+              Expanded(
+                child: _TabItem(
+                  tab: tabs[i],
+                  label: tabs[i].label(t),
+                  badge: badges[i],
+                  active: i == current,
+                  onTap: () => onTap(i),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _TabItem extends StatelessWidget {
+  const _TabItem({
+    required this.tab,
+    required this.label,
+    required this.badge,
+    required this.active,
+    required this.onTap,
+  });
+
+  final RoleTab tab;
+  final String label;
+  final int badge;
+  final bool active;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final icon = Icon(
+      active ? tab.activeIcon : tab.icon,
+      size: 24,
+      color: active ? AppColors.primary : AppColors.textSecondary,
+    );
+    return Semantics(
+      button: true,
+      selected: active,
+      label: badge > 0 ? '$label, $badge' : label,
+      excludeSemantics: true,
+      child: InkWell(
+        onTap: onTap,
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(minHeight: 64),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(2, 10, 2, 6),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                badge > 0
+                    ? Badge(label: Text(badge > 99 ? '99+' : '$badge'), child: icon)
+                    : icon,
+                const SizedBox(height: 4),
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    label,
+                    maxLines: 1,
+                    style: context.text.labelSmall?.copyWith(
+                      fontSize: 12,
+                      fontWeight: active ? FontWeight.w700 : FontWeight.w500,
+                      color: active ? AppColors.primaryDark : AppColors.textSecondary,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 5),
+                AnimatedContainer(
+                  duration: MediaQuery.disableAnimationsOf(context) ? Duration.zero : Motion.micro,
+                  curve: Motion.enter,
+                  width: active ? 22 : 0,
+                  height: 3,
+                  decoration: BoxDecoration(color: AppColors.primary, borderRadius: Corners.pillAll),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+

@@ -59,12 +59,7 @@ class _AdminUsersScreenState extends ConsumerState<AdminUsersScreen> {
 
     return PageScaffold(
       title: t.adUsers,
-      fab: FloatingActionButton.extended(
-        heroTag: null,
-        onPressed: () => context.push(Routes.adminNewUser),
-        icon: const Icon(Icons.person_add_alt_1_outlined),
-        label: Text(t.adAddUserShort),
-      ),
+      fab: AddFab(label: t.adAddUserShort, onPressed: () => context.push(Routes.adminNewUser)),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(0, Space.sm, 0, Space.huge + Space.xxxl),
         children: [

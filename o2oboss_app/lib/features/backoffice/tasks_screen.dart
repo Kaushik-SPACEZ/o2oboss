@@ -43,11 +43,7 @@ class _TasksScreenState extends ConsumerState<TasksScreen> {
 
     return PageScaffold(
       title: t.navTasks,
-      fab: FloatingActionButton.extended(
-        onPressed: () => _add(context),
-        icon: const Icon(Icons.add),
-        label: Text(t.taskAdd),
-      ),
+      fab: AddFab(label: t.taskAdd, onPressed: () => _add(context)),
       body: ListView(
         padding: const EdgeInsets.fromLTRB(0, Space.sm, 0, 120),
         children: [

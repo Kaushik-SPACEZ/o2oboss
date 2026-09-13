@@ -127,23 +127,27 @@ class AdminHomeScreen extends ConsumerWidget {
           QuickActionTile(
             icon: Icons.person_add_alt_1_outlined,
             label: t.adAddUserShort,
+            subtitle: t.qaSubAddUser,
             onTap: () => context.push(Routes.adminNewUser),
           ),
           QuickActionTile(
             icon: Icons.tune,
             label: t.adSettings,
+            subtitle: t.qaSubSettings,
             tint: ActionTint.amber,
             onTap: () => context.push(Routes.adminSettings),
           ),
           QuickActionTile(
             icon: Icons.bar_chart,
             label: t.navReports,
+            subtitle: t.qaSubReports,
             tint: ActionTint.purple,
             onTap: () => context.go('/admin/reports'),
           ),
           QuickActionTile(
             icon: Icons.history,
             label: t.adAudit,
+            subtitle: t.qaSubAudit,
             tint: ActionTint.green,
             onTap: () => context.push(Routes.adminAudit),
           ),

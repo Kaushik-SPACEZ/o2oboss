@@ -45,6 +45,9 @@ void main() {
   testWidgets('sales home renders its main action', (tester) async {
     await pumpApp(tester, as: 'sales');
     expect(find.text('Refer a customer'), findsOneWidget);
+    // The list sits below the inspiration card, so scroll it into view.
+    await tester.scrollUntilVisible(find.text('Latest referrals'), 300,
+        scrollable: find.byType(Scrollable).first);
     expect(find.text('Latest referrals'), findsOneWidget);
   });
 

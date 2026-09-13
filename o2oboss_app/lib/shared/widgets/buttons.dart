@@ -174,3 +174,23 @@ class QuickAction extends StatelessWidget {
     );
   }
 }
+
+/// Round "+" button for adding something to a list. The label becomes the
+/// tooltip and what screen readers announce, so the button itself stays
+/// small and never grows with a long translation.
+class AddFab extends StatelessWidget {
+  const AddFab({super.key, required this.label, required this.onPressed});
+
+  final String label;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      heroTag: null,
+      tooltip: label,
+      onPressed: onPressed,
+      child: const Icon(Icons.add, size: 28),
+    );
+  }
+}

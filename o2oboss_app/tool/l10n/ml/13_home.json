@@ -1,0 +1,20 @@
+{
+  "greetHelloMorning": "സുപ്രഭാതം,",
+  "greetHelloAfternoon": "നമസ്കാരം,",
+  "greetHelloEvening": "ശുഭ സായാഹ്നം,",
+  "qaSubAddUser": "ലോഗിൻ ഉണ്ടാക്കുക",
+  "qaSubSettings": "നിയമങ്ങളും ഓപ്ഷനുകളും",
+  "qaSubReports": "എങ്ങനെ പോകുന്നു എന്ന് കാണുക",
+  "qaSubAudit": "ആര് എന്ത് മാറ്റി",
+  "qaSubNewEnquiry": "ഉപഭോക്താവിന്റെ ആവശ്യം ചേർക്കുക",
+  "qaSubCalls": "ചെയ്തതും വന്നതുമായ കോളുകൾ",
+  "qaSubVisits": "സന്ദർശനങ്ങൾ പ്ലാൻ ചെയ്യുക",
+  "qaSubChat": "ഉപഭോക്താക്കളും വെണ്ടർമാരും",
+  "qaSubNewRequirement": "എന്താണ് വേണ്ടതെന്ന് പറയൂ",
+  "qaSubQuotations": "താരതമ്യം ചെയ്ത് തീരുമാനിക്കൂ",
+  "qaSubTrack": "പുരോഗതി കാണുക",
+  "qaSubMessages": "O2O Boss-മായി ചാറ്റ്",
+  "qaSubHelp": "ചോദ്യങ്ങളും സഹായവും",
+  "qaSubPayments": "ലഭിച്ച പണം",
+  "qaSubBusiness": "നിങ്ങളുടെ കമ്പനി വിവരങ്ങൾ"
+}

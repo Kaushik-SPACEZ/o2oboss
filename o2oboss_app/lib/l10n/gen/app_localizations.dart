@@ -2612,6 +2612,24 @@ abstract class AppLocalizations {
   /// **'Go to home'**
   String get goHome;
 
+  /// No description provided for @greetHelloAfternoon.
+  ///
+  /// In en, this message translates to:
+  /// **'Good afternoon,'**
+  String get greetHelloAfternoon;
+
+  /// No description provided for @greetHelloEvening.
+  ///
+  /// In en, this message translates to:
+  /// **'Good evening,'**
+  String get greetHelloEvening;
+
+  /// No description provided for @greetHelloMorning.
+  ///
+  /// In en, this message translates to:
+  /// **'Good morning,'**
+  String get greetHelloMorning;
+
   /// No description provided for @greetingAfternoon.
   ///
   /// In en, this message translates to:
@@ -5701,6 +5719,96 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Visits'**
   String get qVisit;
+
+  /// No description provided for @qaSubAddUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Create a login'**
+  String get qaSubAddUser;
+
+  /// No description provided for @qaSubAudit.
+  ///
+  /// In en, this message translates to:
+  /// **'Who changed what'**
+  String get qaSubAudit;
+
+  /// No description provided for @qaSubBusiness.
+  ///
+  /// In en, this message translates to:
+  /// **'Your company details'**
+  String get qaSubBusiness;
+
+  /// No description provided for @qaSubCalls.
+  ///
+  /// In en, this message translates to:
+  /// **'Calls made and received'**
+  String get qaSubCalls;
+
+  /// No description provided for @qaSubChat.
+  ///
+  /// In en, this message translates to:
+  /// **'Customers and vendors'**
+  String get qaSubChat;
+
+  /// No description provided for @qaSubHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Questions and support'**
+  String get qaSubHelp;
+
+  /// No description provided for @qaSubMessages.
+  ///
+  /// In en, this message translates to:
+  /// **'Chat with O2O Boss'**
+  String get qaSubMessages;
+
+  /// No description provided for @qaSubNewEnquiry.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a customer\'s need'**
+  String get qaSubNewEnquiry;
+
+  /// No description provided for @qaSubNewRequirement.
+  ///
+  /// In en, this message translates to:
+  /// **'Tell us what you need'**
+  String get qaSubNewRequirement;
+
+  /// No description provided for @qaSubPayments.
+  ///
+  /// In en, this message translates to:
+  /// **'Money received'**
+  String get qaSubPayments;
+
+  /// No description provided for @qaSubQuotations.
+  ///
+  /// In en, this message translates to:
+  /// **'Compare and decide'**
+  String get qaSubQuotations;
+
+  /// No description provided for @qaSubReports.
+  ///
+  /// In en, this message translates to:
+  /// **'See how it\'s going'**
+  String get qaSubReports;
+
+  /// No description provided for @qaSubSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Rules and options'**
+  String get qaSubSettings;
+
+  /// No description provided for @qaSubTrack.
+  ///
+  /// In en, this message translates to:
+  /// **'Track progress'**
+  String get qaSubTrack;
+
+  /// No description provided for @qaSubVisits.
+  ///
+  /// In en, this message translates to:
+  /// **'Plan your visits'**
+  String get qaSubVisits;
 
   /// No description provided for @qualifyComplete.
   ///

@@ -1,0 +1,20 @@
+{
+  "greetHelloMorning": "ಶುಭೋದಯ,",
+  "greetHelloAfternoon": "ನಮಸ್ಕಾರ,",
+  "greetHelloEvening": "ಶುಭ ಸಂಜೆ,",
+  "qaSubAddUser": "ಲಾಗಿನ್ ರಚಿಸಿ",
+  "qaSubSettings": "ನಿಯಮ, ಆಯ್ಕೆಗಳು",
+  "qaSubReports": "ಹೇಗೆ ನಡೆಯುತ್ತಿದೆ ನೋಡಿ",
+  "qaSubAudit": "ಯಾರು ಏನು ಬದಲಿಸಿದರು",
+  "qaSubNewEnquiry": "ಗ್ರಾಹಕರ ಅಗತ್ಯ ಸೇರಿಸಿ",
+  "qaSubCalls": "ಮಾಡಿದ, ಬಂದ ಕರೆಗಳು",
+  "qaSubVisits": "ನಿಮ್ಮ ಭೇಟಿಗಳನ್ನು ಯೋಜಿಸಿ",
+  "qaSubChat": "ಗ್ರಾಹಕರು, ಮಾರಾಟಗಾರರು",
+  "qaSubNewRequirement": "ನಿಮಗೆ ಏನು ಬೇಕು ತಿಳಿಸಿ",
+  "qaSubQuotations": "ಹೋಲಿಸಿ ನಿರ್ಧರಿಸಿ",
+  "qaSubTrack": "ಪ್ರಗತಿ ನೋಡಿ",
+  "qaSubMessages": "O2O Boss ಜೊತೆ ಚಾಟ್",
+  "qaSubHelp": "ಪ್ರಶ್ನೆ, ಸಹಾಯ",
+  "qaSubPayments": "ಬಂದ ಹಣ",
+  "qaSubBusiness": "ನಿಮ್ಮ ಕಂಪನಿ ವಿವರ"
+}

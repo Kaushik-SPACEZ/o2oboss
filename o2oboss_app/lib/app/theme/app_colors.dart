@@ -16,6 +16,10 @@ class AppPalette {
     required this.washSoft,
     required this.washBorder,
     required this.brandText,
+    required this.sceneWindow,
+    required this.sceneLight,
+    required this.sceneMid,
+    required this.sceneDark,
   });
 
   /// Buttons, links, active icons. Keeps 4.5:1 against white.
@@ -33,6 +37,12 @@ class AppPalette {
   /// The "Boss" half of the logo.
   final Color brandText;
 
+  /// The small city drawing beside the Home greeting, back to front.
+  final Color sceneWindow;
+  final Color sceneLight;
+  final Color sceneMid;
+  final Color sceneDark;
+
   /// Blue, from the CRM mobile design specification.
   static const classic = AppPalette(
     primary: Color(0xFF2563EB),
@@ -44,6 +54,10 @@ class AppPalette {
     washSoft: Color(0xFFEEF2FF),
     washBorder: Color(0xFFDCE3FB),
     brandText: Color(0xFF111827),
+    sceneWindow: Color(0xFFE8EBFD),
+    sceneLight: Color(0xFFD5DBFA),
+    sceneMid: Color(0xFFB8C1F5),
+    sceneDark: Color(0xFF8F9BEA),
   );
 
   /// Orange, navy and white from the o2oboss.com website. The website's
@@ -59,6 +73,10 @@ class AppPalette {
     washSoft: Color(0xFFFFF1E8),
     washBorder: Color(0xFFFBD9C4),
     brandText: Color(0xFF2B3990),
+    sceneWindow: Color(0xFFFFF1E8),
+    sceneLight: Color(0xFFFFDCC7),
+    sceneMid: Color(0xFFFDBF9C),
+    sceneDark: Color(0xFFEE9A6C),
   );
 
   static AppPalette of(AppThemeId id) => switch (id) {
@@ -80,6 +98,10 @@ abstract final class AppColors {
   static Color get primaryLight => _palette.primaryLight;
   static Color get blueLight => _palette.primarySoft;
   static Color get brandText => _palette.brandText;
+  static Color get sceneWindow => _palette.sceneWindow;
+  static Color get sceneLight => _palette.sceneLight;
+  static Color get sceneMid => _palette.sceneMid;
+  static Color get sceneDark => _palette.sceneDark;
 
   static const text = Color(0xFF111827);
   static const textSecondary = Color(0xFF6B7280);

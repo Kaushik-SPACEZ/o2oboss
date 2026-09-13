@@ -1,0 +1,20 @@
+{
+  "greetHelloMorning": "Good morning,",
+  "greetHelloAfternoon": "Good afternoon,",
+  "greetHelloEvening": "Good evening,",
+  "qaSubAddUser": "Create a login",
+  "qaSubSettings": "Rules and options",
+  "qaSubReports": "See how it's going",
+  "qaSubAudit": "Who changed what",
+  "qaSubNewEnquiry": "Add a customer's need",
+  "qaSubCalls": "Calls made and received",
+  "qaSubVisits": "Plan your visits",
+  "qaSubChat": "Customers and vendors",
+  "qaSubNewRequirement": "Tell us what you need",
+  "qaSubQuotations": "Compare and decide",
+  "qaSubTrack": "Track progress",
+  "qaSubMessages": "Chat with O2O Boss",
+  "qaSubHelp": "Questions and support",
+  "qaSubPayments": "Money received",
+  "qaSubBusiness": "Your company details"
+}
