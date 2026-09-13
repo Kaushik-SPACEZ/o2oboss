@@ -63,11 +63,11 @@ class FranchiseHomeScreen extends ConsumerWidget {
       children: [
         const HomeTopBar(),
         Greeting(summary: t.frHomeSummary(open)),
-        const InspirationCard(
+        InspirationCard(
           title: kFranchiseQuote,
           subtitle: kFranchiseQuoteBody,
           icon: Icons.business,
-          gradient: [Color(0xFFFCE4EC), Color(0xFFF8BBD9)],
+          gradient: [AppColors.primaryLight, AppColors.primaryLight.withValues(alpha: 0.5)],
         ),
         if (f == null)
           NoteCard(tone: Tone.warning, text: t.frNoTerritory)
