@@ -114,13 +114,14 @@ ThemeData buildAppTheme() {
       errorMaxLines: 3,
       helperMaxLines: 3,
     ),
+    // Filled buttons use ORANGE (accent color) for primary actions
     filledButtonTheme: FilledButtonThemeData(
       style: FilledButton.styleFrom(
         minimumSize: const Size(64, Sizes.buttonHeight),
         padding: const EdgeInsets.symmetric(horizontal: 20),
         shape: const RoundedRectangleBorder(borderRadius: Corners.mdAll),
         textStyle: text.labelLarge,
-        backgroundColor: AppColors.primary,
+        backgroundColor: AppColors.accent, // Orange for primary actions
         foregroundColor: Colors.white,
         disabledBackgroundColor: AppColors.track,
         disabledForegroundColor: AppColors.textMuted,

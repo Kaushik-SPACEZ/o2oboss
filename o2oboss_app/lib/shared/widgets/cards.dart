@@ -5,8 +5,8 @@ import '../../app/theme/app_spacing.dart';
 import '../../app/theme/app_typography.dart';
 import 'layout.dart';
 
-/// Pale blue-lavender card with a soft gradient. Holds the one thing a page
-/// wants attention on: the Home action, the next task, an enquiry's header.
+/// Clean hero card - simple light background with border
+/// No gradients, clean and professional
 class SoftHeroCard extends StatelessWidget {
   const SoftHeroCard({
     super.key,
@@ -22,27 +22,18 @@ class SoftHeroCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.transparent,
+      color: AppColors.primaryLight.withValues(alpha: 0.5),
       shape: RoundedRectangleBorder(
         borderRadius: Corners.xlAll,
-        side: BorderSide(color: AppColors.washBorder),
+        side: BorderSide(color: AppColors.border),
       ),
       clipBehavior: Clip.antiAlias,
-      child: Ink(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: AlignmentDirectional.topStart,
-            end: AlignmentDirectional.bottomEnd,
-            colors: [AppColors.washSoft, AppColors.surface],
-          ),
-        ),
-        child: InkWell(onTap: onTap, child: Padding(padding: padding, child: child)),
-      ),
+      child: InkWell(onTap: onTap, child: Padding(padding: padding, child: child)),
     );
   }
 }
 
-/// Round white badge with a soft blue glow, standing in for an illustration.
+/// Clean icon container - simple circle with light background
 class GlowIcon extends StatelessWidget {
   const GlowIcon(this.icon, {super.key, this.size = 56, this.color});
 
@@ -58,20 +49,18 @@ class GlowIcon extends StatelessWidget {
     return Container(
       width: size,
       height: size,
+      alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: AppColors.surface,
+        color: AppColors.primaryLight,
         shape: BoxShape.circle,
-        boxShadow: [
-          BoxShadow(color: color.withValues(alpha: 0.22), blurRadius: 18, offset: const Offset(0, 6)),
-        ],
       ),
       child: Icon(icon, color: color, size: size * 0.5),
     );
   }
 }
 
-/// The look of a filled blue pill button, for cards that are tappable as a
-/// whole (so the card, not this label, carries the tap and semantics).
+/// The look of a filled ORANGE pill button for primary actions
+/// Orange is the CTA color, used sparingly for important actions
 class PillButtonLabel extends StatelessWidget {
   const PillButtonLabel(this.label, {super.key});
 
@@ -82,7 +71,7 @@ class PillButtonLabel extends StatelessWidget {
     return ExcludeSemantics(
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: Space.xl, vertical: 11),
-        decoration: BoxDecoration(color: AppColors.primary, borderRadius: Corners.pillAll),
+        decoration: BoxDecoration(color: AppColors.accent, borderRadius: Corners.pillAll),
         child: Text(
           label,
           style: context.text.labelLarge?.copyWith(color: Colors.white, fontWeight: FontWeight.w700),

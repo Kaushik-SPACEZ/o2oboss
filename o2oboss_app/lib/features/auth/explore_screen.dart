@@ -39,11 +39,12 @@ extension GoalText on Goal {
         Goal.buy => Icons.shopping_bag_outlined,
       };
 
+  /// Clean accent colors - using brand colors
   Color get accent => switch (this) {
-        Goal.earn => const Color(0xFF15803D),
-        Goal.grow => AppColors.primary,
-        Goal.start => const Color(0xFF7C3AED),
-        Goal.buy => const Color(0xFFB45309),
+        Goal.earn => const Color(0xFF168A52), // Success green
+        Goal.grow => AppColors.accent, // Orange for actions
+        Goal.start => const Color(0xFF7C3AED), // Purple
+        Goal.buy => AppColors.primary, // Royal blue
       };
 }
 
@@ -211,6 +212,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
   }
 }
 
+/// Clean hero card - Royal Blue background (structure color)
+/// Simple, readable, no heavy effects
 class _Hero extends StatelessWidget {
   const _Hero();
 
@@ -223,12 +226,7 @@ class _Hero extends StatelessWidget {
       padding: const EdgeInsetsDirectional.fromSTEB(Space.xl, Space.xl, Space.md, Space.xl),
       decoration: BoxDecoration(
         borderRadius: Corners.xlAll,
-        gradient: LinearGradient(
-          begin: AlignmentDirectional.topStart,
-          end: AlignmentDirectional.bottomEnd,
-          // One hue, deepening: stays clean in both colour themes.
-          colors: [AppColors.primary, Color.lerp(AppColors.primary, Colors.black, 0.22)!],
-        ),
+        color: AppColors.primary, // Solid royal blue, no gradient
       ),
       child: Row(
         children: [
