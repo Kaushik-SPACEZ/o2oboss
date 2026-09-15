@@ -31,7 +31,7 @@ class AboutScreen extends StatelessWidget {
         Space.gapXl,
         
         // Work Philosophy
-        _buildSection(context, kWorkPhilosophyTitle, kWorkPhilosophyText, Icons.work, const Color(0xFF7B1FA2)),
+        _buildSection(context, kWorkPhilosophyTitle, kWorkPhilosophyText, Icons.work, AppColors.primary),
         Space.gapXl,
         
         // INDIA Acronym
@@ -70,9 +70,9 @@ class AboutScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(Space.lg),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: Corners.lgAll,
-        border: Border.all(color: color.withOpacity(0.3)),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Column(children: [
         Icon(icon, color: color, size: 32),
@@ -88,21 +88,22 @@ class AboutScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(Space.lg),
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [const Color(0xFFE8F5E9), const Color(0xFFC8E6C9)]),
+        color: AppColors.successLight,
         borderRadius: Corners.lgAll,
+        border: Border.all(color: AppColors.border),
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Row(children: [
-          const Icon(Icons.flag, color: Color(0xFF2E7D32)),
+          Icon(Icons.flag, color: AppColors.success),
           Space.gapSm,
-          Text(kObjectivesTitle, style: context.text.titleMedium?.copyWith(fontWeight: FontWeight.bold, color: const Color(0xFF2E7D32))),
+          Text(kObjectivesTitle, style: context.text.titleMedium?.copyWith(fontWeight: FontWeight.bold, color: AppColors.success)),
         ]),
         Space.gapMd,
         for (final obj in kObjectives)
           Padding(
             padding: const EdgeInsets.symmetric(vertical: Space.xs),
             child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              const Icon(Icons.check_circle, color: Color(0xFF4CAF50), size: 18),
+              Icon(Icons.check_circle, color: AppColors.success, size: 18),
               Space.gapSm,
               Expanded(child: Text(obj, style: context.text.bodyMedium)),
             ]),
@@ -115,14 +116,14 @@ class AboutScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(Space.xl),
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [const Color(0xFFFF9800).withOpacity(0.15), const Color(0xFFFFB74D).withOpacity(0.15)]),
+        color: AppColors.accentLight,
         borderRadius: Corners.lgAll,
-        border: Border.all(color: const Color(0xFFFF9800).withOpacity(0.4)),
+        border: Border.all(color: AppColors.border),
       ),
       child: Column(children: [
-        const Icon(Icons.format_quote, color: Color(0xFFFF9800), size: 32),
+        Icon(Icons.format_quote, color: AppColors.accent, size: 32),
         Space.gapSm,
-        Text(quote, textAlign: TextAlign.center, style: context.text.titleMedium?.copyWith(fontStyle: FontStyle.italic, fontWeight: FontWeight.w600, color: const Color(0xFFE65100))),
+        Text(quote, textAlign: TextAlign.center, style: context.text.titleMedium?.copyWith(fontStyle: FontStyle.italic, fontWeight: FontWeight.w600, color: AppColors.accent)),
       ]),
     );
   }

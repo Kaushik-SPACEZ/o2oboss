@@ -175,7 +175,7 @@ class _CaringValuesCardState extends State<CaringValuesCard> {
       decoration: BoxDecoration(
         color: AppColors.surface, borderRadius: Corners.mdAll,
         border: Border.all(color: AppColors.washBorder),
-        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.04), blurRadius: 2)],
+        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.04), blurRadius: 2)],
       ),
       child: Column(children: [
         InkWell(
@@ -234,7 +234,7 @@ class _CaringValuesCardState extends State<CaringValuesCard> {
   }
 }
 
-/// Vision section for About page
+/// Vision section for About page - clean design with subtle blue tint
 class VisionSection extends StatelessWidget {
   const VisionSection({super.key});
 
@@ -243,21 +243,22 @@ class VisionSection extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(Space.md),
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [const Color(0xFFE3F2FD), const Color(0xFFBBDEFB)]),
+        color: AppColors.primaryLight,
         borderRadius: Corners.mdAll,
+        border: Border.all(color: AppColors.border),
       ),
       child: Column(children: [
-        const Icon(Icons.visibility, color: Color(0xFF1565C0), size: 28),
+        Icon(Icons.visibility, color: AppColors.primary, size: 28),
         Space.gapSm,
-        Text(kVisionTitle, style: context.text.titleSmall?.copyWith(fontWeight: FontWeight.bold, color: const Color(0xFF1565C0), fontSize: 14)),
+        Text(kVisionTitle, style: context.text.titleSmall?.copyWith(fontWeight: FontWeight.bold, color: AppColors.primary, fontSize: 14)),
         Space.gapSm,
-        Text(kVisionText, textAlign: TextAlign.center, style: context.text.bodySmall?.copyWith(fontStyle: FontStyle.italic, height: 1.4, fontSize: 12)),
+        Text(kVisionText, textAlign: TextAlign.center, style: context.text.bodySmall?.copyWith(fontStyle: FontStyle.italic, height: 1.4, fontSize: 12, color: AppColors.textSecondary)),
       ]),
     );
   }
 }
 
-/// Philosophy card with Sanskrit
+/// Philosophy card with Sanskrit - clean design with subtle accent tint
 class PhilosophyCard extends StatelessWidget {
   const PhilosophyCard({super.key});
 
@@ -266,19 +267,20 @@ class PhilosophyCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(Space.md),
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [const Color(0xFFFCE4EC), const Color(0xFFF8BBD9)]),
+        color: AppColors.accentLight,
         borderRadius: Corners.mdAll,
+        border: Border.all(color: AppColors.border),
       ),
       child: Column(children: [
-        Text(kPhilosophySanskrit, style: context.text.titleSmall?.copyWith(fontWeight: FontWeight.bold, color: const Color(0xFFC2185B), fontSize: 14)),
+        Text(kPhilosophySanskrit, style: context.text.titleSmall?.copyWith(fontWeight: FontWeight.bold, color: AppColors.accent, fontSize: 14)),
         const SizedBox(height: 4),
-        Text(kPhilosophyText, textAlign: TextAlign.center, style: context.text.bodySmall?.copyWith(fontStyle: FontStyle.italic, color: const Color(0xFF880E4F), fontSize: 12)),
+        Text(kPhilosophyText, textAlign: TextAlign.center, style: context.text.bodySmall?.copyWith(fontStyle: FontStyle.italic, color: AppColors.textSecondary, fontSize: 12)),
       ]),
     );
   }
 }
 
-/// INDIA acronym display
+/// INDIA acronym display - clean design with subtle blue tint
 class IndiaAcronymCard extends StatelessWidget {
   const IndiaAcronymCard({super.key, this.expanded = false});
   final bool expanded;
@@ -288,9 +290,9 @@ class IndiaAcronymCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(Space.md),
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: [AppColors.primaryLight, AppColors.primaryLight.withValues(alpha: 0.5)]),
+        color: AppColors.primaryLight,
         borderRadius: Corners.mdAll,
-        border: Border.all(color: AppColors.primary.withValues(alpha: 0.3)),
+        border: Border.all(color: AppColors.border),
       ),
       child: Column(children: [
         Row(mainAxisAlignment: MainAxisAlignment.center, children: [

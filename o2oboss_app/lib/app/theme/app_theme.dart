@@ -75,7 +75,7 @@ ThemeData buildAppTheme() {
       elevation: 0,
       margin: EdgeInsets.zero,
       clipBehavior: Clip.antiAlias,
-      shadowColor: Colors.black.withOpacity(0.08),
+      shadowColor: Colors.black.withValues(alpha: 0.08),
       shape: const RoundedRectangleBorder(
         borderRadius: Corners.lgAll,
         side: BorderSide(color: AppColors.border),
