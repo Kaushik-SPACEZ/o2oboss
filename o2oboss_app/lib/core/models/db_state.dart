@@ -6,6 +6,7 @@ import 'config.dart';
 import 'enquiry.dart';
 import 'json.dart';
 import 'user.dart';
+import 'waitlist.dart';
 
 /// The whole demo "database". One shared copy is read by all six roles, so a
 /// change made in one login is immediately visible in the others.
@@ -36,12 +37,13 @@ class DbState {
     this.audit = const [],
     this.feedback = const [],
     this.consents = const [],
+    this.waitlist = const [],
     this.seq = const {},
     this.chatReads = const {},
   });
 
   /// Bump when the seed or model shape changes so stale saved data is replaced.
-  static const currentSchema = 2;
+  static const currentSchema = 3;
 
   final int schemaVersion;
   final AppConfig config;
@@ -68,6 +70,9 @@ class DbState {
   final List<AuditEntry> audit;
   final List<CustomerFeedback> feedback;
   final List<ConsentRecord> consents;
+
+  /// People from places O2O Boss does not serve yet.
+  final List<WaitlistEntry> waitlist;
 
   /// Running counters used to create readable IDs such as ENQ-1031.
   final Map<String, int> seq;
@@ -100,6 +105,7 @@ class DbState {
     List<AuditEntry>? audit,
     List<CustomerFeedback>? feedback,
     List<ConsentRecord>? consents,
+    List<WaitlistEntry>? waitlist,
     Map<String, int>? seq,
     Map<String, DateTime>? chatReads,
   }) =>
@@ -129,6 +135,7 @@ class DbState {
         audit: audit ?? this.audit,
         feedback: feedback ?? this.feedback,
         consents: consents ?? this.consents,
+        waitlist: waitlist ?? this.waitlist,
         seq: seq ?? this.seq,
         chatReads: chatReads ?? this.chatReads,
       );
@@ -159,6 +166,7 @@ class DbState {
         'audit': listToJson(audit, (e) => e.toJson()),
         'feedback': listToJson(feedback, (e) => e.toJson()),
         'consents': listToJson(consents, (e) => e.toJson()),
+        'waitlist': listToJson(waitlist, (e) => e.toJson()),
         'seq': seq,
         'chatReads':
             chatReads.map((k, v) => MapEntry(k, v.toIso8601String())),
@@ -192,6 +200,7 @@ class DbState {
         audit: listOf(j['audit'], AuditEntry.fromJson),
         feedback: listOf(j['feedback'], CustomerFeedback.fromJson),
         consents: listOf(j['consents'], ConsentRecord.fromJson),
+        waitlist: listOf(j['waitlist'], WaitlistEntry.fromJson),
         seq: j['seq'] == null
             ? <String, int>{}
             : Map<String, int>.from(

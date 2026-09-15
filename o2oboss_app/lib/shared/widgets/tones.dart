@@ -92,12 +92,13 @@ IconData categoryIcon(String key) => switch (key) {
       'water' => Icons.water_drop_outlined,
       'electrical' => Icons.electrical_services_outlined,
       'furniture' => Icons.weekend_outlined,
+      'lift' => Icons.elevator_outlined,
       _ => Icons.category_outlined,
     };
 
 const categoryIconKeys = [
   'cctv', 'ac', 'solar', 'interior', 'tiles', 'jewellery', 'pooja',
-  'appliance', 'painting', 'water', 'electrical', 'furniture', 'other',
+  'appliance', 'painting', 'water', 'electrical', 'furniture', 'lift', 'other',
 ];
 
 IconData roleIcon(UserRole r) => switch (r) {

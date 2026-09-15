@@ -271,7 +271,7 @@ class _VendorCatalogScreenState extends ConsumerState<VendorCatalogScreen> {
         Text(t.vbServicesHelp, style: context.text.bodyMedium?.copyWith(color: AppColors.textSecondary)),
         SectionHeader(t.vbServices, top: Space.lg),
         CheckChips(
-          options: [for (final c in db.categories.where((c) => c.active)) (c.id, c.name)],
+          options: [for (final c in db.categories.where((c) => c.active && c.id != kSourcingCategoryId)) (c.id, c.name)],
           selected: cats,
           onToggle: (id) => setState(() => _toggle(cats, id)),
         ),

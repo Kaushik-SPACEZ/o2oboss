@@ -112,6 +112,7 @@ class _VendorsPartState extends ConsumerState<VendorsPart> {
               for (final m in exact.isEmpty ? others.take(3) : exact)
                 _MatchCard(
                   match: m,
+                  customerPick: m.vendor.id == e.preferredVendorId,
                   selected: _picked.containsKey(m.vendor.id),
                   onChanged: (on) => setState(() =>
                       on ? _picked[m.vendor.id] = m.score : _picked.remove(m.vendor.id)),
@@ -131,6 +132,7 @@ class _VendorsPartState extends ConsumerState<VendorsPart> {
                   for (final m in others)
                     _MatchCard(
                       match: m,
+                      customerPick: m.vendor.id == e.preferredVendorId,
                       selected: _picked.containsKey(m.vendor.id),
                       onChanged: (on) => setState(() =>
                           on ? _picked[m.vendor.id] = m.score : _picked.remove(m.vendor.id)),
@@ -280,9 +282,17 @@ class _AssignmentCard extends ConsumerWidget {
 }
 
 class _MatchCard extends StatelessWidget {
-  const _MatchCard({required this.match, required this.selected, required this.onChanged});
+  const _MatchCard({
+    required this.match,
+    required this.selected,
+    required this.onChanged,
+    this.customerPick = false,
+  });
 
   final VendorMatch match;
+
+  /// The customer chose this seller on a product page.
+  final bool customerPick;
   final bool selected;
   final ValueChanged<bool> onChanged;
 
@@ -322,6 +332,10 @@ class _MatchCard extends StatelessWidget {
                         tone: m.score >= 85 ? Tone.success : (m.score >= 70 ? Tone.info : Tone.neutral)),
                   ],
                 ),
+                if (customerPick) ...[
+                  Space.gapXs,
+                  StatusPill(t.vendorsCustomerPick, tone: Tone.purple, icon: Icons.favorite_border),
+                ],
                 const SizedBox(height: 2),
                 Text(
                   t.vendorsMeta(v.area, v.rating.toStringAsFixed(1), '${v.responseRate}'),

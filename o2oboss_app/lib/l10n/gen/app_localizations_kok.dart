@@ -334,6 +334,13 @@ class AppLocalizationsKok extends AppLocalizations {
   String get adPwTemp => 'Temporary, must be changed';
 
   @override
+  String get adRepAreas => 'Where our people are';
+
+  @override
+  String get adRepAreasHelp =>
+      'Customers and earners by area. Promote vendors where the numbers are highest.';
+
+  @override
   String get adRepClosed => 'Closed';
 
   @override
@@ -343,6 +350,9 @@ class AppLocalizationsKok extends AppLocalizations {
   String get adRepMonths => 'Won in the last 6 months';
 
   @override
+  String get adRepOccupations => 'What our earners do';
+
+  @override
   String get adRepServices => 'Enquiries by service';
 
   @override
@@ -350,6 +360,12 @@ class AppLocalizationsKok extends AppLocalizations {
 
   @override
   String get adRepVendors => 'Top vendors by jobs';
+
+  @override
+  String get adRepWaitlist => 'Waiting for O2O Boss';
+
+  @override
+  String get adRepWaitlistHelp => 'People from places we don\'t serve yet.';
 
   @override
   String adResetBody(String name) {
@@ -801,6 +817,9 @@ class AppLocalizationsKok extends AppLocalizations {
   String get chatWithO2O => 'O2O Boss team';
 
   @override
+  String get cityNotListed => 'My city is not listed';
+
+  @override
   String get comApproved => 'Approved';
 
   @override
@@ -1159,6 +1178,26 @@ class AppLocalizationsKok extends AppLocalizations {
   String get emptyTitle => 'Nothing here yet';
 
   @override
+  String get exHaveAccount => 'I already have an account';
+
+  @override
+  String get exOpen => 'What can I do with O2O Boss?';
+
+  @override
+  String get exSubtitle =>
+      'Earn, grow or start a business, or buy what you need. All in one place.';
+
+  @override
+  String get exTitle => 'What would you like to do?';
+
+  @override
+  String get exWhoSubtitle =>
+      'Anyone can earn with O2O Boss. This helps us train and support you.';
+
+  @override
+  String get exWhoTitle => 'Which of these describes you?';
+
+  @override
   String get faqCustomer1A =>
       'Yes. You only pay the vendor for the work you accept in the quotation.';
 
@@ -1384,6 +1423,158 @@ class AppLocalizationsKok extends AppLocalizations {
   String get frVendorsWaiting => 'Waiting';
 
   @override
+  String get fsCityLabel => 'City or town for the outlet';
+
+  @override
+  String get fsDetailsTitle => 'Your details';
+
+  @override
+  String get fsDoneBody =>
+      'Our franchise team will call you within 2 to 3 working days to plan your outlet.';
+
+  @override
+  String get fsExp3to10 => '3 to 10 years';
+
+  @override
+  String get fsExpNone => 'None yet';
+
+  @override
+  String get fsExpOver10 => 'Over 10 years';
+
+  @override
+  String get fsExpUnder3 => 'Under 3 years';
+
+  @override
+  String get fsExperienceLabel => 'Business experience';
+
+  @override
+  String get fsHeroBody =>
+      'Like the big chains: the same brand, look and products in every outlet. We set up everything; you run it and earn.';
+
+  @override
+  String fsHeroPrice(String amount) {
+    return 'Packages from $amount';
+  }
+
+  @override
+  String get fsHeroTitle => 'Start your own business, fully set up by O2O Boss';
+
+  @override
+  String get fsIncBrand => 'Brand and signboards';
+
+  @override
+  String get fsIncBrandBody =>
+      'The O2O Boss name, logo and signage, done the same way everywhere.';
+
+  @override
+  String get fsIncInterior => 'Theme and interior';
+
+  @override
+  String get fsIncInteriorBody =>
+      'Shop design, furniture, lighting and fitting, ready to open.';
+
+  @override
+  String get fsIncLaunch => 'Launch and support';
+
+  @override
+  String get fsIncLaunchBody =>
+      'Opening-day promotion, and a team to call when you need help.';
+
+  @override
+  String get fsIncProducts => 'Products and first stock';
+
+  @override
+  String get fsIncProductsBody =>
+      'A tested product range and your opening stock from our suppliers.';
+
+  @override
+  String get fsIncTraining => 'Training';
+
+  @override
+  String get fsIncTrainingBody =>
+      'How to run the outlet, serve customers and use the O2O Boss app.';
+
+  @override
+  String get fsIncludedTitle => 'What we set up for you';
+
+  @override
+  String get fsPackageLabel => 'Package';
+
+  @override
+  String get fsPackagesHelp =>
+      'Costs are a starting guide. The final cost depends on the business and your city.';
+
+  @override
+  String get fsPackagesTitle => 'Choose a size';
+
+  @override
+  String get fsPkgCustom => 'Bigger or more outlets';
+
+  @override
+  String get fsPkgCustomBody =>
+      'For several outlets or a larger space. We plan it with you.';
+
+  @override
+  String fsPkgCustomPrice(String amount) {
+    return 'Above $amount';
+  }
+
+  @override
+  String get fsPkgFlagship => 'Large store';
+
+  @override
+  String get fsPkgFlagshipBody =>
+      'A big outlet with the full range and seating or service area.';
+
+  @override
+  String fsPkgFrom(String amount) {
+    return 'From $amount';
+  }
+
+  @override
+  String get fsPkgKiosk => 'Kiosk';
+
+  @override
+  String get fsPkgKioskBody =>
+      'A small counter in a market, mall or bus stand.';
+
+  @override
+  String get fsPkgStore => 'Store';
+
+  @override
+  String get fsPkgStoreBody => 'A shop on a busy street, with more products.';
+
+  @override
+  String get fsStateLabel => 'State';
+
+  @override
+  String get fsSubmit => 'Send application';
+
+  @override
+  String get fsTitle => 'Franchise partner';
+
+  @override
+  String get fsTypeArt => 'Art gallery';
+
+  @override
+  String get fsTypeCoffee => 'Coffee kiosk';
+
+  @override
+  String get fsTypeEgg => 'Egg shop';
+
+  @override
+  String get fsTypeGroceries => 'Monthly groceries';
+
+  @override
+  String get fsTypeHygiene => 'Women\'s hygiene';
+
+  @override
+  String get fsTypeSpa => 'Ayurvedic spa';
+
+  @override
+  String get fsTypesTitle => 'Which business interests you?';
+
+  @override
   String get fuAdd => 'Add follow-up';
 
   @override
@@ -1453,6 +1644,30 @@ class AppLocalizationsKok extends AppLocalizations {
 
   @override
   String get goHome => 'Go to home';
+
+  @override
+  String get goalBuy => 'Buying';
+
+  @override
+  String get goalBuyBody => 'Find products and services near you';
+
+  @override
+  String get goalEarn => 'Earning';
+
+  @override
+  String get goalEarnBody => 'Earn money by referring customers';
+
+  @override
+  String get goalGrow => 'Growing your business';
+
+  @override
+  String get goalGrowBody => 'List your shop and get more customers';
+
+  @override
+  String get goalStart => 'Starting your business';
+
+  @override
+  String get goalStartBody => 'Own an O2O Boss franchise, fully set up for you';
 
   @override
   String get greetHelloAfternoon => 'Good afternoon,';
@@ -1653,6 +1868,9 @@ class AppLocalizationsKok extends AppLocalizations {
   String get labelAddress => 'Address';
 
   @override
+  String get labelAge => 'Age';
+
+  @override
   String get labelAll => 'All';
 
   @override
@@ -1807,6 +2025,12 @@ class AppLocalizationsKok extends AppLocalizations {
 
   @override
   String get labelYes => 'Yes';
+
+  @override
+  String get labelYourArea => 'Your area';
+
+  @override
+  String get labelYourCity => 'Your city or district';
 
   @override
   String get labelYourName => 'Your name';
@@ -2528,6 +2752,45 @@ class AppLocalizationsKok extends AppLocalizations {
   String get notifUnread => 'Unread';
 
   @override
+  String get occEmployed => 'Employed';
+
+  @override
+  String get occEmployedBody => 'Earn alongside your job';
+
+  @override
+  String get occHomemaker => 'Homemaker';
+
+  @override
+  String get occHomemakerBody => 'Earn from home, at your own pace';
+
+  @override
+  String get occLabel => 'What do you do?';
+
+  @override
+  String get occOther => 'Something else';
+
+  @override
+  String get occOtherBody => 'Anyone who knows people can earn';
+
+  @override
+  String get occRetired => 'Retired';
+
+  @override
+  String get occRetiredBody => 'Put your contacts and experience to use';
+
+  @override
+  String get occSelfEmployed => 'Self-employed';
+
+  @override
+  String get occSelfEmployedBody => 'Add income to your own work';
+
+  @override
+  String get occStudent => 'Student';
+
+  @override
+  String get occStudentBody => 'Earn in your free time';
+
+  @override
   String get offlineBanner =>
       'You\'re offline. Changes will sync when you\'re back online.';
 
@@ -2882,6 +3145,9 @@ class AppLocalizationsKok extends AppLocalizations {
   String get prDeliverTo => 'Address';
 
   @override
+  String get prEnquire => 'Enquire';
+
+  @override
   String get prFilterBrands => 'Brands';
 
   @override
@@ -2898,14 +3164,14 @@ class AppLocalizationsKok extends AppLocalizations {
   String get prHow1Body => 'No payment now. Tell us what you need.';
 
   @override
-  String get prHow1Title => 'You order here';
+  String get prHow1Title => 'You send an enquiry';
 
   @override
   String get prHow2Body =>
-      'The O2O Boss team calls you and matches a vendor near you.';
+      'The O2O Boss team calls you and checks price and stock with verified sellers near you.';
 
   @override
-  String get prHow2Title => 'We find a verified vendor';
+  String get prHow2Title => 'We find the right seller';
 
   @override
   String get prHow3Body =>
@@ -2915,7 +3181,7 @@ class AppLocalizationsKok extends AppLocalizations {
   String get prHow3Title => 'You get a quotation';
 
   @override
-  String get prHowTitle => 'How ordering works';
+  String get prHowTitle => 'How it works';
 
   @override
   String get prLess => 'One less';
@@ -2925,7 +3191,7 @@ class AppLocalizationsKok extends AppLocalizations {
 
   @override
   String prNotNear(String city) {
-    return 'Not in $city yet. Order anyway and we\'ll try to find one.';
+    return 'No verified seller in $city yet. Enquire anyway and we\'ll find one.';
   }
 
   @override
@@ -2941,22 +3207,27 @@ class AppLocalizationsKok extends AppLocalizations {
 
   @override
   String get prOrderFootnote =>
-      'No payment now. We\'ll call you to confirm the price.';
+      'No payment now. We\'ll call you with the best price.';
 
   @override
-  String get prOrderNow => 'Order now';
+  String get prOrderNow => 'Enquire now';
 
   @override
   String get prOrderPlaced =>
-      'Order placed. The O2O Boss team will call you soon.';
+      'Enquiry sent. The O2O Boss team will call you soon.';
 
   @override
   String prOrderTitle(String product) {
-    return 'Order $product';
+    return 'Enquire about $product';
   }
 
   @override
-  String get prPlaceOrder => 'Place order';
+  String prPhotoLabel(String index, String count) {
+    return 'Photo $index of $count';
+  }
+
+  @override
+  String get prPlaceOrder => 'Send enquiry';
 
   @override
   String get prPriceNote =>
@@ -2972,13 +3243,72 @@ class AppLocalizationsKok extends AppLocalizations {
 
   @override
   String get prPrivacyNote =>
-      'You deal with O2O Boss, not the vendor directly. We stay with you until the job is done.';
+      'You deal with O2O Boss, not the seller directly. We stay with you until the job is done.';
 
   @override
   String get prQuantity => 'Quantity';
 
   @override
   String get prSearchHint => 'Search products and services';
+
+  @override
+  String get prSellerAbout => 'About this seller';
+
+  @override
+  String prSellerAreas(String areas) {
+    return 'Serves $areas';
+  }
+
+  @override
+  String prSellerBrands(String brands) {
+    return 'Brands: $brands';
+  }
+
+  @override
+  String prSellerCode(String code) {
+    return 'Seller $code';
+  }
+
+  @override
+  String get prSellerPicked => 'Seller you picked';
+
+  @override
+  String prSellerRating(String rating) {
+    return 'Rated $rating out of 5 by customers';
+  }
+
+  @override
+  String prSellerReplies(String percent) {
+    return 'Replies to $percent% of requests on time';
+  }
+
+  @override
+  String prSellerSince(String year) {
+    return 'With O2O Boss since $year';
+  }
+
+  @override
+  String prSellerTitle(String place) {
+    return 'Verified seller in $place';
+  }
+
+  @override
+  String get prSellerVerified => 'Documents checked by O2O Boss';
+
+  @override
+  String get prSellersHelp =>
+      'Open a seller to see their page. Your enquiry still goes through O2O Boss.';
+
+  @override
+  String prSellersTitle(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Sellers near you',
+      one: 'Seller near you',
+    );
+    return '$_temp0';
+  }
 
   @override
   String get prSortFilter => 'Sort and filter';
@@ -3018,8 +3348,8 @@ class AppLocalizationsKok extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count verified vendors in $city',
-      one: '1 verified vendor in $city',
+      other: '$count verified sellers in $city',
+      one: '1 verified seller in $city',
     );
     return '$_temp0';
   }
@@ -4018,6 +4348,13 @@ class AppLocalizationsKok extends AppLocalizations {
       'Tell us what you need. We\'ll connect you with a trusted business.';
 
   @override
+  String get signupWhoFranchise => 'Become a franchise partner';
+
+  @override
+  String get signupWhoFranchiseDesc =>
+      'Start your own business with our full support';
+
+  @override
   String get signupWhoSales => 'Refer customers and earn';
 
   @override
@@ -4071,6 +4408,39 @@ class AppLocalizationsKok extends AppLocalizations {
   String get simpleWork => 'Work in progress';
 
   @override
+  String get soonBackToSignIn => 'Back to sign in';
+
+  @override
+  String soonDoneBody(String city) {
+    return 'O2O Boss will start in $city shortly. We will let you know as soon as we do.';
+  }
+
+  @override
+  String soonDoneTitle(String name) {
+    return 'Thank you, $name';
+  }
+
+  @override
+  String get soonNoteBody =>
+      'We\'ll start operating there shortly and let you know. Leave your details and we\'ll tell you first.';
+
+  @override
+  String soonNoteTitle(String city) {
+    return 'We\'re not in $city yet';
+  }
+
+  @override
+  String get soonNoteTitleAny => 'We\'re not in your city yet';
+
+  @override
+  String get soonNotify => 'Notify me';
+
+  @override
+  String soonWeAreThere(String city) {
+    return 'Good news: O2O Boss is already in $city. Pick your area.';
+  }
+
+  @override
   String get sourceAdmin => 'Admin';
 
   @override
@@ -4081,6 +4451,31 @@ class AppLocalizationsKok extends AppLocalizations {
 
   @override
   String get sourceSales => 'Referral partner';
+
+  @override
+  String get srcBody =>
+      'Anything under the sun: if it\'s not here, we\'ll source it for you. Ask and we\'ll get back to you.';
+
+  @override
+  String get srcButton => 'Ask us to find it';
+
+  @override
+  String srcDoneBody(String query) {
+    return 'We will get back to you with information about “$query”.';
+  }
+
+  @override
+  String get srcDoneTitle => 'Request received';
+
+  @override
+  String srcRequirement(String query) {
+    return 'Please find: $query';
+  }
+
+  @override
+  String srcTitle(String query) {
+    return 'We don\'t list “$query” yet';
+  }
 
   @override
   String get stActive => 'Active';
@@ -4768,6 +5163,13 @@ class AppLocalizationsKok extends AppLocalizations {
   String get upcoming => 'Upcoming';
 
   @override
+  String get validationAge => 'Enter your age in years';
+
+  @override
+  String get validationAgeMin =>
+      'You need to be 18 or older to earn with O2O Boss';
+
+  @override
   String get validationAmount => 'Enter an amount greater than zero.';
 
   @override
@@ -4982,6 +5384,9 @@ class AppLocalizationsKok extends AppLocalizations {
 
   @override
   String get vendorVerifyDoc => 'Mark verified';
+
+  @override
+  String get vendorsCustomerPick => 'Customer\'s pick';
 
   @override
   String get vendorsDeadline => 'Time to reply';

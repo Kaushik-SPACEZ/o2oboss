@@ -11,6 +11,7 @@ import '../../features/admin/admin_settings.dart';
 import '../../features/admin/admin_tabs.dart';
 import '../../features/admin/admin_users.dart';
 import '../../features/auth/account_gate_screens.dart';
+import '../../features/auth/explore_screen.dart';
 import '../../features/auth/forgot_password_screen.dart';
 import '../../features/auth/language_screen.dart';
 import '../../features/auth/login_screen.dart';
@@ -71,7 +72,9 @@ class _RouterRefresh extends ChangeNotifier {
   }
 }
 
-const _publicRoutes = {Routes.welcome, Routes.login, Routes.signup, Routes.signupFranchise, Routes.forgot};
+const _publicRoutes = {
+  Routes.welcome, Routes.login, Routes.explore, Routes.signup, Routes.signupFranchise, Routes.forgot,
+};
 
 String? _redirect(Ref ref, GoRouterState state) {
   final loc = state.matchedLocation;
@@ -117,7 +120,17 @@ final routerProvider = Provider<GoRouter>((ref) {
         pageBuilder: (_, s) => fadePage(s, const LanguageScreen()),
       ),
       GoRoute(path: Routes.login, pageBuilder: (_, s) => fadePage(s, const LoginScreen())),
-      GoRoute(path: Routes.signup, pageBuilder: (_, s) => pushPage(s, const SignupScreen())),
+      GoRoute(path: Routes.explore, pageBuilder: (_, s) => pushPage(s, const ExploreScreen())),
+      GoRoute(
+        path: Routes.signup,
+        pageBuilder: (_, s) => pushPage(
+          s,
+          SignupScreen(
+            initialRole: UserRole.values.asNameMap()[s.uri.queryParameters['role']],
+            initialOccupation: Occupation.values.asNameMap()[s.uri.queryParameters['occupation']],
+          ),
+        ),
+      ),
       GoRoute(path: Routes.signupFranchise, pageBuilder: (_, s) => pushPage(s, const FranchiseSignupScreen())),
       GoRoute(
         path: Routes.forgot,
@@ -217,6 +230,8 @@ List<RouteBase> pageRoutes() => [
           mode: QuotationFormMode.revise, quotationId: s.pathParameters['id'])),
       _push('/project/:id', (s) => ProjectScreen(id: s.pathParameters['id']!)),
       _push('/products/:id', (s) => ProductDetailScreen(id: s.pathParameters['id']!)),
+      _push('/products/:id/sellers/:code', (s) => SellerOfferScreen(
+          productId: s.pathParameters['id']!, code: s.pathParameters['code']!)),
       _push(Routes.appointments, (_) => const AppointmentsListScreen()),
       _push(Routes.quotations, (_) => const QuotationsListScreen()),
       _push(Routes.projects, (_) => const ProjectsListScreen()),

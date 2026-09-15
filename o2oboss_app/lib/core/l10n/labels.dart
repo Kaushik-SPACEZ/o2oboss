@@ -463,3 +463,12 @@ String auditText(AppLocalizations t, AuditEntry a) => switch (a.action) {
       AuditAction.consentGiven => t.auditConsentGiven,
       AuditAction.feedbackGiven => t.auditFeedbackGiven,
     };
+
+String occupationLabel(AppLocalizations t, Occupation o) => switch (o) {
+      Occupation.student => t.occStudent,
+      Occupation.employed => t.occEmployed,
+      Occupation.selfEmployed => t.occSelfEmployed,
+      Occupation.homemaker => t.occHomemaker,
+      Occupation.retired => t.occRetired,
+      Occupation.other => t.occOther,
+    };
