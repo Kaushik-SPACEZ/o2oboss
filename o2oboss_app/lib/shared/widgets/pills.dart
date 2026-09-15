@@ -132,7 +132,7 @@ class CountBadge extends StatelessWidget {
   }
 }
 
-/// The O2O Boss wordmark.
+/// The O2O Boss logo image.
 class BrandMark extends StatelessWidget {
   const BrandMark({super.key, this.size = 30, this.showName = true, this.light = false});
 
@@ -142,40 +142,10 @@ class BrandMark extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Container(
-          width: size,
-          height: size,
-          decoration: BoxDecoration(
-            color: light ? Colors.white : AppColors.primary,
-            borderRadius: BorderRadius.circular(size * 0.3),
-          ),
-          alignment: Alignment.center,
-          child: Text(
-            'O2O',
-            style: TextStyle(
-              color: light ? AppColors.primary : Colors.white,
-              fontWeight: FontWeight.w800,
-              fontSize: size * 0.34,
-              letterSpacing: -0.3,
-            ),
-          ),
-        ),
-        if (showName) ...[
-          SizedBox(width: size * 0.3),
-          Text(
-            'Boss',
-            style: TextStyle(
-              fontSize: size * 0.62,
-              fontWeight: FontWeight.w800,
-              letterSpacing: -0.4,
-              color: light ? Colors.white : AppColors.brandText,
-            ),
-          ),
-        ],
-      ],
+    return Image.asset(
+      'assets/images/o2o_logo.png',
+      height: size,
+      fit: BoxFit.contain,
     );
   }
 }
