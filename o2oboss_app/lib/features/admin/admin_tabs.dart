@@ -309,6 +309,34 @@ class AdminReportsScreen extends ConsumerWidget {
     ].where((x) => x.$2 > 0).toList()
       ..sort((a, b) => b.$2.compareTo(a.$2));
 
+    // Where people are, so vendor promotion goes where demand is.
+    final byArea = <String, int>{};
+    void count(String? area, String city) {
+      final key = (area == null || area.isEmpty) ? city : '$area, $city';
+      byArea[key] = (byArea[key] ?? 0) + 1;
+    }
+    for (final c in db.customers) {
+      count(c.area, c.city);
+    }
+    for (final u in db.users.where((u) => u.role == UserRole.sales)) {
+      count(u.area, u.city);
+    }
+    final areas = byArea.entries.toList()..sort((a, b) => b.value.compareTo(a.value));
+    final waiting = <String, int>{};
+    for (final w in db.waitlist) {
+      waiting[w.city] = (waiting[w.city] ?? 0) + 1;
+    }
+    final waitingCities = waiting.entries.toList()..sort((a, b) => b.value.compareTo(a.value));
+    final occupations = [
+      for (final o in Occupation.values)
+        (
+          occupationLabel(t, o),
+          db.users.where((u) => u.occupation == o).length +
+              db.waitlist.where((w) => w.occupation == o).length,
+        ),
+    ].where((x) => x.$2 > 0).toList()
+      ..sort((a, b) => b.$2.compareTo(a.$2));
+
     return PageScaffold(
       title: t.navReports,
       children: [
@@ -323,6 +351,19 @@ class AdminReportsScreen extends ConsumerWidget {
         BarList(tone: Tone.purple, items: [for (final (l, n) in services.take(8)) (l, n, '$n')]),
         SectionHeader(t.adRepVendors),
         BarList(tone: Tone.warning, items: [for (final (l, n) in vendors.take(5)) (l, n, '$n')]),
+        SectionHeader(t.adRepAreas),
+        Text(t.adRepAreasHelp, style: context.text.bodySmall),
+        Space.gapMd,
+        BarList(items: [for (final e in areas.take(8)) (e.key, e.value, '${e.value}')]),
+        SectionHeader(t.adRepWaitlist),
+        Text(t.adRepWaitlistHelp, style: context.text.bodySmall),
+        Space.gapMd,
+        BarList(
+          tone: Tone.warning,
+          items: [for (final e in waitingCities.take(8)) (e.key, e.value, '${e.value}')],
+        ),
+        SectionHeader(t.adRepOccupations),
+        BarList(tone: Tone.success, items: [for (final (l, n) in occupations) (l, n, '$n')]),
       ],
     );
   }

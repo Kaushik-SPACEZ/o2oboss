@@ -14,6 +14,7 @@ class EnquiryDraft {
     this.categoryId,
     this.productId,
     this.brandId,
+    this.preferredVendorId,
     this.requirement = '',
     Map<String, String>? answers,
     this.contactPreference = ContactPreference.callAnytime,
@@ -32,6 +33,7 @@ class EnquiryDraft {
   String? address;
   String? categoryId;
   String? productId;
+  String? preferredVendorId;
   String? brandId;
   String requirement;
   Map<String, String> answers;
@@ -97,6 +99,8 @@ class QuotationDraft {
 class SignUpData {
   SignUpData({
     this.role = UserRole.sales,
+    this.occupation,
+    this.age,
     this.name = '',
     this.phone = '',
     this.email,
@@ -117,6 +121,8 @@ class SignUpData {
         serviceCities = serviceCities ?? [];
 
   UserRole role;
+  Occupation? occupation;
+  int? age;
   String name;
   String phone;
   String? email;

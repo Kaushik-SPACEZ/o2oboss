@@ -334,6 +334,13 @@ class AppLocalizationsKn extends AppLocalizations {
   String get adPwTemp => 'ತಾತ್ಕಾಲಿಕ, ಬದಲಿಸಬೇಕು';
 
   @override
+  String get adRepAreas => 'ನಮ್ಮ ಜನರು ಎಲ್ಲಿದ್ದಾರೆ';
+
+  @override
+  String get adRepAreasHelp =>
+      'ಪ್ರದೇಶವಾರು ಗ್ರಾಹಕರು ಮತ್ತು ಗಳಿಕೆದಾರರು. ಸಂಖ್ಯೆ ಹೆಚ್ಚಿರುವಲ್ಲಿ ಮಾರಾಟಗಾರರನ್ನು ಪ್ರಚಾರ ಮಾಡಿ.';
+
+  @override
   String get adRepClosed => 'ಮುಚ್ಚಿದವು';
 
   @override
@@ -343,6 +350,9 @@ class AppLocalizationsKn extends AppLocalizations {
   String get adRepMonths => 'ಕಳೆದ 6 ತಿಂಗಳಲ್ಲಿ ಖಚಿತವಾದವು';
 
   @override
+  String get adRepOccupations => 'ನಮ್ಮ ಗಳಿಕೆದಾರರು ಏನು ಮಾಡುತ್ತಾರೆ';
+
+  @override
   String get adRepServices => 'ಸೇವೆವಾರು ವಿಚಾರಣೆಗಳು';
 
   @override
@@ -350,6 +360,12 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get adRepVendors => 'ಕೆಲಸಗಳ ಆಧಾರದಲ್ಲಿ ಉನ್ನತ ಮಾರಾಟಗಾರರು';
+
+  @override
+  String get adRepWaitlist => 'O2O Bossಗಾಗಿ ಕಾಯುತ್ತಿರುವವರು';
+
+  @override
+  String get adRepWaitlistHelp => 'ನಾವು ಇನ್ನೂ ಸೇವೆ ನೀಡದ ಸ್ಥಳಗಳ ಜನರು.';
 
   @override
   String adResetBody(String name) {
@@ -802,6 +818,9 @@ class AppLocalizationsKn extends AppLocalizations {
   String get chatWithO2O => 'O2O Boss ತಂಡ';
 
   @override
+  String get cityNotListed => 'ನನ್ನ ನಗರ ಪಟ್ಟಿಯಲ್ಲಿಲ್ಲ';
+
+  @override
   String get comApproved => 'ಅನುಮೋದಿಸಲಾಗಿದೆ';
 
   @override
@@ -1161,6 +1180,26 @@ class AppLocalizationsKn extends AppLocalizations {
   String get emptyTitle => 'ಇಲ್ಲಿ ಇನ್ನೂ ಏನೂ ಇಲ್ಲ';
 
   @override
+  String get exHaveAccount => 'ನನಗೆ ಈಗಾಗಲೇ ಖಾತೆ ಇದೆ';
+
+  @override
+  String get exOpen => 'O2O Boss ಮೂಲಕ ನಾನು ಏನು ಮಾಡಬಹುದು?';
+
+  @override
+  String get exSubtitle =>
+      'ಗಳಿಸಿ, ವ್ಯಾಪಾರ ಬೆಳೆಸಿ ಅಥವಾ ಆರಂಭಿಸಿ, ಅಥವಾ ಬೇಕಾದ್ದನ್ನು ಖರೀದಿಸಿ. ಎಲ್ಲವೂ ಒಂದೇ ಕಡೆ.';
+
+  @override
+  String get exTitle => 'ನೀವು ಏನು ಮಾಡಲು ಬಯಸುತ್ತೀರಿ?';
+
+  @override
+  String get exWhoSubtitle =>
+      'O2O Boss ಮೂಲಕ ಯಾರಾದರೂ ಗಳಿಸಬಹುದು. ಇದರಿಂದ ನಿಮಗೆ ತರಬೇತಿ ಮತ್ತು ನೆರವು ನೀಡಲು ಸಹಾಯವಾಗುತ್ತದೆ.';
+
+  @override
+  String get exWhoTitle => 'ಇವುಗಳಲ್ಲಿ ಯಾವುದು ನಿಮಗೆ ಹೊಂದುತ್ತದೆ?';
+
+  @override
   String get faqCustomer1A =>
       'ಹೌದು. ಕೊಟೇಶನ್‌ನಲ್ಲಿ ನೀವು ಒಪ್ಪುವ ಕೆಲಸಕ್ಕೆ ಮಾತ್ರ ಮಾರಾಟಗಾರರಿಗೆ ಪಾವತಿಸುತ್ತೀರಿ.';
 
@@ -1385,6 +1424,160 @@ class AppLocalizationsKn extends AppLocalizations {
   String get frVendorsWaiting => 'ಕಾಯುತ್ತಿರುವವು';
 
   @override
+  String get fsCityLabel => 'ಔಟ್‌ಲೆಟ್‌ಗಾಗಿ ನಗರ ಅಥವಾ ಪಟ್ಟಣ';
+
+  @override
+  String get fsDetailsTitle => 'ನಿಮ್ಮ ವಿವರಗಳು';
+
+  @override
+  String get fsDoneBody =>
+      'ನಮ್ಮ ಫ್ರಾಂಚೈಸ್ ತಂಡ 2 ರಿಂದ 3 ಕೆಲಸದ ದಿನಗಳಲ್ಲಿ ನಿಮ್ಮ ಔಟ್‌ಲೆಟ್ ಯೋಜನೆಗಾಗಿ ಕರೆ ಮಾಡುತ್ತದೆ.';
+
+  @override
+  String get fsExp3to10 => '3 ರಿಂದ 10 ವರ್ಷ';
+
+  @override
+  String get fsExpNone => 'ಇನ್ನೂ ಇಲ್ಲ';
+
+  @override
+  String get fsExpOver10 => '10 ವರ್ಷಕ್ಕಿಂತ ಹೆಚ್ಚು';
+
+  @override
+  String get fsExpUnder3 => '3 ವರ್ಷಕ್ಕಿಂತ ಕಡಿಮೆ';
+
+  @override
+  String get fsExperienceLabel => 'ವ್ಯಾಪಾರ ಅನುಭವ';
+
+  @override
+  String get fsHeroBody =>
+      'ದೊಡ್ಡ ಚೈನ್‌ಗಳಂತೆ: ಪ್ರತಿಯೊಂದು ಔಟ್‌ಲೆಟ್‌ನಲ್ಲಿ ಒಂದೇ ಬ್ರ್ಯಾಂಡ್, ನೋಟ ಮತ್ತು ಉತ್ಪನ್ನಗಳು. ಎಲ್ಲವನ್ನೂ ನಾವು ಸಿದ್ಧಪಡಿಸುತ್ತೇವೆ; ನೀವು ನಡೆಸಿ ಗಳಿಸಿ.';
+
+  @override
+  String fsHeroPrice(String amount) {
+    return '$amountರಿಂದ ಪ್ಯಾಕೇಜ್‌ಗಳು';
+  }
+
+  @override
+  String get fsHeroTitle =>
+      'ಸ್ವಂತ ವ್ಯಾಪಾರ ಆರಂಭಿಸಿ, ಸಂಪೂರ್ಣ ಸಿದ್ಧತೆ O2O Boss ಮಾಡುತ್ತದೆ';
+
+  @override
+  String get fsIncBrand => 'ಬ್ರ್ಯಾಂಡ್ ಮತ್ತು ಫಲಕಗಳು';
+
+  @override
+  String get fsIncBrandBody =>
+      'O2O Boss ಹೆಸರು, ಲೋಗೋ ಮತ್ತು ಫಲಕಗಳು, ಎಲ್ಲೆಡೆ ಒಂದೇ ರೀತಿ.';
+
+  @override
+  String get fsIncInterior => 'ಥೀಮ್ ಮತ್ತು ಒಳಾಂಗಣ';
+
+  @override
+  String get fsIncInteriorBody =>
+      'ಅಂಗಡಿ ವಿನ್ಯಾಸ, ಪೀಠೋಪಕರಣ, ದೀಪ ಮತ್ತು ಫಿಟ್ಟಿಂಗ್, ತೆರೆಯಲು ಸಿದ್ಧ.';
+
+  @override
+  String get fsIncLaunch => 'ಆರಂಭ ಮತ್ತು ಬೆಂಬಲ';
+
+  @override
+  String get fsIncLaunchBody =>
+      'ಉದ್ಘಾಟನಾ ದಿನದ ಪ್ರಚಾರ, ಸಹಾಯ ಬೇಕಾದಾಗ ಕರೆ ಮಾಡಲು ಒಂದು ತಂಡ.';
+
+  @override
+  String get fsIncProducts => 'ಉತ್ಪನ್ನಗಳು ಮತ್ತು ಮೊದಲ ಸ್ಟಾಕ್';
+
+  @override
+  String get fsIncProductsBody =>
+      'ಪರೀಕ್ಷಿತ ಉತ್ಪನ್ನ ಶ್ರೇಣಿ ಮತ್ತು ನಮ್ಮ ಪೂರೈಕೆದಾರರಿಂದ ಆರಂಭಿಕ ಸ್ಟಾಕ್.';
+
+  @override
+  String get fsIncTraining => 'ತರಬೇತಿ';
+
+  @override
+  String get fsIncTrainingBody =>
+      'ಔಟ್‌ಲೆಟ್ ನಡೆಸುವುದು, ಗ್ರಾಹಕ ಸೇವೆ ಮತ್ತು O2O Boss ಆ್ಯಪ್ ಬಳಕೆ.';
+
+  @override
+  String get fsIncludedTitle => 'ನಿಮಗಾಗಿ ನಾವು ಸಿದ್ಧಪಡಿಸುವುದು';
+
+  @override
+  String get fsPackageLabel => 'ಪ್ಯಾಕೇಜ್';
+
+  @override
+  String get fsPackagesHelp =>
+      'ವೆಚ್ಚ ಆರಂಭಿಕ ಅಂದಾಜು ಮಾತ್ರ. ಅಂತಿಮ ವೆಚ್ಚ ವ್ಯಾಪಾರ ಮತ್ತು ನಿಮ್ಮ ನಗರವನ್ನು ಅವಲಂಬಿಸಿದೆ.';
+
+  @override
+  String get fsPackagesTitle => 'ಗಾತ್ರ ಆಯ್ಕೆಮಾಡಿ';
+
+  @override
+  String get fsPkgCustom => 'ದೊಡ್ಡ ಅಥವಾ ಹಲವು ಔಟ್‌ಲೆಟ್‌ಗಳು';
+
+  @override
+  String get fsPkgCustomBody =>
+      'ಹಲವು ಔಟ್‌ಲೆಟ್‌ಗಳು ಅಥವಾ ದೊಡ್ಡ ಜಾಗಕ್ಕಾಗಿ. ನಿಮ್ಮೊಂದಿಗೆ ಯೋಜಿಸುತ್ತೇವೆ.';
+
+  @override
+  String fsPkgCustomPrice(String amount) {
+    return '$amountಕ್ಕಿಂತ ಹೆಚ್ಚು';
+  }
+
+  @override
+  String get fsPkgFlagship => 'ದೊಡ್ಡ ಸ್ಟೋರ್';
+
+  @override
+  String get fsPkgFlagshipBody =>
+      'ಪೂರ್ಣ ಶ್ರೇಣಿ ಮತ್ತು ಕುಳಿತುಕೊಳ್ಳುವ ಅಥವಾ ಸೇವಾ ಸ್ಥಳವಿರುವ ದೊಡ್ಡ ಔಟ್‌ಲೆಟ್.';
+
+  @override
+  String fsPkgFrom(String amount) {
+    return '$amountರಿಂದ';
+  }
+
+  @override
+  String get fsPkgKiosk => 'ಕಿಯೋಸ್ಕ್';
+
+  @override
+  String get fsPkgKioskBody =>
+      'ಮಾರುಕಟ್ಟೆ, ಮಾಲ್ ಅಥವಾ ಬಸ್ ನಿಲ್ದಾಣದಲ್ಲಿ ಸಣ್ಣ ಕೌಂಟರ್.';
+
+  @override
+  String get fsPkgStore => 'ಸ್ಟೋರ್';
+
+  @override
+  String get fsPkgStoreBody =>
+      'ಜನನಿಬಿಡ ರಸ್ತೆಯಲ್ಲಿ, ಹೆಚ್ಚು ಉತ್ಪನ್ನಗಳಿರುವ ಅಂಗಡಿ.';
+
+  @override
+  String get fsStateLabel => 'ರಾಜ್ಯ';
+
+  @override
+  String get fsSubmit => 'ಅರ್ಜಿ ಕಳುಹಿಸಿ';
+
+  @override
+  String get fsTitle => 'ಫ್ರಾಂಚೈಸ್ ಪಾಲುದಾರ';
+
+  @override
+  String get fsTypeArt => 'ಕಲಾ ಗ್ಯಾಲರಿ';
+
+  @override
+  String get fsTypeCoffee => 'ಕಾಫಿ ಕಿಯೋಸ್ಕ್';
+
+  @override
+  String get fsTypeEgg => 'ಮೊಟ್ಟೆ ಅಂಗಡಿ';
+
+  @override
+  String get fsTypeGroceries => 'ಮಾಸಿಕ ದಿನಸಿ';
+
+  @override
+  String get fsTypeHygiene => 'ಮಹಿಳೆಯರ ನೈರ್ಮಲ್ಯ';
+
+  @override
+  String get fsTypeSpa => 'ಆಯುರ್ವೇದ ಸ್ಪಾ';
+
+  @override
+  String get fsTypesTitle => 'ಯಾವ ವ್ಯಾಪಾರ ನಿಮಗೆ ಆಸಕ್ತಿ?';
+
+  @override
   String get fuAdd => 'ಫಾಲೋ-ಅಪ್ ಸೇರಿಸಿ';
 
   @override
@@ -1454,6 +1647,31 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get goHome => 'ಮುಖಪುಟಕ್ಕೆ ಹೋಗಿ';
+
+  @override
+  String get goalBuy => 'ಖರೀದಿ';
+
+  @override
+  String get goalBuyBody => 'ಹತ್ತಿರದ ಉತ್ಪನ್ನಗಳು ಮತ್ತು ಸೇವೆಗಳನ್ನು ಹುಡುಕಿ';
+
+  @override
+  String get goalEarn => 'ಗಳಿಕೆ';
+
+  @override
+  String get goalEarnBody => 'ಗ್ರಾಹಕರನ್ನು ಸೂಚಿಸಿ ಹಣ ಗಳಿಸಿ';
+
+  @override
+  String get goalGrow => 'ವ್ಯಾಪಾರ ಬೆಳೆಸುವುದು';
+
+  @override
+  String get goalGrowBody =>
+      'ನಿಮ್ಮ ಅಂಗಡಿಯನ್ನು ಸೇರಿಸಿ ಹೆಚ್ಚು ಗ್ರಾಹಕರನ್ನು ಪಡೆಯಿರಿ';
+
+  @override
+  String get goalStart => 'ವ್ಯಾಪಾರ ಆರಂಭಿಸುವುದು';
+
+  @override
+  String get goalStartBody => 'ಸಂಪೂರ್ಣವಾಗಿ ಸಿದ್ಧಪಡಿಸಿಕೊಡುವ O2O Boss ಫ್ರಾಂಚೈಸ್';
 
   @override
   String get greetHelloAfternoon => 'ನಮಸ್ಕಾರ,';
@@ -1653,6 +1871,9 @@ class AppLocalizationsKn extends AppLocalizations {
   String get labelAddress => 'ವಿಳಾಸ';
 
   @override
+  String get labelAge => 'ವಯಸ್ಸು';
+
+  @override
   String get labelAll => 'ಎಲ್ಲಾ';
 
   @override
@@ -1808,6 +2029,12 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get labelYes => 'ಹೌದು';
+
+  @override
+  String get labelYourArea => 'ನಿಮ್ಮ ಪ್ರದೇಶ';
+
+  @override
+  String get labelYourCity => 'ನಿಮ್ಮ ನಗರ ಅಥವಾ ಜಿಲ್ಲೆ';
 
   @override
   String get labelYourName => 'ನಿಮ್ಮ ಹೆಸರು';
@@ -2529,6 +2756,45 @@ class AppLocalizationsKn extends AppLocalizations {
   String get notifUnread => 'ಓದದಿರುವುದು';
 
   @override
+  String get occEmployed => 'ಉದ್ಯೋಗಿ';
+
+  @override
+  String get occEmployedBody => 'ಕೆಲಸದ ಜೊತೆಗೆ ಗಳಿಸಿ';
+
+  @override
+  String get occHomemaker => 'ಗೃಹಿಣಿ / ಮನೆ ನಿರ್ವಾಹಕರು';
+
+  @override
+  String get occHomemakerBody => 'ಮನೆಯಿಂದಲೇ, ನಿಮ್ಮ ವೇಗದಲ್ಲಿ ಗಳಿಸಿ';
+
+  @override
+  String get occLabel => 'ನೀವು ಏನು ಮಾಡುತ್ತೀರಿ?';
+
+  @override
+  String get occOther => 'ಬೇರೆ ಏನಾದರೂ';
+
+  @override
+  String get occOtherBody => 'ಜನರನ್ನು ತಿಳಿದ ಯಾರಾದರೂ ಗಳಿಸಬಹುದು';
+
+  @override
+  String get occRetired => 'ನಿವೃತ್ತರು';
+
+  @override
+  String get occRetiredBody => 'ನಿಮ್ಮ ಸಂಪರ್ಕ ಮತ್ತು ಅನುಭವ ಬಳಸಿ';
+
+  @override
+  String get occSelfEmployed => 'ಸ್ವಉದ್ಯೋಗಿ';
+
+  @override
+  String get occSelfEmployedBody => 'ನಿಮ್ಮ ಕೆಲಸಕ್ಕೆ ಹೆಚ್ಚುವರಿ ಆದಾಯ';
+
+  @override
+  String get occStudent => 'ವಿದ್ಯಾರ್ಥಿ';
+
+  @override
+  String get occStudentBody => 'ಬಿಡುವಿನ ಸಮಯದಲ್ಲಿ ಗಳಿಸಿ';
+
+  @override
   String get offlineBanner =>
       'ನೀವು ಆಫ್‌ಲೈನ್‌ನಲ್ಲಿದ್ದೀರಿ. ಇಂಟರ್ನೆಟ್ ಬಂದಾಗ ಬದಲಾವಣೆಗಳು ಸಿಂಕ್ ಆಗುತ್ತವೆ.';
 
@@ -2883,6 +3149,9 @@ class AppLocalizationsKn extends AppLocalizations {
   String get prDeliverTo => 'ವಿಳಾಸ';
 
   @override
+  String get prEnquire => 'ವಿಚಾರಿಸಿ';
+
+  @override
   String get prFilterBrands => 'ಬ್ರ್ಯಾಂಡ್‌ಗಳು';
 
   @override
@@ -2899,14 +3168,14 @@ class AppLocalizationsKn extends AppLocalizations {
   String get prHow1Body => 'ಈಗ ಹಣ ಬೇಡ. ನಿಮಗೆ ಏನು ಬೇಕು ಎಂದು ತಿಳಿಸಿ.';
 
   @override
-  String get prHow1Title => 'ನೀವು ಇಲ್ಲಿ ಆರ್ಡರ್ ಮಾಡುತ್ತೀರಿ';
+  String get prHow1Title => 'ನೀವು ವಿಚಾರಣೆ ಕಳುಹಿಸಿ';
 
   @override
   String get prHow2Body =>
-      'O2O Boss ತಂಡ ನಿಮಗೆ ಕರೆ ಮಾಡಿ ಹತ್ತಿರದ ಮಾರಾಟಗಾರರನ್ನು ಜೋಡಿಸುತ್ತದೆ.';
+      'O2O Boss ತಂಡ ನಿಮಗೆ ಕರೆ ಮಾಡಿ, ನಿಮ್ಮ ಹತ್ತಿರದ ಪರಿಶೀಲಿತ ಮಾರಾಟಗಾರರಲ್ಲಿ ಬೆಲೆ ಮತ್ತು ಸ್ಟಾಕ್ ತಿಳಿದುಕೊಳ್ಳುತ್ತದೆ.';
 
   @override
-  String get prHow2Title => 'ನಂಬಿಕಸ್ತ ಮಾರಾಟಗಾರರನ್ನು ಹುಡುಕುತ್ತೇವೆ';
+  String get prHow2Title => 'ಸರಿಯಾದ ಮಾರಾಟಗಾರರನ್ನು ನಾವು ಹುಡುಕುತ್ತೇವೆ';
 
   @override
   String get prHow3Body =>
@@ -2916,7 +3185,7 @@ class AppLocalizationsKn extends AppLocalizations {
   String get prHow3Title => 'ನಿಮಗೆ ಕೊಟೇಶನ್ ಸಿಗುತ್ತದೆ';
 
   @override
-  String get prHowTitle => 'ಆರ್ಡರ್ ಹೇಗೆ ನಡೆಯುತ್ತದೆ';
+  String get prHowTitle => 'ಇದು ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ';
 
   @override
   String get prLess => 'ಒಂದು ಕಡಿಮೆ';
@@ -2926,7 +3195,7 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String prNotNear(String city) {
-    return '$cityಯಲ್ಲಿ ಇನ್ನೂ ಇಲ್ಲ. ಆದರೂ ಆರ್ಡರ್ ಮಾಡಿ, ಒಬ್ಬರನ್ನು ಹುಡುಕಲು ಪ್ರಯತ್ನಿಸುತ್ತೇವೆ.';
+    return '$cityನಲ್ಲಿ ಇನ್ನೂ ಪರಿಶೀಲಿತ ಮಾರಾಟಗಾರರಿಲ್ಲ. ಆದರೂ ವಿಚಾರಣೆ ಕಳುಹಿಸಿ, ನಾವು ಹುಡುಕುತ್ತೇವೆ.';
   }
 
   @override
@@ -2941,22 +3210,28 @@ class AppLocalizationsKn extends AppLocalizations {
   }
 
   @override
-  String get prOrderFootnote => 'ಈಗ ಹಣ ಬೇಡ. ಬೆಲೆ ಖಚಿತಪಡಿಸಲು ಕರೆ ಮಾಡುತ್ತೇವೆ.';
+  String get prOrderFootnote =>
+      'ಈಗ ಪಾವತಿ ಇಲ್ಲ. ಉತ್ತಮ ಬೆಲೆಯೊಂದಿಗೆ ನಿಮಗೆ ಕರೆ ಮಾಡುತ್ತೇವೆ.';
 
   @override
-  String get prOrderNow => 'ಆರ್ಡರ್ ಮಾಡಿ';
+  String get prOrderNow => 'ಈಗಲೇ ವಿಚಾರಿಸಿ';
 
   @override
   String get prOrderPlaced =>
-      'ಆರ್ಡರ್ ಸಿಕ್ಕಿದೆ. O2O Boss ತಂಡ ಬೇಗ ಕರೆ ಮಾಡುತ್ತದೆ.';
+      'ವಿಚಾರಣೆ ಕಳುಹಿಸಲಾಗಿದೆ. O2O Boss ತಂಡ ಶೀಘ್ರದಲ್ಲೇ ಕರೆ ಮಾಡುತ್ತದೆ.';
 
   @override
   String prOrderTitle(String product) {
-    return '$product ಆರ್ಡರ್';
+    return '$product ಬಗ್ಗೆ ವಿಚಾರಣೆ';
   }
 
   @override
-  String get prPlaceOrder => 'ಆರ್ಡರ್ ಕಳುಹಿಸಿ';
+  String prPhotoLabel(String index, String count) {
+    return 'ಫೋಟೋ $index / $count';
+  }
+
+  @override
+  String get prPlaceOrder => 'ವಿಚಾರಣೆ ಕಳುಹಿಸಿ';
 
   @override
   String get prPriceNote => 'ಅಂದಾಜು ಬೆಲೆ. ಅಂತಿಮ ಬೆಲೆ ಕೊಟೇಶನ್‌ನಲ್ಲಿ ಬರುತ್ತದೆ.';
@@ -2971,13 +3246,72 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get prPrivacyNote =>
-      'ನೀವು ವ್ಯವಹರಿಸುವುದು O2O Boss ಜೊತೆ, ನೇರವಾಗಿ ಮಾರಾಟಗಾರರ ಜೊತೆ ಅಲ್ಲ. ಕೆಲಸ ಮುಗಿಯುವವರೆಗೆ ನಾವು ಜೊತೆಗಿರುತ್ತೇವೆ.';
+      'ನೀವು ಮಾರಾಟಗಾರರೊಂದಿಗೆ ನೇರವಾಗಿ ಅಲ್ಲ, O2O Boss ಜೊತೆ ವ್ಯವಹರಿಸುತ್ತೀರಿ. ಕೆಲಸ ಮುಗಿಯುವವರೆಗೆ ನಾವು ನಿಮ್ಮೊಂದಿಗಿರುತ್ತೇವೆ.';
 
   @override
   String get prQuantity => 'ಸಂಖ್ಯೆ';
 
   @override
   String get prSearchHint => 'ಉತ್ಪನ್ನ, ಸೇವೆಗಳನ್ನು ಹುಡುಕಿ';
+
+  @override
+  String get prSellerAbout => 'ಈ ಮಾರಾಟಗಾರರ ಬಗ್ಗೆ';
+
+  @override
+  String prSellerAreas(String areas) {
+    return 'ಸೇವಾ ಪ್ರದೇಶಗಳು: $areas';
+  }
+
+  @override
+  String prSellerBrands(String brands) {
+    return 'ಬ್ರ್ಯಾಂಡ್‌ಗಳು: $brands';
+  }
+
+  @override
+  String prSellerCode(String code) {
+    return 'ಮಾರಾಟಗಾರ $code';
+  }
+
+  @override
+  String get prSellerPicked => 'ನೀವು ಆಯ್ಕೆ ಮಾಡಿದ ಮಾರಾಟಗಾರ';
+
+  @override
+  String prSellerRating(String rating) {
+    return 'ಗ್ರಾಹಕರು 5ಕ್ಕೆ $rating ರೇಟಿಂಗ್ ನೀಡಿದ್ದಾರೆ';
+  }
+
+  @override
+  String prSellerReplies(String percent) {
+    return '$percent% ವಿನಂತಿಗಳಿಗೆ ಸಮಯಕ್ಕೆ ಉತ್ತರ';
+  }
+
+  @override
+  String prSellerSince(String year) {
+    return '$yearರಿಂದ O2O Boss ಜೊತೆ';
+  }
+
+  @override
+  String prSellerTitle(String place) {
+    return '$placeನಲ್ಲಿ ಪರಿಶೀಲಿತ ಮಾರಾಟಗಾರ';
+  }
+
+  @override
+  String get prSellerVerified => 'ದಾಖಲೆಗಳನ್ನು O2O Boss ಪರಿಶೀಲಿಸಿದೆ';
+
+  @override
+  String get prSellersHelp =>
+      'ಮಾರಾಟಗಾರರ ಪುಟ ನೋಡಲು ತೆರೆಯಿರಿ. ನಿಮ್ಮ ವಿಚಾರಣೆ O2O Boss ಮೂಲಕವೇ ಹೋಗುತ್ತದೆ.';
+
+  @override
+  String prSellersTitle(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'ನಿಮ್ಮ ಹತ್ತಿರದ ಮಾರಾಟಗಾರರು',
+      one: 'ನಿಮ್ಮ ಹತ್ತಿರದ ಮಾರಾಟಗಾರ',
+    );
+    return '$_temp0';
+  }
 
   @override
   String get prSortFilter => 'ಕ್ರಮ, ಫಿಲ್ಟರ್';
@@ -3017,8 +3351,8 @@ class AppLocalizationsKn extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$cityಯಲ್ಲಿ $count ನಂಬಿಕಸ್ತ ಮಾರಾಟಗಾರರು',
-      one: '$cityಯಲ್ಲಿ 1 ನಂಬಿಕಸ್ತ ಮಾರಾಟಗಾರ',
+      other: '$cityನಲ್ಲಿ $count ಪರಿಶೀಲಿತ ಮಾರಾಟಗಾರರು',
+      one: '$cityನಲ್ಲಿ 1 ಪರಿಶೀಲಿತ ಮಾರಾಟಗಾರ',
     );
     return '$_temp0';
   }
@@ -4013,6 +4347,13 @@ class AppLocalizationsKn extends AppLocalizations {
       'ನಿಮಗೆ ಏನು ಬೇಕು ಎಂದು ತಿಳಿಸಿ. ನಂಬಿಕಸ್ತ ವ್ಯಾಪಾರದೊಂದಿಗೆ ಜೋಡಿಸುತ್ತೇವೆ.';
 
   @override
+  String get signupWhoFranchise => 'ಫ್ರಾಂಚೈಸ್ ಪಾಲುದಾರರಾಗಿ';
+
+  @override
+  String get signupWhoFranchiseDesc =>
+      'ನಮ್ಮ ಸಂಪೂರ್ಣ ಬೆಂಬಲದೊಂದಿಗೆ ಸ್ವಂತ ವ್ಯಾಪಾರ ಆರಂಭಿಸಿ';
+
+  @override
   String get signupWhoSales => 'ಗ್ರಾಹಕರನ್ನು ಶಿಫಾರಸು ಮಾಡಿ ಗಳಿಸಿ';
 
   @override
@@ -4066,6 +4407,39 @@ class AppLocalizationsKn extends AppLocalizations {
   String get simpleWork => 'ಕೆಲಸ ನಡೆಯುತ್ತಿದೆ';
 
   @override
+  String get soonBackToSignIn => 'ಸೈನ್ ಇನ್‌ಗೆ ಹಿಂತಿರುಗಿ';
+
+  @override
+  String soonDoneBody(String city) {
+    return 'O2O Boss ಶೀಘ್ರದಲ್ಲೇ $cityನಲ್ಲಿ ಆರಂಭವಾಗುತ್ತದೆ. ಆರಂಭವಾದ ತಕ್ಷಣ ನಿಮಗೆ ತಿಳಿಸುತ್ತೇವೆ.';
+  }
+
+  @override
+  String soonDoneTitle(String name) {
+    return 'ಧನ್ಯವಾದಗಳು, $name';
+  }
+
+  @override
+  String get soonNoteBody =>
+      'ಶೀಘ್ರದಲ್ಲೇ ಅಲ್ಲಿ ಸೇವೆ ಆರಂಭಿಸಿ ನಿಮಗೆ ತಿಳಿಸುತ್ತೇವೆ. ನಿಮ್ಮ ವಿವರ ನೀಡಿ, ಮೊದಲು ನಿಮಗೇ ಹೇಳುತ್ತೇವೆ.';
+
+  @override
+  String soonNoteTitle(String city) {
+    return 'ನಾವು ಇನ್ನೂ $cityನಲ್ಲಿ ಇಲ್ಲ';
+  }
+
+  @override
+  String get soonNoteTitleAny => 'ನಾವು ಇನ್ನೂ ನಿಮ್ಮ ನಗರದಲ್ಲಿ ಇಲ್ಲ';
+
+  @override
+  String get soonNotify => 'ನನಗೆ ತಿಳಿಸಿ';
+
+  @override
+  String soonWeAreThere(String city) {
+    return 'ಸಿಹಿ ಸುದ್ದಿ: O2O Boss ಈಗಾಗಲೇ $cityನಲ್ಲಿದೆ. ನಿಮ್ಮ ಪ್ರದೇಶ ಆಯ್ಕೆಮಾಡಿ.';
+  }
+
+  @override
   String get sourceAdmin => 'ಆಡ್ಮಿನ್';
 
   @override
@@ -4076,6 +4450,31 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get sourceSales => 'ಶಿಫಾರಸು ಪಾಲುದಾರ';
+
+  @override
+  String get srcBody =>
+      'ಜಗತ್ತಿನ ಯಾವುದೇ ವಸ್ತು: ಇಲ್ಲಿ ಇಲ್ಲದಿದ್ದರೆ ನಿಮಗಾಗಿ ತರಿಸುತ್ತೇವೆ. ಕೇಳಿ, ಮಾಹಿತಿಯೊಂದಿಗೆ ಮರಳಿ ಸಂಪರ್ಕಿಸುತ್ತೇವೆ.';
+
+  @override
+  String get srcButton => 'ಹುಡುಕಲು ಹೇಳಿ';
+
+  @override
+  String srcDoneBody(String query) {
+    return '“$query” ಬಗ್ಗೆ ಮಾಹಿತಿಯೊಂದಿಗೆ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತೇವೆ.';
+  }
+
+  @override
+  String get srcDoneTitle => 'ವಿನಂತಿ ಸ್ವೀಕರಿಸಲಾಗಿದೆ';
+
+  @override
+  String srcRequirement(String query) {
+    return 'ದಯವಿಟ್ಟು ಹುಡುಕಿ: $query';
+  }
+
+  @override
+  String srcTitle(String query) {
+    return '“$query” ಇನ್ನೂ ನಮ್ಮ ಪಟ್ಟಿಯಲ್ಲಿಲ್ಲ';
+  }
 
   @override
   String get stActive => 'ಸಕ್ರಿಯ';
@@ -4762,6 +5161,13 @@ class AppLocalizationsKn extends AppLocalizations {
   String get upcoming => 'ಮುಂಬರುವವು';
 
   @override
+  String get validationAge => 'ನಿಮ್ಮ ವಯಸ್ಸನ್ನು ವರ್ಷಗಳಲ್ಲಿ ನಮೂದಿಸಿ';
+
+  @override
+  String get validationAgeMin =>
+      'O2O Boss ಮೂಲಕ ಗಳಿಸಲು 18 ವರ್ಷ ಅಥವಾ ಹೆಚ್ಚು ವಯಸ್ಸಾಗಿರಬೇಕು';
+
+  @override
   String get validationAmount => 'ಸೊನ್ನೆಗಿಂತ ಹೆಚ್ಚಿನ ಮೊತ್ತ ಬರೆಯಿರಿ.';
 
   @override
@@ -4977,6 +5383,9 @@ class AppLocalizationsKn extends AppLocalizations {
 
   @override
   String get vendorVerifyDoc => 'ಪರಿಶೀಲಿಸಲಾಗಿದೆ ಎಂದು ಗುರುತಿಸಿ';
+
+  @override
+  String get vendorsCustomerPick => 'ಗ್ರಾಹಕರ ಆಯ್ಕೆ';
 
   @override
   String get vendorsDeadline => 'ಉತ್ತರಿಸಲು ಸಮಯ';

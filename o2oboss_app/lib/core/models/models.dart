@@ -7,3 +7,4 @@ export 'db_state.dart';
 export 'enquiry.dart';
 export 'enums.dart';
 export 'user.dart';
+export 'waitlist.dart';

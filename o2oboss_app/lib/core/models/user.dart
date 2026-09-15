@@ -12,6 +12,8 @@ class AppUser {
     this.email,
     required this.role,
     this.salesType,
+    this.occupation,
+    this.age,
     required this.city,
     this.area,
     this.franchiseId,
@@ -37,6 +39,10 @@ class AppUser {
   final String? email;
   final UserRole role;
   final SalesType? salesType;
+
+  /// Filled in when someone signs up to earn.
+  final Occupation? occupation;
+  final int? age;
   final String city;
   final String? area;
   final String? franchiseId;
@@ -101,6 +107,8 @@ class AppUser {
         email: email ?? this.email,
         role: role ?? this.role,
         salesType: salesType ?? this.salesType,
+        occupation: occupation,
+        age: age,
         city: city ?? this.city,
         area: area ?? this.area,
         franchiseId: franchiseId ?? this.franchiseId,
@@ -127,6 +135,8 @@ class AppUser {
         'email': email,
         'role': role.name,
         'salesType': salesType?.name,
+        'occupation': occupation?.name,
+        'age': age,
         'city': city,
         'area': area,
         'franchiseId': franchiseId,
@@ -153,6 +163,8 @@ class AppUser {
         email: j['email'] as String?,
         role: enumByName(UserRole.values, j['role'], UserRole.sales),
         salesType: enumByNameOrNull(SalesType.values, j['salesType']),
+        occupation: enumByNameOrNull(Occupation.values, j['occupation']),
+        age: j['age'] == null ? null : numToInt(j['age']),
         city: j['city'] as String,
         area: j['area'] as String?,
         franchiseId: j['franchiseId'] as String?,

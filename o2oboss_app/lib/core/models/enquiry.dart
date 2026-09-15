@@ -37,6 +37,7 @@ class Enquiry {
     required this.categoryId,
     this.productId,
     this.brandId,
+    this.preferredVendorId,
     required this.city,
     required this.area,
     this.pincode,
@@ -72,6 +73,10 @@ class Enquiry {
   final String categoryId;
   final String? productId;
   final String? brandId;
+
+  /// Seller the customer picked on a product page. Only back office sees who
+  /// it is; it is a hint for matching, not an assignment.
+  final String? preferredVendorId;
   final String city;
   final String area;
   final String? pincode;
@@ -141,6 +146,7 @@ class Enquiry {
         categoryId: categoryId ?? this.categoryId,
         productId: productId ?? this.productId,
         brandId: brandId ?? this.brandId,
+        preferredVendorId: preferredVendorId,
         city: city ?? this.city,
         area: area ?? this.area,
         pincode: pincode ?? this.pincode,
@@ -178,6 +184,7 @@ class Enquiry {
         'categoryId': categoryId,
         'productId': productId,
         'brandId': brandId,
+        'preferredVendorId': preferredVendorId,
         'city': city,
         'area': area,
         'pincode': pincode,
@@ -213,6 +220,7 @@ class Enquiry {
         categoryId: j['categoryId'] as String,
         productId: j['productId'] as String?,
         brandId: j['brandId'] as String?,
+        preferredVendorId: j['preferredVendorId'] as String?,
         city: j['city'] as String,
         area: j['area'] as String? ?? '',
         pincode: j['pincode'] as String?,

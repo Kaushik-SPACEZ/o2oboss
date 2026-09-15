@@ -93,7 +93,28 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
           child: ListView(
             padding: EdgeInsets.fromLTRB(pad, Space.lg, pad, Space.xxl),
             children: [
-              const Row(children: [BrandMark(size: 34), Spacer(), _LanguageButton()]),
+              Row(
+                children: [
+                  // The logo opens the Explore page: earn, grow, start or buy.
+                  Tooltip(
+                    message: t.exOpen,
+                    child: Semantics(
+                      button: true,
+                      label: t.exOpen,
+                      child: InkWell(
+                        borderRadius: Corners.mdAll,
+                        onTap: () => context.push(Routes.explore),
+                        child: const Padding(
+                          padding: EdgeInsets.all(4),
+                          child: BrandMark(size: 34),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const Spacer(),
+                  const _LanguageButton(),
+                ],
+              ),
               const SizedBox(height: Space.xl),
               const TaglineBanner(compact: true),
               const SizedBox(height: Space.xl),

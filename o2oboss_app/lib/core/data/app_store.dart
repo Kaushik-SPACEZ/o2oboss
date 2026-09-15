@@ -154,6 +154,8 @@ class AppStore extends Notifier<DbState> {
           email: d.email,
           role: d.role,
           salesType: d.role == UserRole.sales ? SalesType.independent : null,
+          occupation: d.role == UserRole.sales ? d.occupation : null,
+          age: d.role == UserRole.sales ? d.age : null,
           city: d.city,
           area: d.area,
           franchiseId: franchise?.id,
@@ -180,6 +182,25 @@ class AppStore extends Notifier<DbState> {
           }
         }
         return userId;
+      });
+
+  /// Someone from a city we do not serve yet. Nothing else is created; admin
+  /// sees the waitlist grouped by city.
+  void joinWaitlist(SignUpData d) => _run((tx) {
+        tx.db = tx.db.copyWith(waitlist: [
+          ...tx.db.waitlist,
+          WaitlistEntry(
+            id: 'W-${tx.next('waitlist')}',
+            name: d.name.trim(),
+            phone: d.phone,
+            role: d.role,
+            occupation: d.role == UserRole.sales ? d.occupation : null,
+            age: d.role == UserRole.sales ? d.age : null,
+            city: d.city.trim(),
+            area: d.area.trim(),
+            createdAt: tx.now,
+          ),
+        ]);
       });
 
   /// Admin creates any user and gets a generated login to hand over.
@@ -367,6 +388,7 @@ class AppStore extends Notifier<DbState> {
           customerId: customer.id,
           categoryId: d.categoryId!,
           productId: d.productId,
+          preferredVendorId: d.preferredVendorId,
           brandId: d.brandId,
           city: d.city,
           area: d.area,

@@ -740,6 +740,18 @@ abstract class AppLocalizations {
   /// **'Temporary, must be changed'**
   String get adPwTemp;
 
+  /// No description provided for @adRepAreas.
+  ///
+  /// In en, this message translates to:
+  /// **'Where our people are'**
+  String get adRepAreas;
+
+  /// No description provided for @adRepAreasHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Customers and earners by area. Promote vendors where the numbers are highest.'**
+  String get adRepAreasHelp;
+
   /// No description provided for @adRepClosed.
   ///
   /// In en, this message translates to:
@@ -758,6 +770,12 @@ abstract class AppLocalizations {
   /// **'Won in the last 6 months'**
   String get adRepMonths;
 
+  /// No description provided for @adRepOccupations.
+  ///
+  /// In en, this message translates to:
+  /// **'What our earners do'**
+  String get adRepOccupations;
+
   /// No description provided for @adRepServices.
   ///
   /// In en, this message translates to:
@@ -775,6 +793,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Top vendors by jobs'**
   String get adRepVendors;
+
+  /// No description provided for @adRepWaitlist.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for O2O Boss'**
+  String get adRepWaitlist;
+
+  /// No description provided for @adRepWaitlistHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'People from places we don\'t serve yet.'**
+  String get adRepWaitlistHelp;
 
   /// No description provided for @adResetBody.
   ///
@@ -1562,6 +1592,12 @@ abstract class AppLocalizations {
   /// **'O2O Boss team'**
   String get chatWithO2O;
 
+  /// No description provided for @cityNotListed.
+  ///
+  /// In en, this message translates to:
+  /// **'My city is not listed'**
+  String get cityNotListed;
+
   /// No description provided for @comApproved.
   ///
   /// In en, this message translates to:
@@ -2126,6 +2162,42 @@ abstract class AppLocalizations {
   /// **'Nothing here yet'**
   String get emptyTitle;
 
+  /// No description provided for @exHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'I already have an account'**
+  String get exHaveAccount;
+
+  /// No description provided for @exOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'What can I do with O2O Boss?'**
+  String get exOpen;
+
+  /// No description provided for @exSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Earn, grow or start a business, or buy what you need. All in one place.'**
+  String get exSubtitle;
+
+  /// No description provided for @exTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What would you like to do?'**
+  String get exTitle;
+
+  /// No description provided for @exWhoSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Anyone can earn with O2O Boss. This helps us train and support you.'**
+  String get exWhoSubtitle;
+
+  /// No description provided for @exWhoTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Which of these describes you?'**
+  String get exWhoTitle;
+
   /// No description provided for @faqCustomer1A.
   ///
   /// In en, this message translates to:
@@ -2480,6 +2552,276 @@ abstract class AppLocalizations {
   /// **'Waiting'**
   String get frVendorsWaiting;
 
+  /// No description provided for @fsCityLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'City or town for the outlet'**
+  String get fsCityLabel;
+
+  /// No description provided for @fsDetailsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Your details'**
+  String get fsDetailsTitle;
+
+  /// No description provided for @fsDoneBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Our franchise team will call you within 2 to 3 working days to plan your outlet.'**
+  String get fsDoneBody;
+
+  /// No description provided for @fsExp3to10.
+  ///
+  /// In en, this message translates to:
+  /// **'3 to 10 years'**
+  String get fsExp3to10;
+
+  /// No description provided for @fsExpNone.
+  ///
+  /// In en, this message translates to:
+  /// **'None yet'**
+  String get fsExpNone;
+
+  /// No description provided for @fsExpOver10.
+  ///
+  /// In en, this message translates to:
+  /// **'Over 10 years'**
+  String get fsExpOver10;
+
+  /// No description provided for @fsExpUnder3.
+  ///
+  /// In en, this message translates to:
+  /// **'Under 3 years'**
+  String get fsExpUnder3;
+
+  /// No description provided for @fsExperienceLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Business experience'**
+  String get fsExperienceLabel;
+
+  /// No description provided for @fsHeroBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Like the big chains: the same brand, look and products in every outlet. We set up everything; you run it and earn.'**
+  String get fsHeroBody;
+
+  /// No description provided for @fsHeroPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Packages from {amount}'**
+  String fsHeroPrice(String amount);
+
+  /// No description provided for @fsHeroTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Start your own business, fully set up by O2O Boss'**
+  String get fsHeroTitle;
+
+  /// No description provided for @fsIncBrand.
+  ///
+  /// In en, this message translates to:
+  /// **'Brand and signboards'**
+  String get fsIncBrand;
+
+  /// No description provided for @fsIncBrandBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The O2O Boss name, logo and signage, done the same way everywhere.'**
+  String get fsIncBrandBody;
+
+  /// No description provided for @fsIncInterior.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme and interior'**
+  String get fsIncInterior;
+
+  /// No description provided for @fsIncInteriorBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Shop design, furniture, lighting and fitting, ready to open.'**
+  String get fsIncInteriorBody;
+
+  /// No description provided for @fsIncLaunch.
+  ///
+  /// In en, this message translates to:
+  /// **'Launch and support'**
+  String get fsIncLaunch;
+
+  /// No description provided for @fsIncLaunchBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Opening-day promotion, and a team to call when you need help.'**
+  String get fsIncLaunchBody;
+
+  /// No description provided for @fsIncProducts.
+  ///
+  /// In en, this message translates to:
+  /// **'Products and first stock'**
+  String get fsIncProducts;
+
+  /// No description provided for @fsIncProductsBody.
+  ///
+  /// In en, this message translates to:
+  /// **'A tested product range and your opening stock from our suppliers.'**
+  String get fsIncProductsBody;
+
+  /// No description provided for @fsIncTraining.
+  ///
+  /// In en, this message translates to:
+  /// **'Training'**
+  String get fsIncTraining;
+
+  /// No description provided for @fsIncTrainingBody.
+  ///
+  /// In en, this message translates to:
+  /// **'How to run the outlet, serve customers and use the O2O Boss app.'**
+  String get fsIncTrainingBody;
+
+  /// No description provided for @fsIncludedTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What we set up for you'**
+  String get fsIncludedTitle;
+
+  /// No description provided for @fsPackageLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Package'**
+  String get fsPackageLabel;
+
+  /// No description provided for @fsPackagesHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Costs are a starting guide. The final cost depends on the business and your city.'**
+  String get fsPackagesHelp;
+
+  /// No description provided for @fsPackagesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a size'**
+  String get fsPackagesTitle;
+
+  /// No description provided for @fsPkgCustom.
+  ///
+  /// In en, this message translates to:
+  /// **'Bigger or more outlets'**
+  String get fsPkgCustom;
+
+  /// No description provided for @fsPkgCustomBody.
+  ///
+  /// In en, this message translates to:
+  /// **'For several outlets or a larger space. We plan it with you.'**
+  String get fsPkgCustomBody;
+
+  /// No description provided for @fsPkgCustomPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'Above {amount}'**
+  String fsPkgCustomPrice(String amount);
+
+  /// No description provided for @fsPkgFlagship.
+  ///
+  /// In en, this message translates to:
+  /// **'Large store'**
+  String get fsPkgFlagship;
+
+  /// No description provided for @fsPkgFlagshipBody.
+  ///
+  /// In en, this message translates to:
+  /// **'A big outlet with the full range and seating or service area.'**
+  String get fsPkgFlagshipBody;
+
+  /// No description provided for @fsPkgFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'From {amount}'**
+  String fsPkgFrom(String amount);
+
+  /// No description provided for @fsPkgKiosk.
+  ///
+  /// In en, this message translates to:
+  /// **'Kiosk'**
+  String get fsPkgKiosk;
+
+  /// No description provided for @fsPkgKioskBody.
+  ///
+  /// In en, this message translates to:
+  /// **'A small counter in a market, mall or bus stand.'**
+  String get fsPkgKioskBody;
+
+  /// No description provided for @fsPkgStore.
+  ///
+  /// In en, this message translates to:
+  /// **'Store'**
+  String get fsPkgStore;
+
+  /// No description provided for @fsPkgStoreBody.
+  ///
+  /// In en, this message translates to:
+  /// **'A shop on a busy street, with more products.'**
+  String get fsPkgStoreBody;
+
+  /// No description provided for @fsStateLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'State'**
+  String get fsStateLabel;
+
+  /// No description provided for @fsSubmit.
+  ///
+  /// In en, this message translates to:
+  /// **'Send application'**
+  String get fsSubmit;
+
+  /// No description provided for @fsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Franchise partner'**
+  String get fsTitle;
+
+  /// No description provided for @fsTypeArt.
+  ///
+  /// In en, this message translates to:
+  /// **'Art gallery'**
+  String get fsTypeArt;
+
+  /// No description provided for @fsTypeCoffee.
+  ///
+  /// In en, this message translates to:
+  /// **'Coffee kiosk'**
+  String get fsTypeCoffee;
+
+  /// No description provided for @fsTypeEgg.
+  ///
+  /// In en, this message translates to:
+  /// **'Egg shop'**
+  String get fsTypeEgg;
+
+  /// No description provided for @fsTypeGroceries.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly groceries'**
+  String get fsTypeGroceries;
+
+  /// No description provided for @fsTypeHygiene.
+  ///
+  /// In en, this message translates to:
+  /// **'Women\'s hygiene'**
+  String get fsTypeHygiene;
+
+  /// No description provided for @fsTypeSpa.
+  ///
+  /// In en, this message translates to:
+  /// **'Ayurvedic spa'**
+  String get fsTypeSpa;
+
+  /// No description provided for @fsTypesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Which business interests you?'**
+  String get fsTypesTitle;
+
   /// No description provided for @fuAdd.
   ///
   /// In en, this message translates to:
@@ -2611,6 +2953,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Go to home'**
   String get goHome;
+
+  /// No description provided for @goalBuy.
+  ///
+  /// In en, this message translates to:
+  /// **'Buying'**
+  String get goalBuy;
+
+  /// No description provided for @goalBuyBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Find products and services near you'**
+  String get goalBuyBody;
+
+  /// No description provided for @goalEarn.
+  ///
+  /// In en, this message translates to:
+  /// **'Earning'**
+  String get goalEarn;
+
+  /// No description provided for @goalEarnBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Earn money by referring customers'**
+  String get goalEarnBody;
+
+  /// No description provided for @goalGrow.
+  ///
+  /// In en, this message translates to:
+  /// **'Growing your business'**
+  String get goalGrow;
+
+  /// No description provided for @goalGrowBody.
+  ///
+  /// In en, this message translates to:
+  /// **'List your shop and get more customers'**
+  String get goalGrowBody;
+
+  /// No description provided for @goalStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Starting your business'**
+  String get goalStart;
+
+  /// No description provided for @goalStartBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Own an O2O Boss franchise, fully set up for you'**
+  String get goalStartBody;
 
   /// No description provided for @greetHelloAfternoon.
   ///
@@ -2930,6 +3320,12 @@ abstract class AppLocalizations {
   /// **'Address'**
   String get labelAddress;
 
+  /// No description provided for @labelAge.
+  ///
+  /// In en, this message translates to:
+  /// **'Age'**
+  String get labelAge;
+
   /// No description provided for @labelAll.
   ///
   /// In en, this message translates to:
@@ -3241,6 +3637,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Yes'**
   String get labelYes;
+
+  /// No description provided for @labelYourArea.
+  ///
+  /// In en, this message translates to:
+  /// **'Your area'**
+  String get labelYourArea;
+
+  /// No description provided for @labelYourCity.
+  ///
+  /// In en, this message translates to:
+  /// **'Your city or district'**
+  String get labelYourCity;
 
   /// No description provided for @labelYourName.
   ///
@@ -4448,6 +4856,84 @@ abstract class AppLocalizations {
   /// **'Unread'**
   String get notifUnread;
 
+  /// No description provided for @occEmployed.
+  ///
+  /// In en, this message translates to:
+  /// **'Employed'**
+  String get occEmployed;
+
+  /// No description provided for @occEmployedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Earn alongside your job'**
+  String get occEmployedBody;
+
+  /// No description provided for @occHomemaker.
+  ///
+  /// In en, this message translates to:
+  /// **'Homemaker'**
+  String get occHomemaker;
+
+  /// No description provided for @occHomemakerBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Earn from home, at your own pace'**
+  String get occHomemakerBody;
+
+  /// No description provided for @occLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'What do you do?'**
+  String get occLabel;
+
+  /// No description provided for @occOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Something else'**
+  String get occOther;
+
+  /// No description provided for @occOtherBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Anyone who knows people can earn'**
+  String get occOtherBody;
+
+  /// No description provided for @occRetired.
+  ///
+  /// In en, this message translates to:
+  /// **'Retired'**
+  String get occRetired;
+
+  /// No description provided for @occRetiredBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Put your contacts and experience to use'**
+  String get occRetiredBody;
+
+  /// No description provided for @occSelfEmployed.
+  ///
+  /// In en, this message translates to:
+  /// **'Self-employed'**
+  String get occSelfEmployed;
+
+  /// No description provided for @occSelfEmployedBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Add income to your own work'**
+  String get occSelfEmployedBody;
+
+  /// No description provided for @occStudent.
+  ///
+  /// In en, this message translates to:
+  /// **'Student'**
+  String get occStudent;
+
+  /// No description provided for @occStudentBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Earn in your free time'**
+  String get occStudentBody;
+
   /// No description provided for @offlineBanner.
   ///
   /// In en, this message translates to:
@@ -5066,6 +5552,12 @@ abstract class AppLocalizations {
   /// **'Address'**
   String get prDeliverTo;
 
+  /// No description provided for @prEnquire.
+  ///
+  /// In en, this message translates to:
+  /// **'Enquire'**
+  String get prEnquire;
+
   /// No description provided for @prFilterBrands.
   ///
   /// In en, this message translates to:
@@ -5093,19 +5585,19 @@ abstract class AppLocalizations {
   /// No description provided for @prHow1Title.
   ///
   /// In en, this message translates to:
-  /// **'You order here'**
+  /// **'You send an enquiry'**
   String get prHow1Title;
 
   /// No description provided for @prHow2Body.
   ///
   /// In en, this message translates to:
-  /// **'The O2O Boss team calls you and matches a vendor near you.'**
+  /// **'The O2O Boss team calls you and checks price and stock with verified sellers near you.'**
   String get prHow2Body;
 
   /// No description provided for @prHow2Title.
   ///
   /// In en, this message translates to:
-  /// **'We find a verified vendor'**
+  /// **'We find the right seller'**
   String get prHow2Title;
 
   /// No description provided for @prHow3Body.
@@ -5123,7 +5615,7 @@ abstract class AppLocalizations {
   /// No description provided for @prHowTitle.
   ///
   /// In en, this message translates to:
-  /// **'How ordering works'**
+  /// **'How it works'**
   String get prHowTitle;
 
   /// No description provided for @prLess.
@@ -5141,7 +5633,7 @@ abstract class AppLocalizations {
   /// No description provided for @prNotNear.
   ///
   /// In en, this message translates to:
-  /// **'Not in {city} yet. Order anyway and we\'ll try to find one.'**
+  /// **'No verified seller in {city} yet. Enquire anyway and we\'ll find one.'**
   String prNotNear(String city);
 
   /// No description provided for @prNoteHint.
@@ -5165,31 +5657,37 @@ abstract class AppLocalizations {
   /// No description provided for @prOrderFootnote.
   ///
   /// In en, this message translates to:
-  /// **'No payment now. We\'ll call you to confirm the price.'**
+  /// **'No payment now. We\'ll call you with the best price.'**
   String get prOrderFootnote;
 
   /// No description provided for @prOrderNow.
   ///
   /// In en, this message translates to:
-  /// **'Order now'**
+  /// **'Enquire now'**
   String get prOrderNow;
 
   /// No description provided for @prOrderPlaced.
   ///
   /// In en, this message translates to:
-  /// **'Order placed. The O2O Boss team will call you soon.'**
+  /// **'Enquiry sent. The O2O Boss team will call you soon.'**
   String get prOrderPlaced;
 
   /// No description provided for @prOrderTitle.
   ///
   /// In en, this message translates to:
-  /// **'Order {product}'**
+  /// **'Enquire about {product}'**
   String prOrderTitle(String product);
+
+  /// No description provided for @prPhotoLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Photo {index} of {count}'**
+  String prPhotoLabel(String index, String count);
 
   /// No description provided for @prPlaceOrder.
   ///
   /// In en, this message translates to:
-  /// **'Place order'**
+  /// **'Send enquiry'**
   String get prPlaceOrder;
 
   /// No description provided for @prPriceNote.
@@ -5213,7 +5711,7 @@ abstract class AppLocalizations {
   /// No description provided for @prPrivacyNote.
   ///
   /// In en, this message translates to:
-  /// **'You deal with O2O Boss, not the vendor directly. We stay with you until the job is done.'**
+  /// **'You deal with O2O Boss, not the seller directly. We stay with you until the job is done.'**
   String get prPrivacyNote;
 
   /// No description provided for @prQuantity.
@@ -5227,6 +5725,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Search products and services'**
   String get prSearchHint;
+
+  /// No description provided for @prSellerAbout.
+  ///
+  /// In en, this message translates to:
+  /// **'About this seller'**
+  String get prSellerAbout;
+
+  /// No description provided for @prSellerAreas.
+  ///
+  /// In en, this message translates to:
+  /// **'Serves {areas}'**
+  String prSellerAreas(String areas);
+
+  /// No description provided for @prSellerBrands.
+  ///
+  /// In en, this message translates to:
+  /// **'Brands: {brands}'**
+  String prSellerBrands(String brands);
+
+  /// No description provided for @prSellerCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Seller {code}'**
+  String prSellerCode(String code);
+
+  /// No description provided for @prSellerPicked.
+  ///
+  /// In en, this message translates to:
+  /// **'Seller you picked'**
+  String get prSellerPicked;
+
+  /// No description provided for @prSellerRating.
+  ///
+  /// In en, this message translates to:
+  /// **'Rated {rating} out of 5 by customers'**
+  String prSellerRating(String rating);
+
+  /// No description provided for @prSellerReplies.
+  ///
+  /// In en, this message translates to:
+  /// **'Replies to {percent}% of requests on time'**
+  String prSellerReplies(String percent);
+
+  /// No description provided for @prSellerSince.
+  ///
+  /// In en, this message translates to:
+  /// **'With O2O Boss since {year}'**
+  String prSellerSince(String year);
+
+  /// No description provided for @prSellerTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Verified seller in {place}'**
+  String prSellerTitle(String place);
+
+  /// No description provided for @prSellerVerified.
+  ///
+  /// In en, this message translates to:
+  /// **'Documents checked by O2O Boss'**
+  String get prSellerVerified;
+
+  /// No description provided for @prSellersHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Open a seller to see their page. Your enquiry still goes through O2O Boss.'**
+  String get prSellersHelp;
+
+  /// No description provided for @prSellersTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Seller near you} other{Sellers near you}}'**
+  String prSellersTitle(int count);
 
   /// No description provided for @prSortFilter.
   ///
@@ -5297,7 +5867,7 @@ abstract class AppLocalizations {
   /// No description provided for @prVendorsNear.
   ///
   /// In en, this message translates to:
-  /// **'{count, plural, =1{1 verified vendor in {city}} other{{count} verified vendors in {city}}}'**
+  /// **'{count, plural, =1{1 verified seller in {city}} other{{count} verified sellers in {city}}}'**
   String prVendorsNear(int count, String city);
 
   /// No description provided for @prViewRequest.
@@ -7040,6 +7610,18 @@ abstract class AppLocalizations {
   /// **'Tell us what you need. We\'ll connect you with a trusted business.'**
   String get signupWhoCustomerDesc;
 
+  /// No description provided for @signupWhoFranchise.
+  ///
+  /// In en, this message translates to:
+  /// **'Become a franchise partner'**
+  String get signupWhoFranchise;
+
+  /// No description provided for @signupWhoFranchiseDesc.
+  ///
+  /// In en, this message translates to:
+  /// **'Start your own business with our full support'**
+  String get signupWhoFranchiseDesc;
+
   /// No description provided for @signupWhoSales.
   ///
   /// In en, this message translates to:
@@ -7142,6 +7724,54 @@ abstract class AppLocalizations {
   /// **'Work in progress'**
   String get simpleWork;
 
+  /// No description provided for @soonBackToSignIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to sign in'**
+  String get soonBackToSignIn;
+
+  /// No description provided for @soonDoneBody.
+  ///
+  /// In en, this message translates to:
+  /// **'O2O Boss will start in {city} shortly. We will let you know as soon as we do.'**
+  String soonDoneBody(String city);
+
+  /// No description provided for @soonDoneTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Thank you, {name}'**
+  String soonDoneTitle(String name);
+
+  /// No description provided for @soonNoteBody.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'ll start operating there shortly and let you know. Leave your details and we\'ll tell you first.'**
+  String get soonNoteBody;
+
+  /// No description provided for @soonNoteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'re not in {city} yet'**
+  String soonNoteTitle(String city);
+
+  /// No description provided for @soonNoteTitleAny.
+  ///
+  /// In en, this message translates to:
+  /// **'We\'re not in your city yet'**
+  String get soonNoteTitleAny;
+
+  /// No description provided for @soonNotify.
+  ///
+  /// In en, this message translates to:
+  /// **'Notify me'**
+  String get soonNotify;
+
+  /// No description provided for @soonWeAreThere.
+  ///
+  /// In en, this message translates to:
+  /// **'Good news: O2O Boss is already in {city}. Pick your area.'**
+  String soonWeAreThere(String city);
+
   /// No description provided for @sourceAdmin.
   ///
   /// In en, this message translates to:
@@ -7165,6 +7795,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Referral partner'**
   String get sourceSales;
+
+  /// No description provided for @srcBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Anything under the sun: if it\'s not here, we\'ll source it for you. Ask and we\'ll get back to you.'**
+  String get srcBody;
+
+  /// No description provided for @srcButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask us to find it'**
+  String get srcButton;
+
+  /// No description provided for @srcDoneBody.
+  ///
+  /// In en, this message translates to:
+  /// **'We will get back to you with information about “{query}”.'**
+  String srcDoneBody(String query);
+
+  /// No description provided for @srcDoneTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Request received'**
+  String get srcDoneTitle;
+
+  /// No description provided for @srcRequirement.
+  ///
+  /// In en, this message translates to:
+  /// **'Please find: {query}'**
+  String srcRequirement(String query);
+
+  /// No description provided for @srcTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'We don\'t list “{query}” yet'**
+  String srcTitle(String query);
 
   /// No description provided for @stActive.
   ///
@@ -8342,6 +9008,18 @@ abstract class AppLocalizations {
   /// **'Upcoming'**
   String get upcoming;
 
+  /// No description provided for @validationAge.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your age in years'**
+  String get validationAge;
+
+  /// No description provided for @validationAgeMin.
+  ///
+  /// In en, this message translates to:
+  /// **'You need to be 18 or older to earn with O2O Boss'**
+  String get validationAgeMin;
+
   /// No description provided for @validationAmount.
   ///
   /// In en, this message translates to:
@@ -8749,6 +9427,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Mark verified'**
   String get vendorVerifyDoc;
+
+  /// No description provided for @vendorsCustomerPick.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer\'s pick'**
+  String get vendorsCustomerPick;
 
   /// No description provided for @vendorsDeadline.
   ///

@@ -119,6 +119,8 @@ void main() {
       '/products/p_split_ac',
       '/products/p_gold',
       '/products/p_tv',
+      '/products/p_home_lift',
+      '/products/p_split_ac/sellers/S103',
     ],
     'backoffice': _opsPages,
     'admin': [

@@ -1,6 +1,9 @@
 import 'enums.dart';
 import 'json.dart';
 
+/// Category for requests about things O2O Boss does not list yet.
+const kSourcingCategoryId = 'cat_other';
+
 /// A question back office asks while qualifying an enquiry in this category.
 class QualificationQuestion {
   const QualificationQuestion({
@@ -115,6 +118,7 @@ class Product {
     this.unit = PriceUnit.job,
     this.highlights = const [],
     this.popularity = 0,
+    this.photos = const [],
   });
 
   final String id;
@@ -135,6 +139,10 @@ class Product {
   /// Higher shows first when sorting by popular.
   final int popularity;
 
+  /// Photo links added by admin. Until there are photos, the app shows
+  /// drawn picture tiles for the category instead.
+  final List<String> photos;
+
   Product copyWith({
     String? name,
     String? description,
@@ -144,6 +152,7 @@ class Product {
     PriceUnit? unit,
     List<String>? highlights,
     int? popularity,
+    List<String>? photos,
   }) =>
       Product(
         id: id,
@@ -156,6 +165,7 @@ class Product {
         unit: unit ?? this.unit,
         highlights: highlights ?? this.highlights,
         popularity: popularity ?? this.popularity,
+        photos: photos ?? this.photos,
       );
 
   Map<String, dynamic> toJson() => {
@@ -169,6 +179,7 @@ class Product {
         'unit': unit.name,
         'highlights': highlights,
         'popularity': popularity,
+        'photos': photos,
       };
 
   factory Product.fromJson(Map<String, dynamic> j) => Product(
@@ -182,6 +193,7 @@ class Product {
         unit: enumByName(PriceUnit.values, j['unit'], PriceUnit.job),
         highlights: stringList(j['highlights']),
         popularity: numToInt(j['popularity']),
+        photos: stringList(j['photos']),
       );
 }
 

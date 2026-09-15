@@ -6,6 +6,10 @@ enum UserRole { sales, backOffice, vendor, customer, franchise, admin }
 /// Independent referrers sign up themselves; company sales staff are created by admin.
 enum SalesType { independent, company }
 
+/// What a person who signs up to earn does day to day. Helps O2O Boss plan
+/// training and promotion.
+enum Occupation { student, employed, selfEmployed, homemaker, retired, other }
+
 enum AccountStatus { active, pending, underReview, rejected, suspended }
 
 enum EnquirySource { sales, customer, backOffice, admin }

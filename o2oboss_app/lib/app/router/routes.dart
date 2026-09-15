@@ -6,6 +6,11 @@ abstract final class Routes {
   static const login = '/login';
   static const signup = '/signup';
   static const signupFranchise = '/signup/franchise';
+  static const explore = '/explore';
+  static String signupAs(UserRole role, {Occupation? occupation}) => Uri(
+        path: signup,
+        queryParameters: {'role': role.name, 'occupation': ?occupation?.name},
+      ).toString();
   static const forgot = '/forgot';
   static const pending = '/pending';
   static const changePassword = '/change-password';
@@ -34,6 +39,7 @@ abstract final class Routes {
   static String reviseQuotation(String id) => '/quotation/$id/revise';
   static String project(String id) => '/project/$id';
   static String product(String id) => '/products/$id';
+  static String seller(String productId, String code) => '/products/$productId/sellers/$code';
 
   // Shared lists opened from "More" pages.
   static const appointments = '/appointments';

@@ -233,6 +233,35 @@ const seedCategories = <ServiceCategory>[
       QualificationQuestion(id: 'budget', label: 'Budget (₹)', type: QuestionType.number),
     ],
   ),
+  ServiceCategory(
+    id: 'cat_lifts',
+    name: 'Lifts & Elevators',
+    icon: 'lift',
+    description: 'Home and building lifts, and lift maintenance',
+    questions: [
+      QualificationQuestion(
+          id: 'building',
+          label: 'Building type',
+          type: QuestionType.choice,
+          options: ['Independent house', 'Apartment', 'Office or shop', 'Hospital'],
+          required: true),
+      QualificationQuestion(id: 'floors', label: 'Number of floors', type: QuestionType.number),
+      QualificationQuestion(id: 'budget', label: 'Budget (₹)', type: QuestionType.number),
+    ],
+  ),
+  // Anything not listed yet. Back office uses these requests to find and
+  // sign up new vendors.
+  ServiceCategory(
+    id: kSourcingCategoryId,
+    name: 'Something else',
+    icon: 'other',
+    description: "Anything we don't list yet. We'll source it for you.",
+    questions: [
+      QualificationQuestion(
+          id: 'details', label: 'What exactly is needed', type: QuestionType.text, required: true),
+      QualificationQuestion(id: 'budget', label: 'Budget (₹)', type: QuestionType.number),
+    ],
+  ),
 ];
 
 const seedBrands = <Brand>[
@@ -251,6 +280,8 @@ const seedBrands = <Brand>[
   Brand(id: 'b_berger', name: 'Berger', categoryIds: ['cat_painting']),
   Brand(id: 'b_kent', name: 'Kent', categoryIds: ['cat_water']),
   Brand(id: 'b_aquaguard', name: 'Aquaguard', categoryIds: ['cat_water']),
+  Brand(id: 'b_otis', name: 'Otis', categoryIds: ['cat_lifts']),
+  Brand(id: 'b_kone', name: 'KONE', categoryIds: ['cat_lifts']),
   Brand(id: 'b_godrej', name: 'Godrej', categoryIds: ['cat_furniture', 'cat_appliances']),
 ];
 
@@ -277,6 +308,8 @@ const seedCities = <City>[
   ]),
   City(id: 'city_bengaluru', name: 'Bengaluru', state: 'Karnataka', areas: [
     Area(name: 'Whitefield', pincode: '560066'),
+    Area(name: 'Malleshwaram', pincode: '560003'),
+    Area(name: 'Seshadripuram', pincode: '560020'),
     Area(name: 'Indiranagar', pincode: '560038'),
     Area(name: 'Jayanagar', pincode: '560041'),
   ]),

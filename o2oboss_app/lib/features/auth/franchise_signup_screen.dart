@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+
 import '../../app/router/routes.dart';
 import '../../app/theme/app_colors.dart';
 import '../../app/theme/app_motion.dart';
@@ -9,119 +10,529 @@ import '../../app/theme/app_spacing.dart';
 import '../../app/theme/app_typography.dart';
 import '../../core/brand/brand_philosophy.dart';
 import '../../core/l10n/l10n.dart';
+import '../../core/utils/format.dart';
 import '../../core/utils/validators.dart';
 import '../../shared/widgets/brand_widgets.dart';
 import '../../shared/widgets/buttons.dart';
+import '../../shared/widgets/cards.dart';
 import '../../shared/widgets/feedback.dart';
 import '../../shared/widgets/inputs.dart';
 import '../../shared/widgets/layout.dart';
+import '../../shared/widgets/rows.dart';
 
 enum FranchiseType { womenHygiene, artGallery, coffeeKiosk, ayurvedicSpa, eggMaster, monthlyGroceries }
-enum ExperienceRange { under1Year, years1to3, years3to5, years5to10, years10to15, years15to20, years20to25, years25plus }
-enum BusinessSize { lakh2to5, lakh5to10, lakh10to25, lakh25to50, lakh50to1cr, above1cr }
 
-class _D { String firstName = '', lastName = '', email = '', mobile = '', area = '', state = ''; ExperienceRange? exp; BusinessSize? size; FranchiseType? type; bool terms = false; }
+enum ExperienceRange { none, under3, years3to10, over10 }
 
-class FranchiseSignupScreen extends ConsumerStatefulWidget {
-  const FranchiseSignupScreen({super.key});
-  @override ConsumerState<FranchiseSignupScreen> createState() => _State();
+/// Turnkey franchise sizes. Costs are indicative starting points; the final
+/// figure depends on the format and the city.
+enum FranchisePackage { kiosk, store, flagship, custom }
+
+extension on FranchisePackage {
+  double? get startsAt => switch (this) {
+        FranchisePackage.kiosk => 500000,
+        FranchisePackage.store => 1000000,
+        FranchisePackage.flagship => 2500000,
+        FranchisePackage.custom => null,
+      };
+
+  String title(AppLocalizations t) => switch (this) {
+        FranchisePackage.kiosk => t.fsPkgKiosk,
+        FranchisePackage.store => t.fsPkgStore,
+        FranchisePackage.flagship => t.fsPkgFlagship,
+        FranchisePackage.custom => t.fsPkgCustom,
+      };
+
+  String body(AppLocalizations t) => switch (this) {
+        FranchisePackage.kiosk => t.fsPkgKioskBody,
+        FranchisePackage.store => t.fsPkgStoreBody,
+        FranchisePackage.flagship => t.fsPkgFlagshipBody,
+        FranchisePackage.custom => t.fsPkgCustomBody,
+      };
+
+  String price(AppLocalizations t) =>
+      startsAt == null
+          ? t.fsPkgCustomPrice(Fmt.moneyCompact(FranchisePackage.flagship.startsAt!))
+          : t.fsPkgFrom(Fmt.moneyCompact(startsAt!));
 }
 
+String _typeLabel(AppLocalizations t, FranchiseType f) => switch (f) {
+      FranchiseType.womenHygiene => t.fsTypeHygiene,
+      FranchiseType.artGallery => t.fsTypeArt,
+      FranchiseType.coffeeKiosk => t.fsTypeCoffee,
+      FranchiseType.ayurvedicSpa => t.fsTypeSpa,
+      FranchiseType.eggMaster => t.fsTypeEgg,
+      FranchiseType.monthlyGroceries => t.fsTypeGroceries,
+    };
+
+IconData _typeIcon(FranchiseType f) => switch (f) {
+      FranchiseType.womenHygiene => Icons.spa_outlined,
+      FranchiseType.artGallery => Icons.palette_outlined,
+      FranchiseType.coffeeKiosk => Icons.local_cafe_outlined,
+      FranchiseType.ayurvedicSpa => Icons.self_improvement_outlined,
+      FranchiseType.eggMaster => Icons.egg_outlined,
+      FranchiseType.monthlyGroceries => Icons.shopping_cart_outlined,
+    };
+
+String _experienceLabel(AppLocalizations t, ExperienceRange e) => switch (e) {
+      ExperienceRange.none => t.fsExpNone,
+      ExperienceRange.under3 => t.fsExpUnder3,
+      ExperienceRange.years3to10 => t.fsExp3to10,
+      ExperienceRange.over10 => t.fsExpOver10,
+    };
+
+const _states = [
+  'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Delhi', 'Goa',
+  'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh',
+  'Maharashtra', 'Odisha', 'Puducherry', 'Punjab', 'Rajasthan', 'Tamil Nadu', 'Telangana',
+  'Uttar Pradesh', 'Uttarakhand', 'West Bengal',
+];
+
+/// Franchise: O2O Boss sets up the whole outlet (brand, look, interior,
+/// products, training), the same everywhere, like the big chains. The page
+/// explains what is included, shows the package sizes, and takes a short
+/// application.
+class FranchiseSignupScreen extends ConsumerStatefulWidget {
+  const FranchiseSignupScreen({super.key});
+
+  @override
+  ConsumerState<FranchiseSignupScreen> createState() => _State();
+}
 
 class _State extends ConsumerState<FranchiseSignupScreen> {
   final _key = GlobalKey<FormState>();
-  final _d = _D();
-  final _fn = TextEditingController(), _ln = TextEditingController(), _em = TextEditingController();
-  final _mb = TextEditingController(), _ar = TextEditingController();
-  bool _te = false, _done = false;
+  final _name = TextEditingController();
+  final _email = TextEditingController();
+  final _mobile = TextEditingController();
+  final _city = TextEditingController();
+  String? _state;
+  ExperienceRange? _experience;
+  FranchisePackage? _package;
+  FranchiseType? _type;
+  bool _terms = false;
+  bool _termsError = false;
+  bool _done = false;
 
-  @override void dispose() { _fn.dispose(); _ln.dispose(); _em.dispose(); _mb.dispose(); _ar.dispose(); super.dispose(); }
+  @override
+  void dispose() {
+    for (final c in [_name, _email, _mobile, _city]) {
+      c.dispose();
+    }
+    super.dispose();
+  }
 
   Future<void> _submit() async {
-    if (!_key.currentState!.validate() || !_d.terms || _d.state.isEmpty || _d.exp == null || _d.size == null) {
-      setState(() => _te = !_d.terms);
-      showToast(context, 'Please fill all required fields'); return;
+    final t = context.t;
+    final ok = _key.currentState!.validate();
+    setState(() => _termsError = !_terms);
+    if (!ok || !_terms) {
+      showToast(context, t.validationFixErrors, tone: Tone.danger);
+      return;
     }
-    _d..firstName = _fn.text.trim()..lastName = _ln.text.trim()..email = _em.text.trim()..mobile = _mb.text.trim()..area = _ar.text.trim();
     await simulateWork(800);
-    setState(() => _done = true);
+    if (mounted) setState(() => _done = true);
   }
 
-  @override Widget build(BuildContext c) => _done ? _success(c) : _form(c);
+  @override
+  Widget build(BuildContext context) => _done ? _success(context) : _form(context);
 
-  Widget _form(BuildContext c) {
-    final p = Space.page(c);
+  Widget _form(BuildContext context) {
+    final t = context.t;
+    final p = Space.page(context);
     return Scaffold(
-      appBar: AppBar(leading: BackButton(onPressed: () => c.canPop() ? c.pop() : c.go(Routes.signup)), title: const Text('Become a Franchiser')),
-      body: SafeArea(child: ContentWidth(max: 640, child: Form(key: _key, child: ListView(padding: EdgeInsets.fromLTRB(p, Space.md, p, Space.xxxl), children: [
-        _hero(c), Space.gapLg, const IndiaAcronymCard(), Space.gapXxl, _offers(c), Space.gapXxl, _fields(c), Space.gapXxl, _terms(c), Space.gapLg, AppButton('Submit Application', onPressed: _submit),
-      ])))));
+      appBar: AppBar(
+        leading: BackButton(
+            onPressed: () => context.canPop() ? context.pop() : context.go(Routes.signup)),
+        title: Text(t.fsTitle),
+      ),
+      body: SafeArea(
+        child: ContentWidth(
+          max: 640,
+          child: Form(
+            key: _key,
+            child: ListView(
+              padding: EdgeInsets.fromLTRB(p, Space.md, p, Space.xxxl),
+              children: [
+                const _Hero(),
+                SectionHeader(t.fsIncludedTitle),
+                const _Included(),
+                SectionHeader(t.fsPackagesTitle),
+                Text(t.fsPackagesHelp, style: context.text.bodySmall),
+                Space.gapMd,
+                _packages(context),
+                SectionHeader(t.fsTypesTitle),
+                _types(context),
+                SectionHeader(t.fsDetailsTitle),
+                _fields(context),
+                Space.gapXl,
+                _termsRow(context),
+                Space.gapLg,
+                AppButton(t.fsSubmit, onPressed: _submit),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
-  Widget _hero(BuildContext c) => Container(
-    padding: const EdgeInsets.all(Space.lg),
-    decoration: BoxDecoration(color: AppColors.primaryLight, borderRadius: Corners.lgAll, border: Border.all(color: AppColors.washBorder)),
-    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Row(children: [Container(padding: const EdgeInsets.all(Space.sm), decoration: BoxDecoration(color: AppColors.blueLight, borderRadius: Corners.mdAll), child: Icon(Icons.rocket_launch_outlined, color: AppColors.primary, size: 28)), Space.gapMd, Expanded(child: Text('Start Your Own Business', style: c.text.titleLarge?.copyWith(color: AppColors.primary, fontWeight: FontWeight.bold)))]),
-      Space.gapMd, Text('Become a Franchise Partner with o2oboss.com', style: c.text.titleMedium?.copyWith(fontWeight: FontWeight.w600)),
-      Space.gapXs, Text('"Affordable Franchise to Own"', style: c.text.bodyMedium?.copyWith(color: AppColors.primary, fontStyle: FontStyle.italic)),
-      Space.gapMd, Text('Complete setup with training & support.', style: c.text.bodySmall?.copyWith(color: AppColors.textSecondary)),
-      Space.gapSm, Container(padding: const EdgeInsets.symmetric(horizontal: Space.sm, vertical: Space.xs), decoration: BoxDecoration(color: AppColors.successLight, borderRadius: Corners.smAll), child: Text('💰 Great opportunity to earn', style: c.text.labelSmall?.copyWith(color: AppColors.successText))),
-    ]),
-  );
-
-  Widget _offers(BuildContext c) {
-    final o = [(FranchiseType.womenHygiene, 'Women Hygiene', Icons.spa_outlined, Colors.pink), (FranchiseType.artGallery, 'Art Gallery', Icons.palette_outlined, Colors.purple), (FranchiseType.coffeeKiosk, 'Coffee Kiosk', Icons.local_cafe_outlined, Colors.brown), (FranchiseType.ayurvedicSpa, 'Ayurvedic Spa', Icons.self_improvement_outlined, Colors.green), (FranchiseType.eggMaster, 'Egg Master', Icons.egg_outlined, Colors.orange), (FranchiseType.monthlyGroceries, 'Groceries', Icons.shopping_cart_outlined, Colors.teal)];
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Row(children: [Icon(Icons.business_center_outlined, color: AppColors.primary), Space.gapSm, Text('We Offer', style: c.text.titleMedium?.copyWith(fontWeight: FontWeight.bold))]),
-      Space.gapMd, GridView.count(shrinkWrap: true, physics: const NeverScrollableScrollPhysics(), crossAxisCount: 2, childAspectRatio: 1.6, crossAxisSpacing: Space.md, mainAxisSpacing: Space.md, children: [for (final (t, n, i, cl) in o) _card(c, t, n, i, cl)]),
-    ]);
+  Widget _packages(BuildContext context) {
+    final t = context.t;
+    return FormField<FranchisePackage>(
+      validator: (_) => _package == null ? t.validationChooseOne : null,
+      builder: (field) => Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          ResponsiveGrid(
+            minItemWidth: 260,
+            children: [
+              for (final pkg in FranchisePackage.values)
+                _PackageCard(
+                  package: pkg,
+                  selected: _package == pkg,
+                  onTap: () {
+                    setState(() => _package = pkg);
+                    field.didChange(pkg);
+                  },
+                ),
+            ],
+          ),
+          if (field.hasError) ...[
+            Space.gapSm,
+            Text(field.errorText!,
+                style: context.text.bodySmall?.copyWith(color: AppColors.dangerText)),
+          ],
+        ],
+      ),
+    );
   }
 
-  Widget _card(BuildContext c, FranchiseType t, String n, IconData i, Color cl) {
-    final s = _d.type == t;
-    return InkWell(borderRadius: Corners.mdAll, onTap: () => setState(() => _d.type = t), child: Container(padding: const EdgeInsets.all(Space.md), decoration: BoxDecoration(color: s ? cl.withValues(alpha: 0.15) : AppColors.track, borderRadius: Corners.mdAll, border: Border.all(color: s ? cl : AppColors.border, width: s ? 2 : 1)), child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [Icon(i, color: cl, size: 28), Space.gapSm, Text(n, textAlign: TextAlign.center, maxLines: 2, overflow: TextOverflow.ellipsis, style: c.text.labelMedium?.copyWith(color: s ? cl : AppColors.text, fontWeight: s ? FontWeight.bold : FontWeight.normal))])));
+  Widget _types(BuildContext context) {
+    final t = context.t;
+    return Wrap(
+      spacing: Space.sm,
+      runSpacing: Space.sm,
+      children: [
+        for (final f in FranchiseType.values)
+          ChoiceChip(
+            avatar: Icon(_typeIcon(f), size: 18, color: _type == f ? Colors.white : AppColors.primary),
+            label: Text(_typeLabel(t, f)),
+            selected: _type == f,
+            showCheckmark: false,
+            labelStyle:
+                context.text.labelMedium?.copyWith(color: _type == f ? Colors.white : AppColors.text),
+            onSelected: (_) => setState(() => _type = _type == f ? null : f),
+          ),
+      ],
+    );
   }
 
-  Widget _fields(BuildContext c) {
-    final st = ['Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa', 'Gujarat', 'Haryana', 'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Punjab', 'Rajasthan', 'Tamil Nadu', 'Telangana', 'Uttar Pradesh', 'West Bengal', 'Delhi'];
-    final ex = [(ExperienceRange.under1Year, '<1yr'), (ExperienceRange.years1to3, '1-3yrs'), (ExperienceRange.years3to5, '3-5yrs'), (ExperienceRange.years5to10, '5-10yrs'), (ExperienceRange.years10to15, '10-15yrs'), (ExperienceRange.years25plus, '15+yrs')];
-    final sz = [(BusinessSize.lakh2to5, '₹2L-5L'), (BusinessSize.lakh5to10, '₹5L-10L'), (BusinessSize.lakh10to25, '₹10L-25L'), (BusinessSize.lakh25to50, '₹25L-50L'), (BusinessSize.lakh50to1cr, '₹50L-1Cr'), (BusinessSize.above1cr, '₹1Cr+')];
-    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Row(children: [Icon(Icons.person_add_outlined, color: AppColors.primary), Space.gapSm, Text('Your Details', style: c.text.titleMedium?.copyWith(fontWeight: FontWeight.bold))]), Space.gapLg,
-      Row(children: [Expanded(child: AppTextField(label: 'First Name', controller: _fn, required: true, validator: (v) => Validators.name(c.t, v))), Space.gapMd, Expanded(child: AppTextField(label: 'Last Name', controller: _ln, required: true, validator: (v) => Validators.name(c.t, v)))]),
-      Space.gapLg, AppTextField(label: 'Email', controller: _em, required: true, keyboardType: TextInputType.emailAddress, validator: (v) => Validators.email(c.t, v)),
-      Space.gapLg, AppTextField(label: 'Mobile', controller: _mb, required: true, keyboardType: TextInputType.phone, validator: (v) => Validators.phone(c.t, v)),
-      Space.gapLg, AppTextField(label: 'Area of Business', controller: _ar, required: true, validator: (v) => Validators.required(c.t, v)),
-      Space.gapLg, _dd<String>(c, 'State', _d.state.isEmpty ? null : _d.state, st.map((s) => (s, s)).toList(), (v) => setState(() => _d.state = v ?? '')),
-      Space.gapLg, _dd<ExperienceRange>(c, 'Experience', _d.exp, ex, (v) => setState(() => _d.exp = v)),
-      Space.gapLg, _dd<BusinessSize>(c, 'Investment', _d.size, sz, (v) => setState(() => _d.size = v)),
-    ]);
+  Widget _fields(BuildContext context) {
+    final t = context.t;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        AppTextField(
+          label: t.labelFullName,
+          controller: _name,
+          required: true,
+          textCapitalization: TextCapitalization.words,
+          validator: (v) => Validators.name(t, v),
+        ),
+        Space.gapLg,
+        PhoneField(controller: _mobile),
+        Space.gapLg,
+        AppTextField(
+          label: t.labelEmail,
+          controller: _email,
+          optional: true,
+          keyboardType: TextInputType.emailAddress,
+          validator: (v) => Validators.email(t, v),
+        ),
+        Space.gapLg,
+        AppTextField(
+          label: t.fsCityLabel,
+          controller: _city,
+          required: true,
+          textCapitalization: TextCapitalization.words,
+          validator: (v) => Validators.required(t, v),
+        ),
+        Space.gapLg,
+        FormField<String>(
+          validator: (_) => _state == null ? t.validationChooseOne : null,
+          builder: (field) => Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              SelectField<String>(
+                label: t.fsStateLabel,
+                value: _state,
+                required: true,
+                icon: Icons.map_outlined,
+                options: [for (final s in _states) SelectOption(s, s)],
+                onChanged: (v) {
+                  setState(() => _state = v);
+                  field.didChange(v);
+                },
+              ),
+              if (field.hasError)
+                Padding(
+                  padding: const EdgeInsets.only(top: Space.xs),
+                  child: Text(field.errorText!,
+                      style: context.text.bodySmall?.copyWith(color: AppColors.dangerText)),
+                ),
+            ],
+          ),
+        ),
+        Space.gapLg,
+        ChoiceChips<ExperienceRange>(
+          label: t.fsExperienceLabel,
+          required: true,
+          options: [
+            for (final e in ExperienceRange.values) SelectOption(e, _experienceLabel(t, e)),
+          ],
+          selected: _experience,
+          onSelected: (v) => setState(() => _experience = v),
+        ),
+      ],
+    );
   }
 
-  Widget _dd<T>(BuildContext c, String l, T? v, List<(T, String)> i, ValueChanged<T?> f) => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-    Text('$l *', style: c.text.labelMedium?.copyWith(color: AppColors.textSecondary)), Space.gapXs,
-    DropdownButtonFormField<T>(initialValue: v, decoration: InputDecoration(border: OutlineInputBorder(borderRadius: Corners.mdAll), contentPadding: const EdgeInsets.symmetric(horizontal: Space.md, vertical: Space.sm)), hint: Text('Select $l'), items: i.map((e) => DropdownMenuItem(value: e.$1, child: Text(e.$2))).toList(), onChanged: f, validator: (v) => v == null ? 'Required' : null),
-  ]);
-
-  Widget _terms(BuildContext c) => Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-    InkWell(borderRadius: Corners.mdAll, onTap: () => setState(() => _d.terms = !_d.terms), child: Padding(padding: const EdgeInsets.symmetric(vertical: Space.xs), child: Row(children: [Checkbox(value: _d.terms, onChanged: (v) => setState(() => _d.terms = v ?? false)), Expanded(child: Text('I agree to Terms & Privacy', style: c.text.bodyMedium))]))),
-    Row(children: [const SizedBox(width: 48), TextButton(onPressed: () => c.push(Routes.legal('terms')), child: const Text('Terms')), TextButton(onPressed: () => c.push(Routes.legal('privacy')), child: const Text('Privacy'))]),
-    if (_te) Padding(padding: const EdgeInsetsDirectional.only(start: 48), child: Text('Please accept terms', style: c.text.bodySmall?.copyWith(color: AppColors.dangerText))),
-  ]);
-
-  Widget _success(BuildContext c) {
-    Widget m = Container(width: 88, height: 88, decoration: const BoxDecoration(color: AppColors.successLight, shape: BoxShape.circle), child: const Icon(Icons.hourglass_top_rounded, size: 48, color: AppColors.successText));
-    if (!Motion.reduced(c)) m = m.animate().scale(begin: const Offset(0.6, 0.6), duration: 360.ms, curve: Curves.easeOutBack).fadeIn();
-    return Scaffold(body: SafeArea(child: ContentWidth(max: 480, child: ListView(padding: EdgeInsets.fromLTRB(Space.page(c), 72, Space.page(c), Space.xxl), children: [
-      Center(child: m), Space.gapXxl, Text(kSuccessWelcome, textAlign: TextAlign.center, style: c.text.headlineSmall), Space.gapSm,
-      Text('Our team will contact you in 2-3 business days.', textAlign: TextAlign.center, style: c.text.bodyMedium?.copyWith(color: AppColors.textSecondary)), Space.gapMd,
-      const PhilosophyCard(), Space.gapXl,
-      Container(padding: const EdgeInsets.all(Space.md), decoration: BoxDecoration(color: AppColors.track, borderRadius: Corners.mdAll), child: Column(children: [_row(c, 'Name', '${_d.firstName} ${_d.lastName}'), _row(c, 'Email', _d.email), _row(c, 'Mobile', _d.mobile), _row(c, 'State', _d.state)])),
-      Space.gapXxl, AppButton('Back to Login', onPressed: () => c.go(Routes.login)),
-    ]))));
+  Widget _termsRow(BuildContext context) {
+    final t = context.t;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        InkWell(
+          borderRadius: Corners.mdAll,
+          onTap: () => setState(() => _terms = !_terms),
+          child: Row(
+            children: [
+              Checkbox(value: _terms, onChanged: (v) => setState(() => _terms = v ?? false)),
+              Expanded(child: Text(t.signupTerms, style: context.text.bodyMedium)),
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsetsDirectional.only(start: 48),
+          child: Wrap(
+            children: [
+              TextButton(
+                  onPressed: () => context.push(Routes.legal('terms')), child: Text(t.legalTerms)),
+              TextButton(
+                  onPressed: () => context.push(Routes.legal('privacy')),
+                  child: Text(t.legalPrivacy)),
+            ],
+          ),
+        ),
+        if (_termsError && !_terms)
+          Padding(
+            padding: const EdgeInsetsDirectional.only(start: 48),
+            child: Text(t.signupTermsError,
+                style: context.text.bodySmall?.copyWith(color: AppColors.dangerText)),
+          ),
+      ],
+    );
   }
 
-  Widget _row(BuildContext c, String l, String v) => Padding(padding: const EdgeInsets.symmetric(vertical: Space.xs), child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [Text(l, style: c.text.bodySmall?.copyWith(color: AppColors.textSecondary)), Text(v, style: c.text.bodyMedium)]));
+  Widget _success(BuildContext context) {
+    final t = context.t;
+    Widget mark = Container(
+      width: 88,
+      height: 88,
+      decoration: const BoxDecoration(color: AppColors.successLight, shape: BoxShape.circle),
+      child: const Icon(Icons.storefront_outlined, size: 46, color: AppColors.successText),
+    );
+    if (!Motion.reduced(context)) {
+      mark = mark
+          .animate()
+          .scale(begin: const Offset(0.6, 0.6), duration: 360.ms, curve: Curves.easeOutBack)
+          .fadeIn();
+    }
+    final pkg = _package!;
+    return Scaffold(
+      body: SafeArea(
+        child: ContentWidth(
+          max: 480,
+          child: ListView(
+            padding: EdgeInsets.fromLTRB(Space.page(context), 72, Space.page(context), Space.xxl),
+            children: [
+              Center(child: mark),
+              Space.gapXxl,
+              Text(kSuccessWelcome, textAlign: TextAlign.center, style: context.text.headlineSmall),
+              Space.gapSm,
+              Text(t.fsDoneBody,
+                  textAlign: TextAlign.center,
+                  style: context.text.bodyMedium?.copyWith(color: AppColors.textSecondary)),
+              Space.gapMd,
+              const PhilosophyCard(),
+              Space.gapXl,
+              AppCard(
+                child: Column(
+                  children: [
+                    InfoRow(icon: Icons.person_outline, label: t.labelFullName, value: _name.text.trim()),
+                    InfoRow(icon: Icons.phone_outlined, label: t.labelMobile, value: _mobile.text.trim()),
+                    InfoRow(
+                      icon: Icons.place_outlined,
+                      label: t.fsCityLabel,
+                      value: '${_city.text.trim()}, ${_state ?? ''}',
+                    ),
+                    InfoRow(
+                      icon: Icons.storefront_outlined,
+                      label: t.fsPackageLabel,
+                      value: '${pkg.title(t)} (${pkg.price(t)})',
+                    ),
+                  ],
+                ),
+              ),
+              Space.gapXxl,
+              AppButton(t.soonBackToSignIn, onPressed: () => context.go(Routes.login)),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
 
+class _Hero extends StatelessWidget {
+  const _Hero();
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.t;
+    return Container(
+      padding: const EdgeInsets.all(Space.xl),
+      decoration: BoxDecoration(
+        borderRadius: Corners.xlAll,
+        gradient: LinearGradient(
+          begin: AlignmentDirectional.topStart,
+          end: AlignmentDirectional.bottomEnd,
+          // One hue, deepening: stays clean in both colour themes.
+          colors: [AppColors.primary, Color.lerp(AppColors.primary, Colors.black, 0.22)!],
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Icon(Icons.rocket_launch_outlined, color: Colors.white, size: 34),
+          Space.gapMd,
+          Semantics(
+            header: true,
+            child: Text(
+              t.fsHeroTitle,
+              style: AppType.weight(context.text.headlineSmall!, FontWeight.w800)
+                  .copyWith(color: Colors.white, height: 1.2),
+            ),
+          ),
+          Space.gapSm,
+          Text(
+            t.fsHeroBody,
+            style: context.text.bodyMedium?.copyWith(color: Colors.white.withValues(alpha: 0.92)),
+          ),
+          Space.gapLg,
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha: 0.16),
+              borderRadius: Corners.pillAll,
+            ),
+            child: Text(
+              t.fsHeroPrice(Fmt.moneyCompact(FranchisePackage.kiosk.startsAt!)),
+              style: context.text.labelLarge?.copyWith(color: Colors.white, fontWeight: FontWeight.w700),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Everything O2O Boss sets up, so the partner does not have to.
+class _Included extends StatelessWidget {
+  const _Included();
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.t;
+    final items = [
+      (Icons.verified_outlined, t.fsIncBrand, t.fsIncBrandBody),
+      (Icons.format_paint_outlined, t.fsIncInterior, t.fsIncInteriorBody),
+      (Icons.inventory_2_outlined, t.fsIncProducts, t.fsIncProductsBody),
+      (Icons.school_outlined, t.fsIncTraining, t.fsIncTrainingBody),
+      (Icons.campaign_outlined, t.fsIncLaunch, t.fsIncLaunchBody),
+    ];
+    return AppCard(
+      child: Gap(
+        space: Space.lg,
+        children: [
+          for (final (icon, title, body) in items)
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                GlowIcon(icon, size: 40),
+                Space.gapMd,
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(title, style: context.text.titleSmall),
+                      const SizedBox(height: 2),
+                      Text(body, style: context.text.bodySmall),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+        ],
+      ),
+    );
+  }
+}
+
+class _PackageCard extends StatelessWidget {
+  const _PackageCard({required this.package, required this.selected, required this.onTap});
+
+  final FranchisePackage package;
+  final bool selected;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.t;
+    return Semantics(
+      selected: selected,
+      button: true,
+      child: AppCard(
+        onTap: onTap,
+        color: selected ? AppColors.primaryLight : null,
+        borderColor: selected ? AppColors.primary : null,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Icon(
+              selected ? Icons.radio_button_checked : Icons.radio_button_unchecked,
+              color: selected ? AppColors.primary : AppColors.textMuted,
+            ),
+            Space.gapMd,
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(package.title(t), style: context.text.titleSmall),
+                  const SizedBox(height: 2),
+                  Text(
+                    package.price(t),
+                    style: AppType.weight(context.text.titleMedium!, FontWeight.w800)
+                        .copyWith(color: AppColors.primaryDark),
+                  ),
+                  Space.gapXs,
+                  Text(package.body(t), style: context.text.bodySmall),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
