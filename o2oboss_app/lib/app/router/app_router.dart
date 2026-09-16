@@ -81,6 +81,7 @@ String? _redirect(Ref ref, GoRouterState state) {
   final loc = state.matchedLocation;
   final user = ref.read(currentUserProvider);
   final hasLocale = ref.read(localeProvider) != null;
+  debugPrint('Router: loc=$loc hasLocale=$hasLocale user=${user?.id}');
   
   // Landing page logic
   if (loc == Routes.landing || loc == '/' || loc.isEmpty) {
@@ -292,3 +293,4 @@ List<RouteBase> pageRoutes() => [
       _push(Routes.about, (_) => const AboutScreen()),
       _push('/legal/:doc', (s) => LegalScreen(doc: s.pathParameters['doc']!)),
     ];
+

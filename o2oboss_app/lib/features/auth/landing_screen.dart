@@ -76,7 +76,7 @@ class _LandingScreenState extends State<LandingScreen> with SingleTickerProvider
             SizedBox(height: small ? 24 : 32),
             _buildCTA(context, small),
             SizedBox(height: small ? 10 : 14),
-            TextButton(onPressed: () => context.go(Routes.login),
+            TextButton(onPressed: _navigateToLogin,
               child: Text('Already have an account? Sign In',
                 style: context.text.bodyMedium?.copyWith(color: AppColors.primary, fontWeight: FontWeight.w600, fontSize: small ? 13 : 14))),
             SizedBox(height: small ? 16 : 24),
@@ -108,14 +108,17 @@ class _LandingScreenState extends State<LandingScreen> with SingleTickerProvider
           decoration: BoxDecoration(color: _currentPage == i ? AppColors.primary : AppColors.primary.withValues(alpha: 0.25),
             borderRadius: BorderRadius.circular(3))))]);
 
+  void _navigateToLogin() {
+    debugPrint('Navigating to login...');
+    if (!mounted) return;
+    GoRouter.of(context).go(Routes.login);
+  }
+
   Widget _buildCTA(BuildContext ctx, bool small) => Padding(
     padding: const EdgeInsets.symmetric(horizontal: 32),
     child: SizedBox(width: double.infinity, height: small ? 50 : 56,
       child: ElevatedButton(
-        onPressed: () {
-          debugPrint('Grow With Us tapped - navigating to login');
-          ctx.go(Routes.login);
-        },
+        onPressed: _navigateToLogin,
         style: ElevatedButton.styleFrom(backgroundColor: AppColors.primary, foregroundColor: Colors.white,
           elevation: 4, shadowColor: AppColors.primary.withValues(alpha: 0.4),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14))),
