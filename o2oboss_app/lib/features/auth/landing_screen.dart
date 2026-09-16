@@ -56,31 +56,30 @@ class _LandingScreenState extends State<LandingScreen> with SingleTickerProvider
     final h = MediaQuery.sizeOf(context).height;
     final small = h < 700;
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Stack(children: [
-        Positioned.fill(child: Image.asset('assets/images/bg_pattern.png', fit: BoxFit.cover,
-          color: Colors.white.withValues(alpha: 0.92), colorBlendMode: BlendMode.srcOver)),
+        // Background pattern - no overlay, show as-is
+        Positioned.fill(child: Image.asset('assets/images/bg_pattern.png', fit: BoxFit.cover)),
         SafeArea(child: FadeTransition(opacity: CurvedAnimation(parent: _fadeCtrl, curve: Curves.easeOut),
           child: Column(children: [
-            SizedBox(height: small ? 12 : 20),
+            SizedBox(height: small ? 16 : 24),
             TweenAnimationBuilder<double>(tween: Tween(begin: 0.8, end: 1.0),
               duration: const Duration(milliseconds: 500), curve: Curves.elasticOut,
               builder: (_, s, c) => Transform.scale(scale: s, child: c),
               child: BrandMark(size: small ? 56 : 68)),
-            SizedBox(height: small ? 8 : 14),
-            Text('Making A LIFE...\nNot Just A Living...', textAlign: TextAlign.center,
-              style: context.text.titleLarge?.copyWith(fontWeight: FontWeight.w700, height: 1.3, fontSize: small ? 17 : 21)),
-            SizedBox(height: small ? 12 : 18),
-            Expanded(child: _buildCarousel(small)),
-            SizedBox(height: small ? 10 : 14),
-            _buildDots(),
-            SizedBox(height: small ? 20 : 28),
-            _buildCTA(context, small),
             SizedBox(height: small ? 8 : 12),
+            Text('Making A LIFE...\nNot Just A Living...', textAlign: TextAlign.center,
+              style: context.text.titleLarge?.copyWith(fontWeight: FontWeight.w700, height: 1.3, fontSize: small ? 17 : 21, color: AppColors.text)),
+            SizedBox(height: small ? 16 : 20),
+            Expanded(child: _buildCarousel(small)),
+            SizedBox(height: small ? 12 : 16),
+            _buildDots(),
+            SizedBox(height: small ? 24 : 32),
+            _buildCTA(context, small),
+            SizedBox(height: small ? 10 : 14),
             TextButton(onPressed: () => context.go(Routes.login),
               child: Text('Already have an account? Sign In',
                 style: context.text.bodyMedium?.copyWith(color: AppColors.primary, fontWeight: FontWeight.w600, fontSize: small ? 13 : 14))),
-            SizedBox(height: small ? 12 : 18),
+            SizedBox(height: small ? 16 : 24),
           ]))),
       ]),
     );
@@ -95,10 +94,11 @@ class _LandingScreenState extends State<LandingScreen> with SingleTickerProvider
       if (_pageController.position.haveDimensions) v = (_pageController.page! - i).abs().clamp(0.0, 1.0);
       return Transform.scale(scale: 1 - v * 0.06, child: Opacity(opacity: 1 - v * 0.25, child: child));
     }, child: Container(
-      margin: const EdgeInsets.symmetric(horizontal: 6, vertical: 8),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(18),
-        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.12), blurRadius: 14, offset: const Offset(0, 6))]),
-      child: ClipRRect(borderRadius: BorderRadius.circular(18), child: Image.asset(_images[i], fit: BoxFit.cover)))));
+      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(16),
+        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.15), blurRadius: 12, offset: const Offset(0, 4))]),
+      child: ClipRRect(borderRadius: BorderRadius.circular(16), 
+        child: Image.asset(_images[i], fit: BoxFit.contain, width: double.infinity)))));
 
   Widget _buildDots() => Row(mainAxisAlignment: MainAxisAlignment.center, children: [
     for (var i = 0; i < _images.length; i++)
@@ -109,11 +109,15 @@ class _LandingScreenState extends State<LandingScreen> with SingleTickerProvider
             borderRadius: BorderRadius.circular(3))))]);
 
   Widget _buildCTA(BuildContext ctx, bool small) => Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 28),
-    child: SizedBox(width: double.infinity, height: small ? 48 : 52,
-      child: ElevatedButton(onPressed: () => ctx.go(Routes.login),
+    padding: const EdgeInsets.symmetric(horizontal: 32),
+    child: SizedBox(width: double.infinity, height: small ? 50 : 56,
+      child: ElevatedButton(
+        onPressed: () {
+          debugPrint('Grow With Us tapped - navigating to login');
+          ctx.go(Routes.login);
+        },
         style: ElevatedButton.styleFrom(backgroundColor: AppColors.primary, foregroundColor: Colors.white,
-          elevation: 3, shadowColor: AppColors.primary.withValues(alpha: 0.35),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13))),
-        child: Text('Grow With Us', style: ctx.text.titleMedium?.copyWith(color: Colors.white, fontWeight: FontWeight.w700, fontSize: small ? 15 : 16)))));
+          elevation: 4, shadowColor: AppColors.primary.withValues(alpha: 0.4),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14))),
+        child: Text('Grow With Us', style: ctx.text.titleMedium?.copyWith(color: Colors.white, fontWeight: FontWeight.w700, fontSize: small ? 16 : 18)))));
 }
