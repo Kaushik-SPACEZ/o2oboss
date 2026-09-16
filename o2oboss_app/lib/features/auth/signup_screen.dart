@@ -237,16 +237,24 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                 title: Text(t.signupTitle),
                 bottom: _step == 0 ? null : StepProgress(step: _step, total: _stepCount),
               ),
-        body: SafeArea(
-          child: ContentWidth(
-            max: 560,
-            child: directionalSwitch(
-              context: context,
-              step: _pickOccupation ? -1 : _step,
-              forward: _forward,
-              child: content,
+        body: Stack(
+          children: [
+            // Background pattern
+            Positioned.fill(
+              child: Image.asset('assets/images/bg_pattern.png', fit: BoxFit.cover),
             ),
-          ),
+            SafeArea(
+              child: ContentWidth(
+                max: 560,
+                child: directionalSwitch(
+                  context: context,
+                  step: _pickOccupation ? -1 : _step,
+                  forward: _forward,
+                  child: content,
+                ),
+              ),
+            ),
+          ],
         ),
         bottomNavigationBar: action == null ? null : StickyActions(children: [action]),
       ),

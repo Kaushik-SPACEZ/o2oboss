@@ -23,12 +23,12 @@ class _LandingScreenState extends State<LandingScreen> with SingleTickerProvider
   late AnimationController _fadeCtrl;
 
   static const _images = [
-    'assets/images/carousel/043753f5-1b62-4e99-8e84-bd588ef22b6a.jpg',
     'assets/images/carousel/0e52d1d9-07cf-42e5-a8bb-b634804e5bc7.jpg',
     'assets/images/carousel/55a5ef61-15fd-45ed-9526-9e2d7df7c0bd.jpg',
     'assets/images/carousel/6b10a3ba-68c3-4088-bc12-56fddcd056a4.jpg',
     'assets/images/carousel/a6a78b75-f85a-4fc7-8749-4219b178a1c0.jpg',
     'assets/images/carousel/ce8e9d13-6e94-4257-b465-548aeb1f046c.jpg',
+    'assets/images/carousel/043753f5-1b62-4e99-8e84-bd588ef22b6a.jpg',
   ];
 
   @override

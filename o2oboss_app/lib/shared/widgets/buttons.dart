@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import '../../app/theme/app_colors.dart';
 import '../../app/theme/app_spacing.dart';
 
-/// Button kinds - primary uses ORANGE for main actions
+/// Button kinds - primary uses Royal Blue for main actions (professional look)
 enum ButtonKind { primary, secondary, danger, success, text }
 
 /// The one button used for actions. Shows a spinner while its async action
@@ -92,10 +92,10 @@ class _AppButtonState extends State<AppButton> {
             ],
           );
     final onPressed = enabled ? _tap : null;
-    // Primary buttons use ORANGE (accent color) for important actions
+    // Primary buttons use Royal Blue for professional look
     final Widget button = switch (widget.kind) {
       ButtonKind.primary => FilledButton(
-          style: FilledButton.styleFrom(backgroundColor: AppColors.accent),
+          style: FilledButton.styleFrom(backgroundColor: AppColors.primary),
           onPressed: onPressed,
           child: content,
         ),
@@ -194,7 +194,7 @@ class QuickAction extends StatelessWidget {
 /// Round "+" button for adding something to a list. The label becomes the
 /// tooltip and what screen readers announce, so the button itself stays
 /// small and never grows with a long translation.
-/// Clean FAB button - uses orange accent for important add actions
+/// Clean FAB button - uses Royal Blue for professional look
 class AddFab extends StatelessWidget {
   const AddFab({super.key, required this.label, required this.onPressed});
 
@@ -206,7 +206,7 @@ class AddFab extends StatelessWidget {
     return FloatingActionButton(
       heroTag: null,
       tooltip: label,
-      backgroundColor: AppColors.accent,
+      backgroundColor: AppColors.primary,
       elevation: 2,
       onPressed: () {
         HapticFeedback.mediumImpact();

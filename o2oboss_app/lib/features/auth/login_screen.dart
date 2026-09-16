@@ -87,21 +87,27 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     final t = context.t;
     final pad = Space.page(context);
     return Scaffold(
-      body: SafeArea(
-        child: ContentWidth(
-          max: 480,
-          child: ListView(
-            padding: EdgeInsets.fromLTRB(pad, Space.lg, pad, Space.xxl),
-            children: [
-              Row(
+      body: Stack(
+        children: [
+          // Background pattern
+          Positioned.fill(
+            child: Image.asset('assets/images/bg_pattern.png', fit: BoxFit.cover),
+          ),
+          SafeArea(
+            child: ContentWidth(
+              max: 480,
+              child: ListView(
+                padding: EdgeInsets.fromLTRB(pad, Space.lg, pad, Space.xxl),
                 children: [
-                  // The logo opens the Explore page: earn, grow, start or buy.
-                  Tooltip(
-                    message: t.exOpen,
-                    child: Semantics(
-                      button: true,
-                      label: t.exOpen,
-                      child: InkWell(
+                  Row(
+                    children: [
+                      // The logo opens the Explore page: earn, grow, start or buy.
+                      Tooltip(
+                        message: t.exOpen,
+                        child: Semantics(
+                          button: true,
+                          label: t.exOpen,
+                          child: InkWell(
                         borderRadius: Corners.mdAll,
                         onTap: () => context.push(Routes.explore),
                         child: const Padding(
@@ -188,6 +194,8 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             ],
           ),
         ),
+      ),
+        ],
       ),
     );
   }
