@@ -92,11 +92,9 @@ class _LandingScreenState extends State<LandingScreen> with SingleTickerProvider
     itemBuilder: (_, i) => AnimatedBuilder(animation: _pageController, builder: (_, child) {
       double v = 1.0;
       if (_pageController.position.haveDimensions) v = (_pageController.page! - i).abs().clamp(0.0, 1.0);
-      return Transform.scale(scale: 1 - v * 0.06, child: Opacity(opacity: 1 - v * 0.25, child: child));
-    }, child: Container(
-      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(16),
-        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.15), blurRadius: 12, offset: const Offset(0, 4))]),
+      return Transform.scale(scale: 1 - v * 0.05, child: Opacity(opacity: 1 - v * 0.2, child: child));
+    }, child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       child: ClipRRect(borderRadius: BorderRadius.circular(16), 
         child: Image.asset(_images[i], fit: BoxFit.contain, width: double.infinity)))));
 
