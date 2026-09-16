@@ -79,24 +79,25 @@ const _publicRoutes = {
 
 String? _redirect(Ref ref, GoRouterState state) {
   final loc = state.matchedLocation;
-  // Always allow landing page for unauthenticated users
+  final user = ref.read(currentUserProvider);
+  final hasLocale = ref.read(localeProvider) != null;
+  
+  // Landing page logic
   if (loc == Routes.landing || loc == '/' || loc.isEmpty) {
-    final user = ref.read(currentUserProvider);
-    if (user == null) {
-      // Show landing if no locale chosen, otherwise stay on landing
-      if (ref.read(localeProvider) == null) return null;
-      return null; // Stay on landing page
-    }
-    // Logged-in user on landing → go to home
+    if (user == null) return null; // Stay on landing
     if (user.status == AccountStatus.active && !user.mustChangePassword) {
       return Routes.home(user.role);
     }
   }
-  if (ref.read(localeProvider) == null) {
-    if (loc == Routes.welcome) return null;
+  
+  // Allow login/signup even without locale (user coming from landing)
+  if (!hasLocale) {
+    if (loc == Routes.welcome || loc == Routes.login || 
+        loc == Routes.signup || loc == Routes.signupFranchise) {
+      return null;
+    }
     return Routes.landing;
   }
-  final user = ref.read(currentUserProvider);
   final isPublic = _publicRoutes.contains(loc) ||
       loc.startsWith('/legal/') ||
       (user == null && loc == Routes.help);
