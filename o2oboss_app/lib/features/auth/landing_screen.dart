@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../app/router/routes.dart';
 import '../../app/theme/app_colors.dart';
-import '../../app/theme/app_spacing.dart';
+
 import '../../app/theme/app_typography.dart';
 import '../../shared/widgets/pills.dart';
 
@@ -16,10 +16,11 @@ class LandingScreen extends StatefulWidget {
   State<LandingScreen> createState() => _LandingScreenState();
 }
 
-class _LandingScreenState extends State<LandingScreen> {
-  final PageController _pageController = PageController();
+class _LandingScreenState extends State<LandingScreen> with SingleTickerProviderStateMixin {
+  final PageController _pageController = PageController(viewportFraction: 0.88);
   int _currentPage = 0;
   Timer? _timer;
+  late AnimationController _fadeCtrl;
 
   static const _images = [
     'assets/images/carousel/043753f5-1b62-4e99-8e84-bd588ef22b6a.jpg',
@@ -33,13 +34,11 @@ class _LandingScreenState extends State<LandingScreen> {
   @override
   void initState() {
     super.initState();
-    _timer = Timer.periodic(const Duration(seconds: 4), (_) {
+    _fadeCtrl = AnimationController(vsync: this, duration: const Duration(milliseconds: 700))..forward();
+    _timer = Timer.periodic(const Duration(seconds: 3), (_) {
       if (_pageController.hasClients) {
-        _pageController.animateToPage(
-          (_currentPage + 1) % _images.length,
-          duration: const Duration(milliseconds: 600),
-          curve: Curves.easeInOut,
-        );
+        _pageController.animateToPage((_currentPage + 1) % _images.length,
+          duration: const Duration(milliseconds: 500), curve: Curves.easeInOutCubic);
       }
     });
   }
@@ -48,73 +47,73 @@ class _LandingScreenState extends State<LandingScreen> {
   void dispose() {
     _timer?.cancel();
     _pageController.dispose();
+    _fadeCtrl.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    final h = MediaQuery.sizeOf(context).height;
+    final small = h < 700;
     return Scaffold(
-      body: Stack(
-        children: [
-          // Background
-          Positioned.fill(
-            child: Image.asset('assets/images/bg_pattern.png', fit: BoxFit.cover,
-              color: Colors.white.withValues(alpha: 0.9), colorBlendMode: BlendMode.srcOver),
-          ),
-          SafeArea(
-            child: Column(children: [
-              const SizedBox(height: Space.xl),
-              Center(child: BrandMark(size: 80)),
-              const SizedBox(height: Space.lg),
-              Text('Making A LIFE...\nNot Just A Living...', textAlign: TextAlign.center,
-                style: context.text.headlineSmall?.copyWith(fontWeight: FontWeight.w700, height: 1.3)),
-              const SizedBox(height: Space.xl),
-              // Carousel
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: Space.lg),
-                  child: ClipRRect(
-                    borderRadius: Corners.xlAll,
-                    child: PageView.builder(
-                      controller: _pageController,
-                      onPageChanged: (i) => setState(() => _currentPage = i),
-                      itemCount: _images.length,
-                      itemBuilder: (_, i) => Image.asset(_images[i], fit: BoxFit.cover),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: Space.md),
-              // Dots
-              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                for (var i = 0; i < _images.length; i++)
-                  AnimatedContainer(duration: const Duration(milliseconds: 300),
-                    margin: const EdgeInsets.symmetric(horizontal: 4),
-                    width: _currentPage == i ? 24 : 8, height: 8,
-                    decoration: BoxDecoration(
-                      color: _currentPage == i ? AppColors.primary : AppColors.primary.withValues(alpha: 0.3),
-                      borderRadius: BorderRadius.circular(4))),
-              ]),
-              const SizedBox(height: Space.xxl),
-              // CTA
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: Space.xl),
-                child: SizedBox(width: double.infinity, height: 56,
-                  child: ElevatedButton(
-                    onPressed: () => context.go(Routes.login),
-                    style: ElevatedButton.styleFrom(backgroundColor: AppColors.primary,
-                      foregroundColor: Colors.white, shape: RoundedRectangleBorder(borderRadius: Corners.lgAll)),
-                    child: Text('Grow With Us', style: context.text.titleMedium?.copyWith(
-                      color: Colors.white, fontWeight: FontWeight.w700))))),
-              const SizedBox(height: Space.lg),
-              TextButton(onPressed: () => context.go(Routes.login),
-                child: Text('Already have an account? Sign In',
-                  style: context.text.bodyMedium?.copyWith(color: AppColors.primary, fontWeight: FontWeight.w600))),
-              const SizedBox(height: Space.xl),
-            ]),
-          ),
-        ],
-      ),
+      backgroundColor: Colors.white,
+      body: Stack(children: [
+        Positioned.fill(child: Image.asset('assets/images/bg_pattern.png', fit: BoxFit.cover,
+          color: Colors.white.withValues(alpha: 0.92), colorBlendMode: BlendMode.srcOver)),
+        SafeArea(child: FadeTransition(opacity: CurvedAnimation(parent: _fadeCtrl, curve: Curves.easeOut),
+          child: Column(children: [
+            SizedBox(height: small ? 12 : 20),
+            TweenAnimationBuilder<double>(tween: Tween(begin: 0.8, end: 1.0),
+              duration: const Duration(milliseconds: 500), curve: Curves.elasticOut,
+              builder: (_, s, c) => Transform.scale(scale: s, child: c),
+              child: BrandMark(size: small ? 56 : 68)),
+            SizedBox(height: small ? 8 : 14),
+            Text('Making A LIFE...\nNot Just A Living...', textAlign: TextAlign.center,
+              style: context.text.titleLarge?.copyWith(fontWeight: FontWeight.w700, height: 1.3, fontSize: small ? 17 : 21)),
+            SizedBox(height: small ? 12 : 18),
+            Expanded(child: _buildCarousel(small)),
+            SizedBox(height: small ? 10 : 14),
+            _buildDots(),
+            SizedBox(height: small ? 20 : 28),
+            _buildCTA(context, small),
+            SizedBox(height: small ? 8 : 12),
+            TextButton(onPressed: () => context.go(Routes.login),
+              child: Text('Already have an account? Sign In',
+                style: context.text.bodyMedium?.copyWith(color: AppColors.primary, fontWeight: FontWeight.w600, fontSize: small ? 13 : 14))),
+            SizedBox(height: small ? 12 : 18),
+          ]))),
+      ]),
     );
   }
+
+  Widget _buildCarousel(bool small) => PageView.builder(
+    controller: _pageController,
+    onPageChanged: (i) => setState(() => _currentPage = i),
+    itemCount: _images.length,
+    itemBuilder: (_, i) => AnimatedBuilder(animation: _pageController, builder: (_, child) {
+      double v = 1.0;
+      if (_pageController.position.haveDimensions) v = (_pageController.page! - i).abs().clamp(0.0, 1.0);
+      return Transform.scale(scale: 1 - v * 0.06, child: Opacity(opacity: 1 - v * 0.25, child: child));
+    }, child: Container(
+      margin: const EdgeInsets.symmetric(horizontal: 6, vertical: 8),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(18),
+        boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.12), blurRadius: 14, offset: const Offset(0, 6))]),
+      child: ClipRRect(borderRadius: BorderRadius.circular(18), child: Image.asset(_images[i], fit: BoxFit.cover)))));
+
+  Widget _buildDots() => Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+    for (var i = 0; i < _images.length; i++)
+      GestureDetector(onTap: () => _pageController.animateToPage(i, duration: const Duration(milliseconds: 350), curve: Curves.easeInOut),
+        child: AnimatedContainer(duration: const Duration(milliseconds: 220), curve: Curves.easeInOut,
+          margin: const EdgeInsets.symmetric(horizontal: 3), width: _currentPage == i ? 18 : 6, height: 6,
+          decoration: BoxDecoration(color: _currentPage == i ? AppColors.primary : AppColors.primary.withValues(alpha: 0.25),
+            borderRadius: BorderRadius.circular(3))))]);
+
+  Widget _buildCTA(BuildContext ctx, bool small) => Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 28),
+    child: SizedBox(width: double.infinity, height: small ? 48 : 52,
+      child: ElevatedButton(onPressed: () => ctx.go(Routes.login),
+        style: ElevatedButton.styleFrom(backgroundColor: AppColors.primary, foregroundColor: Colors.white,
+          elevation: 3, shadowColor: AppColors.primary.withValues(alpha: 0.35),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13))),
+        child: Text('Grow With Us', style: ctx.text.titleMedium?.copyWith(color: Colors.white, fontWeight: FontWeight.w700, fontSize: small ? 15 : 16)))));
 }
