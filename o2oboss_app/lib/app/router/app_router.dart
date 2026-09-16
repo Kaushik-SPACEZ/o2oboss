@@ -79,9 +79,21 @@ const _publicRoutes = {
 
 String? _redirect(Ref ref, GoRouterState state) {
   final loc = state.matchedLocation;
+  // Always allow landing page for unauthenticated users
+  if (loc == Routes.landing || loc == '/' || loc.isEmpty) {
+    final user = ref.read(currentUserProvider);
+    if (user == null) {
+      // Show landing if no locale chosen, otherwise stay on landing
+      if (ref.read(localeProvider) == null) return null;
+      return null; // Stay on landing page
+    }
+    // Logged-in user on landing → go to home
+    if (user.status == AccountStatus.active && !user.mustChangePassword) {
+      return Routes.home(user.role);
+    }
+  }
   if (ref.read(localeProvider) == null) {
-    // Show landing page or welcome (language selection) for new users
-    if (loc == Routes.landing || loc == Routes.welcome) return null;
+    if (loc == Routes.welcome) return null;
     return Routes.landing;
   }
   final user = ref.read(currentUserProvider);
