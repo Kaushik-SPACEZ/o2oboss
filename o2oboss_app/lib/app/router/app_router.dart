@@ -17,6 +17,7 @@ import '../../features/auth/language_screen.dart';
 import '../../features/auth/login_screen.dart';
 import '../../features/auth/signup_screen.dart';
 import '../../features/auth/franchise_signup_screen.dart';
+import '../../features/auth/landing_screen.dart';
 import '../../features/backoffice/bo_home_screen.dart';
 import '../../features/backoffice/bo_more_screen.dart';
 import '../../features/backoffice/followups_screen.dart';
@@ -73,13 +74,15 @@ class _RouterRefresh extends ChangeNotifier {
 }
 
 const _publicRoutes = {
-  Routes.welcome, Routes.login, Routes.explore, Routes.signup, Routes.signupFranchise, Routes.forgot,
+  Routes.landing, Routes.welcome, Routes.login, Routes.explore, Routes.signup, Routes.signupFranchise, Routes.forgot,
 };
 
 String? _redirect(Ref ref, GoRouterState state) {
   final loc = state.matchedLocation;
   if (ref.read(localeProvider) == null) {
-    return loc == Routes.welcome ? null : Routes.welcome;
+    // Show landing page or welcome (language selection) for new users
+    if (loc == Routes.landing || loc == Routes.welcome) return null;
+    return Routes.landing;
   }
   final user = ref.read(currentUserProvider);
   final isPublic = _publicRoutes.contains(loc) ||
@@ -114,7 +117,7 @@ final routerProvider = Provider<GoRouter>((ref) {
     redirect: (context, state) => _redirect(ref, state),
     errorPageBuilder: (context, state) => fadePage(state, const NotFoundScreen()),
     routes: [
-      GoRoute(path: '/', builder: (_, _) => const SizedBox.shrink()),
+      GoRoute(path: Routes.landing, pageBuilder: (_, s) => fadePage(s, const LandingScreen())),
       GoRoute(
         path: Routes.welcome,
         pageBuilder: (_, s) => fadePage(s, const LanguageScreen()),

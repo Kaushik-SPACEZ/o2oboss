@@ -2,6 +2,7 @@ import '../../core/models/models.dart';
 
 /// Every path in the app, in one place.
 abstract final class Routes {
+  static const landing = '/';
   static const welcome = '/welcome';
   static const login = '/login';
   static const signup = '/signup';
